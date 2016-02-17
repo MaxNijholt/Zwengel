@@ -19,7 +19,7 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html>
+<html ng-app="zwengelApp">
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
@@ -31,16 +31,28 @@
     	<script src="ionic/ionic.bundle.js"></script>
     	<script src="angular/angular-route.js"></script>
     	<script src="angular/angular-resource.js"></script>
-        <title>Hello World</title>
+        <title>De Zwengel</title>
     </head>
-    <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+    <body ng-controller="AllController">
+        <ion-header-bar class="bar-light">
+            <h1 class="title">{{title}}</h1>
+        </ion-header-bar>  
+        <ion-content>
+            <div ng-view></div>
+        </ion-content>
+        <ion-footer-bar class="bar-dark">
+            <div id="footerMenu" class="buttons">
+                <div ng-click="navTijdlijn()">Tijdlijn</div>
+                <div ng-click="navVoortgang()">Voortgang</div>
+                <div ng-click="navBeloningen()">Beloningen</div>
+                <div ng-click="navProfiel()">Profiel</div>
             </div>
-        </div>
+        </ion-footer-bar>        
+        
+        <script src="js/ZwengelApp.js"></script>    		
+    	<script src="js/ZwengelControllers.js"></script>
+        <script src="js/DataServices.js"></script>
+        
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
