@@ -37,6 +37,7 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        // angular.bootstrap(document, ['zwengelApp']);
+        //Hier moet uiteindelijk angular worden gekoppeld aan het document
+        //angular.bootstrap(document, ['zwengelApp']);
     }
 };
