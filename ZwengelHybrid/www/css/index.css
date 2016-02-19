@@ -19,3 +19,7 @@ ion-footer-bar {
     border-left: 1px groove grey;
     border-right: 1px groove grey;
 }
+
+.timecard i{
+    font-size: 3em !important;
+}

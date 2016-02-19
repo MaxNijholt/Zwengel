@@ -17,6 +17,7 @@ dataCaller.getModules = function(studentID, onSucces){
     var testResult = [{
 			"title": "Minder praten tijdens de les",
 			"endDate": "05-03-2016",
+            "image": "ion-volume-low",
 			"steps": {
 				"Step1": {
 					"title": "4x2 min",
@@ -53,6 +54,7 @@ dataCaller.getModules = function(studentID, onSucces){
         {
 			"title": "De rekentafels kennen",
 			"endDate": "04-05-2016",
+            "image": "ion-calculator",
 			"steps": {
 				"Step1": {
 					"title": "Tafels 1, 2 en 3",

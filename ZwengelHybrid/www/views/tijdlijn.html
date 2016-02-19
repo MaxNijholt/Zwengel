@@ -1,8 +1,13 @@
-<div ng-repeat="module in modules" class="card">
-    <div class="item item-divider">
-        {{module.title}}
+<div ng-repeat="module in modules" class="row timecard">
+    <div class="col col-10 col-center">
+        <i class="icon {{module.image}}"></i>
     </div>
-    <div class="item item-text-wrap">
-        Datum: {{module.endDate}}
+    <div class="col col-90 card">
+        <div class="item item-divider">
+            {{module.title}}
+        </div>
+        <div class="item item-text-wrap">
+            Datum: {{module.endDate}}
+        </div>
     </div>
 </div>
