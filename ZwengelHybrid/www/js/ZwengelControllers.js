@@ -10,11 +10,6 @@ controllers.AllController = function($scope, $ionicPlatform, $window) {
         window.location.replace("#/tijdlijn");
     }
     
-    $scope.navVoortgang = function(){
-        $scope.title = "Voortgang";
-        window.location.replace("#/voortgang");
-    }
-    
     $scope.navBeloningen = function(){
         $scope.title = "Beloningen";
         window.location.replace("#/beloningen");
@@ -40,9 +35,6 @@ controllers.TijdlijnController = function($scope, StudentInfo) {
     });
 };
 
-controllers.VoortgangController = function($scope) {
-};
-
 controllers.BeloningenController = function($scope) {
     
 };
@@ -53,6 +45,5 @@ controllers.ProfielController = function($scope) {
 
 zwengelControllers.controller('AllController', ['$scope', '$ionicPlatform', '$window', controllers.AllController]);
 zwengelControllers.controller('TijdlijnController', ['$scope', 'StudentInfo', controllers.TijdlijnController]);
-zwengelControllers.controller('VoortgangController', ['$scope', controllers.VoortgangController]);
 zwengelControllers.controller('BeloningenController', ['$scope', controllers.BeloningenController]);
 zwengelControllers.controller('ProfielController', ['$scope', controllers.ProfielController]);
