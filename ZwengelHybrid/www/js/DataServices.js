@@ -1,9 +1,9 @@
 var dataServices = angular.module('dataServices', ['ngResource']);
 
-var services = {};
+var services_data = {};
 var dataCaller = {};
 
-services.StudentInfo = function(){
+services_data.StudentInfo = function(){
     this.getModules = function(studentID, onSucces){
         dataCaller.getModules(studentID, onSucces);
     };
@@ -88,4 +88,4 @@ dataCaller.getModules = function(studentID, onSucces){
     onSucces(testResult);
 };
 
-dataServices.factory('StudentInfo', services.StudentInfo);
+dataServices.factory('StudentInfo', services_data.StudentInfo);

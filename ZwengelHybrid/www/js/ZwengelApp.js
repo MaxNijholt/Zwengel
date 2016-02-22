@@ -1,6 +1,7 @@
 var zwengelApp = angular.module('zwengelApp', [
     'ngRoute',
     'zwengelControllers',
+    'zwengelServices',
     'dataServices',
     'ionic'
 ]);

@@ -23,3 +23,7 @@ ion-footer-bar {
 .timecard i{
     font-size: 3em !important;
 }
+
+ion-content {
+    padding: 5px;
+}

@@ -1,22 +1,22 @@
 var zwengelControllers = angular.module('zwengelControllers', []);
 var controllers = {};
 
-controllers.AllController = function($scope, $ionicPlatform, $window) {
+controllers.AllController = function($scope, $ionicPlatform, $window, AllData) {
     
-    $scope.title = "Tijdlijn";
+    $scope.page = AllData.page;
     
     $scope.navTijdlijn = function(){
-        $scope.title = "Tijdlijn";
+        AllData.page.title = "Tijdlijn";
         window.location.replace("#/tijdlijn");
     }
     
     $scope.navBeloningen = function(){
-        $scope.title = "Beloningen";
+        AllData.page.title = "Beloningen";
         window.location.replace("#/beloningen");
     }
     
     $scope.navProfiel = function(){
-        $scope.title = "Profiel";
+        AllData.page.title = "Profiel";
         window.location.replace("#/profiel");
     }
     
@@ -31,7 +31,7 @@ controllers.AllController = function($scope, $ionicPlatform, $window) {
 
 controllers.TijdlijnController = function($scope, StudentInfo) {
     StudentInfo.getModules("test", function(results){
-        $scope.modules = results;
+        $scope.targets = results;
     });
 };
 
@@ -43,7 +43,7 @@ controllers.ProfielController = function($scope) {
     
 };
 
-zwengelControllers.controller('AllController', ['$scope', '$ionicPlatform', '$window', controllers.AllController]);
+zwengelControllers.controller('AllController', ['$scope', '$ionicPlatform', '$window', 'AllData', controllers.AllController]);
 zwengelControllers.controller('TijdlijnController', ['$scope', 'StudentInfo', controllers.TijdlijnController]);
 zwengelControllers.controller('BeloningenController', ['$scope', controllers.BeloningenController]);
 zwengelControllers.controller('ProfielController', ['$scope', controllers.ProfielController]);

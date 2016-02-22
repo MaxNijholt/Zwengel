@@ -1,14 +1,14 @@
-<div ng-repeat="module in modules" class="row timecard">
+<div ng-repeat="target in targets" class="row timecard">
     <div class="col col-10 col-center">
-        <i class="icon {{module.image}}"></i>
+        <i class="icon {{target.image}}"></i>
     </div>
     <div class="col col-90">
         <div class="card">
             <div class="item item-divider">
-                {{module.title}}
+                {{target.title}}
             </div>
             <div class="item item-text-wrap">
-                Datum: {{module.endDate}}
+                Datum: {{target.endDate}}
             </div>
         </div>
     </div>
