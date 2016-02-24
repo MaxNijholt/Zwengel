@@ -11,7 +11,7 @@ ion-footer-bar {
     background-color: grey;
 }
 
-#footerMenu div{
+#footerMenu div {
     width: 33.4%;
     height: 100%;
     text-align: center;
@@ -20,10 +20,31 @@ ion-footer-bar {
     border-right: 1px groove grey;
 }
 
-.timecard i{
+.timecard i {
     font-size: 3em !important;
 }
 
 ion-content {
-    padding: 5px;
+    padding: 10px;
+}
+
+.profileImage {
+    width: 100%;
+}
+
+.no_margin_bot {
+    margin-bottom: 0px !important;
+}
+
+.no_margin_top {
+    margin-top: 0px !important;
+}
+
+.thema .button{
+    width: 100%;
+}
+
+.scroll-bar-indicator
+{
+	display: none;
 }
