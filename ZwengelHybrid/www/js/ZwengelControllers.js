@@ -35,8 +35,23 @@ controllers.TijdlijnController = function($scope, StudentInfo) {
     });
 };
 
-controllers.BeloningenController = function($scope) {
+controllers.BeloningenController = function($scope, StudentInfo) {
+    $scope.hideFilter = "ng-hide";
+	$scope.filterIcon = "ion-chevron-down";
+    StudentInfo.getBeloningen("test" , function(results){
+        $scope.rewards = results;
+    });
     
+	
+	$scope.toggleHideFilter = function(bool){
+		if($scope.hideFilter === "ng-hide" && !bool){
+			$scope.hideFilter = "ng-show";
+			$scope.filterIcon = "ion-chevron-up";
+		}else{
+			$scope.hideFilter = "ng-hide";
+			$scope.filterIcon = "ion-chevron-down";
+		}
+	};
 };
 
 controllers.ProfielController = function($scope) {
@@ -45,5 +60,5 @@ controllers.ProfielController = function($scope) {
 
 zwengelControllers.controller('AllController', ['$scope', '$ionicPlatform', '$window', 'AllData', controllers.AllController]);
 zwengelControllers.controller('TijdlijnController', ['$scope', 'StudentInfo', controllers.TijdlijnController]);
-zwengelControllers.controller('BeloningenController', ['$scope', controllers.BeloningenController]);
+zwengelControllers.controller('BeloningenController', ['$scope', 'StudentInfo', controllers.BeloningenController]);
 zwengelControllers.controller('ProfielController', ['$scope', controllers.ProfielController]);

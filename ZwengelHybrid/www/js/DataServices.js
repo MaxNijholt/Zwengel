@@ -8,8 +8,13 @@ services_data.StudentInfo = function(){
         dataCaller.getModules(studentID, onSucces);
     };
     
+    this.getBeloningen = function(studentID, onSucces){
+        dataCaller.getBeloningen(studentID, onSucces);
+    };
+    
     return {
-        getModules: this.getModules
+        getModules: this.getModules,
+        getBeloningen: this.getBeloningen
     };
 };
 
@@ -83,6 +88,28 @@ dataCaller.getModules = function(studentID, onSucces){
 				}
 			}
 		}
+    ];
+    
+    onSucces(testResult);
+};
+
+dataCaller.getBeloningen = function(studentID, onSucces){
+    var testResult = [{ 
+        "title": "10 min. spelletje spelen in de les",
+        "behaald": true
+    },{ 
+        "title": "15 min. spelletje spelen in de les",
+        "behaald": false
+    },{ 
+        "title": "Thema Ridder",
+        "behaald": false
+    },{ 
+        "title": "Thema Koning",
+        "behaald": true
+    },{ 
+        "title": "Als eerste naar huis",
+        "behaald": false
+    }
     ];
     
     onSucces(testResult);
