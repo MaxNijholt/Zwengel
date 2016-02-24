@@ -15,6 +15,16 @@
 
 <div class="row">
     <div class="col">
+        <h4>Voorkeurscherm doelen</h4>
+        <ion-list>
+            <ion-radio ng-model="choice" ng-value="'takenlijst'">Takenlijst</ion-radio>
+            <ion-radio ng-model="choice" ng-value="'kaart'">Kaart</ion-radio>
+        </ion-list>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
         <h4>Huidig thema:</h4>
     </div>
     <div class="col">
@@ -38,12 +48,7 @@
 <div class="row">
     <div class="col">
         <h4>Reed behaalde beloningen</h4>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col">
-        <ul class="list">
+        <div class="card">
             <div class="item item-divider">
                 <div class="row">
                     <div class="col col-10">
@@ -60,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <li class="item">
+            <div class="item">
                 <div class="row">
                     <div class="col col-10">
                         <p>1</p>
@@ -75,20 +80,15 @@
                         <p>14-05-2016</p>
                     </div>
                 </div>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 </div>
 
 <div class="row">
     <div class="col">
         <h4>Reeds aangeschafte beloningen</h4>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col">
-        <ul class="list">
+        <div class="card">
             <div class="item item-divider">
                 <div class="row">
                     <div class="col col-10">
@@ -101,11 +101,11 @@
                         <p>Tijd</p>
                     </div>
                     <div class="col col-33">
-                        <p>Goedkeuring Docent</p>
+                        <p>Goedkeuring</p>
                     </div>
                 </div>
             </div>
-            <li class="item">
+            <div class="item">
                 <div class="row">
                     <div class="col col-10">
                         <p>1</p>
@@ -120,8 +120,8 @@
                         <p>Bep van der Putten</p>
                     </div>
                 </div>
-            </li>
-            <li class="item">
+            </div>
+            <div class="item">
                 <div class="row">
                     <div class="col col-10">
                         <p>2</p>
@@ -136,8 +136,8 @@
                         <p>---</p>
                     </div>
                 </div>
-            </li>
-            <li class="item">
+            </div>
+            <div class="item">
                 <div class="row">
                     <div class="col col-10">
                         <p>3</p>
@@ -152,7 +152,7 @@
                         <p>---</p>
                     </div>
                 </div>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 </div>

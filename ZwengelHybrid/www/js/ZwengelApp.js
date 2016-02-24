@@ -25,6 +25,10 @@ zwengelApp.config(['$routeProvider',
         	templateUrl: 'views/profiel.html',
         	controller: 'ProfielController'
         }).
+        when('/doel', {
+        	templateUrl: 'views/doel.html',
+        	controller: 'DoelController'
+        }).
         otherwise({
         	redirectTo: '/tijdlijn'
         });

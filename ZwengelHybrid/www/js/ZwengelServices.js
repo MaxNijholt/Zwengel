@@ -7,8 +7,11 @@ services_zwengel.AllData = function(){
         title: "Tijdlijn"
     }
     
+    this.doel = {};
+    
     return {
-        page: this.page
+        page: this.page,
+        doel: this.doel
     }
 };
 

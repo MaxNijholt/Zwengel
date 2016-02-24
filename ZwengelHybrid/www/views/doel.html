@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col">
+        <h3>{{doel.title}}</h3>        
+    </div>
+</div>
+
+<div class="card" ng-repeat="step in doel.steps">
+    <div class="item item-divider">
+        {{step.title}}      
+    </div>
+    <div class="item">
+        {{step.description}} 
+    </div>
+</div>

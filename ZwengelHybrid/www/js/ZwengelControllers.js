@@ -29,10 +29,15 @@ controllers.AllController = function($scope, $ionicPlatform, $window, AllData) {
 	}, 100);
 };
 
-controllers.TijdlijnController = function($scope, StudentInfo) {
+controllers.TijdlijnController = function($scope, AllData, StudentInfo) {
     StudentInfo.getModules("test", function(results){
         $scope.targets = results;
     });
+    
+    $scope.toDoel = function(doel){
+        AllData.doel = doel;
+        window.location.replace("#/doel");
+    };
 };
 
 controllers.BeloningenController = function($scope, StudentInfo) {
@@ -58,7 +63,12 @@ controllers.ProfielController = function($scope) {
     
 };
 
+controllers.DoelController = function($scope, AllData) {
+    $scope.doel = AllData.doel;
+};
+
 zwengelControllers.controller('AllController', ['$scope', '$ionicPlatform', '$window', 'AllData', controllers.AllController]);
-zwengelControllers.controller('TijdlijnController', ['$scope', 'StudentInfo', controllers.TijdlijnController]);
+zwengelControllers.controller('TijdlijnController', ['$scope', 'AllData', 'StudentInfo', controllers.TijdlijnController]);
 zwengelControllers.controller('BeloningenController', ['$scope', 'StudentInfo', controllers.BeloningenController]);
 zwengelControllers.controller('ProfielController', ['$scope', controllers.ProfielController]);
+zwengelControllers.controller('DoelController', ['$scope', 'AllData', controllers.DoelController]);
