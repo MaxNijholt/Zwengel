@@ -38,10 +38,7 @@
     </head>
     <body ng-controller="AllController">
         <ion-header-bar class="bar-light">
-            <div class="buttons">
-                <button class="button icon button-clear ion-arrow-left-a" ng-click="back()"></button>
-            </div>
-            <h1 class="title">{{page.title}}</h1>
+            <div ng-include="'views/header.html'"></div>
         </ion-header-bar>
         <ion-content>
             <div ng-view></div>
