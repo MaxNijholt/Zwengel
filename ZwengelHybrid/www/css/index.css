@@ -20,10 +20,6 @@ ion-footer-bar {
     border-right: 1px groove grey;
 }
 
-.timecard i {
-    font-size: 3em !important;
-}
-
 ion-content {
     padding: 10px;
 }
@@ -51,4 +47,8 @@ ion-content {
 
 .koopKnop{
     width: 100%;
+}
+
+.profileName{
+    text-align: right;
 }

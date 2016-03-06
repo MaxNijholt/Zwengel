@@ -29,6 +29,10 @@ zwengelApp.config(['$routeProvider',
         	templateUrl: 'views/doel.html',
         	controller: 'DoelController'
         }).
+        when('/step', {
+        	templateUrl: 'views/step.html',
+        	controller: 'StepController'
+        }).
         otherwise({
         	redirectTo: '/tijdlijn'
         });

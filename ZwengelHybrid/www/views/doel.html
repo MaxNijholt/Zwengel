@@ -4,11 +4,12 @@
     </div>
 </div>
 
-<div class="card" ng-repeat="step in doel.steps">
+<div class="card" ng-repeat="step in doel.steps" ng-click="toStep(step)">
     <div class="item item-divider">
         {{step.title}}      
     </div>
-    <div class="item">
+    <div class="item item-icon-right">
+        <i class="icon ion-information"></i>
         {{step.description}} 
     </div>
 </div>

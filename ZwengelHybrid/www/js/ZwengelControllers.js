@@ -29,7 +29,9 @@ controllers.AllController = function($scope, $ionicPlatform, $window, AllData) {
 	}, 100);
 };
 
-controllers.TijdlijnController = function($scope, AllData, StudentInfo) {
+controllers.TijdlijnController = function($scope, $ionicScrollDelegate, AllData, StudentInfo) {
+    $ionicScrollDelegate.scrollTop();
+    
     StudentInfo.getModules("test", function(results){
         $scope.targets = results;
     });
@@ -40,7 +42,9 @@ controllers.TijdlijnController = function($scope, AllData, StudentInfo) {
     };
 };
 
-controllers.BeloningenController = function($scope, StudentInfo) {
+controllers.BeloningenController = function($scope, $ionicScrollDelegate, StudentInfo) {
+    $ionicScrollDelegate.scrollTop();
+    
     $scope.hideFilter = "ng-hide";
 	$scope.filterIcon = "ion-chevron-down";
     StudentInfo.getBeloningen("test" , function(results){
@@ -59,16 +63,32 @@ controllers.BeloningenController = function($scope, StudentInfo) {
 	};
 };
 
-controllers.ProfielController = function($scope) {
+controllers.ProfielController = function($scope, $ionicScrollDelegate, AllData) {
+    $ionicScrollDelegate.scrollTop();
     
+    $scope.choice = AllData.pref.doelscreen;
 };
 
-controllers.DoelController = function($scope, AllData) {
+controllers.DoelController = function($scope, $ionicScrollDelegate, AllData) {
+    $ionicScrollDelegate.scrollTop();
+    
     $scope.doel = AllData.doel;
+    
+    $scope.toStep = function(step){
+        AllData.step = step;
+        window.location.replace("#/step");
+    };
+};
+
+controllers.StepController = function($scope, $ionicScrollDelegate, AllData) {
+    $ionicScrollDelegate.scrollTop();
+    
+    $scope.step = AllData.step;
 };
 
 zwengelControllers.controller('AllController', ['$scope', '$ionicPlatform', '$window', 'AllData', controllers.AllController]);
-zwengelControllers.controller('TijdlijnController', ['$scope', 'AllData', 'StudentInfo', controllers.TijdlijnController]);
-zwengelControllers.controller('BeloningenController', ['$scope', 'StudentInfo', controllers.BeloningenController]);
-zwengelControllers.controller('ProfielController', ['$scope', controllers.ProfielController]);
-zwengelControllers.controller('DoelController', ['$scope', 'AllData', controllers.DoelController]);
+zwengelControllers.controller('TijdlijnController', ['$scope', '$ionicScrollDelegate', 'AllData', 'StudentInfo', controllers.TijdlijnController]);
+zwengelControllers.controller('BeloningenController', ['$scope', '$ionicScrollDelegate', 'StudentInfo', controllers.BeloningenController]);
+zwengelControllers.controller('ProfielController', ['$scope', '$ionicScrollDelegate', 'AllData', controllers.ProfielController]);
+zwengelControllers.controller('DoelController', ['$scope', '$ionicScrollDelegate', 'AllData', controllers.DoelController]);
+zwengelControllers.controller('StepController', ['$scope', '$ionicScrollDelegate', 'AllData', controllers.StepController]);

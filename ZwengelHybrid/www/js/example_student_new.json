@@ -1,25 +1,8 @@
-var dataServices = angular.module('dataServices', ['ngResource']);
-
-var services_data = {};
-var dataCaller = {};
-
-services_data.StudentInfo = function(){
-    this.getModules = function(studentID, onSucces){
-        dataCaller.getModules(studentID, onSucces);
-    };
-    
-    this.getBeloningen = function(studentID, onSucces){
-        dataCaller.getBeloningen(studentID, onSucces);
-    };
-    
-    return {
-        getModules: this.getModules,
-        getBeloningen: this.getBeloningen
-    };
-};
-
-dataCaller.getModules = function(studentID, onSucces){
-    var testResult = [
+{
+	"id": "s1",
+	"name": "Pieter-Jan",
+	"surname": "Derks",
+	"targets": [
 		{
 			"id": "t1",
 			"title": "Minder praten tijdens de les",
@@ -226,31 +209,5 @@ dataCaller.getModules = function(studentID, onSucces){
 				}
 			]
 		}
-	];
-    
-    onSucces(testResult);
-};
-
-dataCaller.getBeloningen = function(studentID, onSucces){
-    var testResult = [{ 
-        "title": "10 min. spelletje spelen in de les",
-        "behaald": true
-    },{ 
-        "title": "15 min. spelletje spelen in de les",
-        "behaald": false
-    },{ 
-        "title": "Thema Ridder",
-        "behaald": false
-    },{ 
-        "title": "Thema Koning",
-        "behaald": true
-    },{ 
-        "title": "Als eerste naar huis",
-        "behaald": false
-    }
-    ];
-    
-    onSucces(testResult);
-};
-
-dataServices.factory('StudentInfo', services_data.StudentInfo);
+	]
+}

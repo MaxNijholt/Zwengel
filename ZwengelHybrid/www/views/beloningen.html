@@ -1,6 +1,6 @@
 <div class="card">
 	  	<div class="item item-divider row" ng-click="toggleHideFilter()">
-	    	<div class="col col-10">Filter</div><a class="icon {{filterIcon}} col col-10 col-offset-80"></a>
+	    	<div class="col col-10"><div class="button-icon icon ion-search"></div></div><a class="button-icon icon {{filterIcon}} col col-10 col-offset-80"></a>
 	  	</div>
 	
 	  	<label class="item item-input {{hideFilter}}">
@@ -30,12 +30,12 @@
 <div class="card">
 	  	<div ng-repeat="reward in rewards | filter:searchName | orderBy:orderBy | filter: {behaald: filterBehaald}">
 			<div class="row">
-                <div class="col col-67">
+                <div class="col col-80">
                     <h4>{{reward.title}}</h4>
                 </div>
-                <div class="col col-33">
-                    <h4 ng-if="reward.behaald">Behaald</h4>
-                    <button class="button koopKnop" ng-if="!reward.behaald">Kopen</button>
+                <div class="col col-20">
+                    <div class="button-icon icon ion-checkmark-round" ng-if="reward.behaald"></div>
+                    <button class="button koopKnop icon ion-plus-round" ng-if="!reward.behaald"></button>
                 </div>
 			</div>
 		</div>
