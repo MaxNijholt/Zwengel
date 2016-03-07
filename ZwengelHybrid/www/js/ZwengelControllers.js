@@ -36,7 +36,8 @@ controllers.TijdlijnController = function($scope, $ionicScrollDelegate, AllData,
         $scope.targets = results;
     });
     
-    $scope.toDoel = function(doel){
+    $scope.toDoel = function(doel){        
+        AllData.page.title = "Doel";
         AllData.doel = doel;
         window.location.replace("#/doel");
     };
@@ -74,7 +75,8 @@ controllers.DoelController = function($scope, $ionicScrollDelegate, AllData) {
     
     $scope.doel = AllData.doel;
     
-    $scope.toStep = function(step){
+    $scope.toStep = function(step){        
+        AllData.page.title = "Stap";
         AllData.step = step;
         window.location.replace("#/step");
     };
