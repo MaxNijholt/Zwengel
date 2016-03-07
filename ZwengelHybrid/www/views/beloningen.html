@@ -1,6 +1,11 @@
 <div class="card">
 	  	<div class="item item-divider row" ng-click="toggleHideFilter()">
-	    	<div class="col col-10"><div class="button-icon icon ion-search"></div></div><a class="button-icon icon {{filterIcon}} col col-10 col-offset-80"></a>
+	    	<div class="col col-80">
+                <div class="button-icon icon ion-search"></div>
+            </div>
+            <div class=" col col-20 filterToggleIcon">
+                <a class="button-icon icon {{filterIcon}}"></a>
+            </div>
 	  	</div>
 	
 	  	<label class="item item-input {{hideFilter}}">

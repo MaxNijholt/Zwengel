@@ -36,27 +36,30 @@ ion-content {
     margin-top: 0px !important;
 }
 
-.thema .button{
+.thema .button {
     width: 100%;
 }
 
-.scroll-bar-indicator
-{
+.scroll-bar-indicator {
 	display: none;
 }
 
-.koopKnop{
+.koopKnop {
     width: 100%;
 }
 
-.profileName{
+.profileName {
     text-align: right;
 }
 
-.behaaldIcon{
+.behaaldIcon {
     text-align: center;
 }
 
-.bewerkThemaIcon{
+.bewerkThemaIcon {
     text-align: right;
+}
+
+.filterToggleIcon {
+   text-align: center; 
 }
