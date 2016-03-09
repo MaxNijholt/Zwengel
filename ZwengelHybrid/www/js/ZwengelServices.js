@@ -4,7 +4,8 @@ var services_zwengel = {};
 
 services_zwengel.AllData = function(){
     this.page = {
-        title: "Tijdlijn"
+        title: "Tijdlijn",
+        url: "#/tijdlijn"
     };
     
     this.doel = {};
@@ -15,11 +16,26 @@ services_zwengel.AllData = function(){
         doelscreen: "list"
     };
     
+    this.history = [];
+    
+    this.pushHistory = function(title, url, doel, step){
+        var object = {
+            title: title,
+            url: url,
+            doel: doel,
+            step: step
+        };
+        
+        this.history.push(object);
+    };
+    
     return {
         page: this.page,
         doel: this.doel,
         step: this.step,
-        pref: this.pref
+        pref: this.pref,
+        history: this.history,
+        pushHistory: this.pushHistory
     }
 };
 

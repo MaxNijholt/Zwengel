@@ -2,23 +2,28 @@ var zwengelControllers = angular.module('zwengelControllers', []);
 var controllers = {};
 
 controllers.AllController = function($scope, $ionicPlatform, $window, AllData) {
-    
     $scope.page = AllData.page;
     
     $scope.navTijdlijn = function(){
+        AllData.pushHistory(AllData.page.title, AllData.page.url);
         AllData.page.title = "Tijdlijn";
+        AllData.page.url = "#/tijdlijn";
         window.location.replace("#/tijdlijn");
-    }
+    };
     
     $scope.navBeloningen = function(){
+        AllData.pushHistory(AllData.page.title, AllData.page.url);
         AllData.page.title = "Beloningen";
+        AllData.page.url = "#/beloningen";
         window.location.replace("#/beloningen");
-    }
+    };
     
     $scope.navProfiel = function(){
+        AllData.pushHistory(AllData.page.title, AllData.page.url);
         AllData.page.title = "Profiel";
+        AllData.page.url = "#/profiel";
         window.location.replace("#/profiel");
-    }
+    };
     
     $scope.back = function(){
 		$window.history.back();
@@ -36,8 +41,10 @@ controllers.TijdlijnController = function($scope, $ionicScrollDelegate, AllData,
         $scope.targets = results;
     });
     
-    $scope.toDoel = function(doel){        
+    $scope.toDoel = function(doel){
+        AllData.pushHistory(AllData.page.title, AllData.page.url, doel); 
         AllData.page.title = "Doel";
+        AllData.page.url = "#/doel";
         AllData.doel = doel;
         window.location.replace("#/doel");
     };
@@ -75,8 +82,10 @@ controllers.DoelController = function($scope, $ionicScrollDelegate, AllData) {
     
     $scope.doel = AllData.doel;
     
-    $scope.toStep = function(step){        
+    $scope.toStep = function(step){
+        AllData.pushHistory(AllData.page.title, AllData.page.url, undefined, step);     
         AllData.page.title = "Stap";
+        AllData.page.url = "#/step";
         AllData.step = step;
         window.location.replace("#/step");
     };
