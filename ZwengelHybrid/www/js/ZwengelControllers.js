@@ -5,32 +5,23 @@ controllers.AllController = function($scope, $ionicPlatform, $window, AllData) {
     $scope.page = AllData.page;
     
     $scope.navTijdlijn = function(){
-        AllData.pushHistory(AllData.page.title, AllData.page.url);
-        AllData.page.title = "Tijdlijn";
-        AllData.page.url = "#/tijdlijn";
-        window.location.replace("#/tijdlijn");
+        AllData.toPage("Tijdlijn", "#/tijdlijn");
     };
     
     $scope.navBeloningen = function(){
-        AllData.pushHistory(AllData.page.title, AllData.page.url);
-        AllData.page.title = "Beloningen";
-        AllData.page.url = "#/beloningen";
-        window.location.replace("#/beloningen");
+        AllData.toPage("Beloningen", "#/beloningen");
     };
     
     $scope.navProfiel = function(){
-        AllData.pushHistory(AllData.page.title, AllData.page.url);
-        AllData.page.title = "Profiel";
-        AllData.page.url = "#/profiel";
-        window.location.replace("#/profiel");
+        AllData.toPage("Profiel", "#/profiel");
     };
     
     $scope.back = function(){
-		$window.history.back();
+		AllData.toBack();
     };
     
     $ionicPlatform.registerBackButtonAction(function () {
-		$window.history.back();
+		AllData.toBack();
 	}, 100);
 };
 
@@ -42,11 +33,7 @@ controllers.TijdlijnController = function($scope, $ionicScrollDelegate, AllData,
     });
     
     $scope.toDoel = function(doel){
-        AllData.pushHistory(AllData.page.title, AllData.page.url, doel); 
-        AllData.page.title = "Doel";
-        AllData.page.url = "#/doel";
-        AllData.doel = doel;
-        window.location.replace("#/doel");
+        AllData.toPage("Doel", "#/doel", doel);
     };
 };
 
@@ -80,21 +67,17 @@ controllers.ProfielController = function($scope, $ionicScrollDelegate, AllData) 
 controllers.DoelController = function($scope, $ionicScrollDelegate, AllData) {
     $ionicScrollDelegate.scrollTop();
     
-    $scope.doel = AllData.doel;
+    $scope.doel = AllData.page.doel;
     
     $scope.toStep = function(step){
-        AllData.pushHistory(AllData.page.title, AllData.page.url, undefined, step);     
-        AllData.page.title = "Stap";
-        AllData.page.url = "#/step";
-        AllData.step = step;
-        window.location.replace("#/step");
+        AllData.toPage("Stap", "#/step", null, step);
     };
 };
 
 controllers.StepController = function($scope, $ionicScrollDelegate, AllData) {
     $ionicScrollDelegate.scrollTop();
     
-    $scope.step = AllData.step;
+    $scope.step = AllData.page.step;
 };
 
 zwengelControllers.controller('AllController', ['$scope', '$ionicPlatform', '$window', 'AllData', controllers.AllController]);

@@ -4,17 +4,19 @@ var services_data = {};
 var dataCaller = {};
 
 services_data.StudentInfo = function(){
-    this.getModules = function(studentID, onSucces){
+    var self = this;
+    
+    self.getModules = function(studentID, onSucces){
         dataCaller.getModules(studentID, onSucces);
     };
     
-    this.getBeloningen = function(studentID, onSucces){
+    self.getBeloningen = function(studentID, onSucces){
         dataCaller.getBeloningen(studentID, onSucces);
     };
     
     return {
-        getModules: this.getModules,
-        getBeloningen: this.getBeloningen
+        getModules: self.getModules,
+        getBeloningen: self.getBeloningen
     };
 };
 

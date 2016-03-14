@@ -3,39 +3,66 @@ var zwengelServices = angular.module('zwengelServices', ['ngResource']);
 var services_zwengel = {};
 
 services_zwengel.AllData = function(){
-    this.page = {
-        title: "Tijdlijn",
-        url: "#/tijdlijn"
+    var self = this;
+    
+    function to(title, url, doel, step) {
+        self.page.title = title;
+        self.page.url = url;
+        if(doel){
+            self.page.doel = doel;
+        }else{
+            self.page.doel = null;
+        }
+        if(step){
+            self.page.step = step;
+        }else{
+            self.page.step = null;
+        }
+        window.location.replace(url);
+    }
+    
+    function pushHistory(){
+        var object = {
+            title: self.page.title,
+            url: self.page.url,
+            doel: self.page.doel,
+            step: self.page.step
+        };
+        
+        self.history.push(object);
+        console.log(self.history);
     };
     
-    this.doel = {};
+    self.page = {
+        title: "Tijdlijn",
+        url: "#/tijdlijn",
+        doel: null,
+        step: null
+    };
     
-    this.step = {};
-    
-    this.pref = {
+    self.pref = {
         doelscreen: "list"
     };
     
-    this.history = [];
+    self.history = [];
     
-    this.pushHistory = function(title, url, doel, step){
-        var object = {
-            title: title,
-            url: url,
-            doel: doel,
-            step: step
-        };
-        
-        this.history.push(object);
+    self.toPage = function(title, url, doel, step){
+        pushHistory();
+        to(title, url, doel, step);
+    };
+    
+    self.toBack = function(){
+        var historyItem = self.history.pop();
+        to(historyItem.title, historyItem.url, historyItem.doel, historyItem.step)
     };
     
     return {
-        page: this.page,
-        doel: this.doel,
-        step: this.step,
-        pref: this.pref,
-        history: this.history,
-        pushHistory: this.pushHistory
+        page: self.page,
+        pref: self.pref,
+        history: self.history,
+        pushHistory: self.pushHistory,
+        toPage: self.toPage,
+        toBack: self.toBack
     }
 };
 
