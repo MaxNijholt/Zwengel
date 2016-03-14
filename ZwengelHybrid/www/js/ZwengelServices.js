@@ -5,7 +5,7 @@ var services_zwengel = {};
 services_zwengel.AllData = function(){
     var self = this;
     
-    function to(title, url, doel, step) {
+    self.to = function(title, url, doel, step) {
         self.page.title = title;
         self.page.url = url;
         if(doel){
@@ -21,7 +21,7 @@ services_zwengel.AllData = function(){
         window.location.replace(url);
     }
     
-    function pushHistory(){
+    self.pushHistory = function(){
         var object = {
             title: self.page.title,
             url: self.page.url,
@@ -47,20 +47,26 @@ services_zwengel.AllData = function(){
     self.history = [];
     
     self.toPage = function(title, url, doel, step){
-        pushHistory();
-        to(title, url, doel, step);
+        self.pushHistory();
+        self.to(title, url, doel, step);
     };
     
     self.toBack = function(){
-        var historyItem = self.history.pop();
-        to(historyItem.title, historyItem.url, historyItem.doel, historyItem.step)
+        if(self.history.length > 0){
+            var historyItem = self.history.pop();
+            self.to(historyItem.title, historyItem.url, historyItem.doel, historyItem.step);
+        }else{
+            var confirm = window.confirm("Wilt u afsluiten?");
+            if (confirm == true) {
+                window.close();
+            }
+        }
     };
     
     return {
         page: self.page,
         pref: self.pref,
         history: self.history,
-        pushHistory: self.pushHistory,
         toPage: self.toPage,
         toBack: self.toBack
     }
