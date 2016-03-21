@@ -6,8 +6,16 @@ var dataCaller = {};
 services_data.StudentInfo = function(){
     var self = this;
     
-    self.getModules = function(studentID, onSucces){
-        dataCaller.getModules(studentID, onSucces);
+    self.getDoelen = function(studentID, onSucces){
+        dataCaller.getDoelen(studentID, onSucces);
+    };
+    
+    self.getDoel = function(studentID, doelID, onSucces){
+        dataCaller.getDoel(studentID, doelID, onSucces);
+    };
+    
+    self.getStap = function(studentID, doelID, stapID, onSucces){
+        dataCaller.getStap(studentID, doelID, stapID, onSucces);
     };
     
     self.getBeloningen = function(studentID, onSucces){
@@ -15,13 +23,14 @@ services_data.StudentInfo = function(){
     };
     
     return {
-        getModules: self.getModules,
+        getDoelen: self.getDoelen,
+        getDoel: self.getDoel,
+        getStap: self.getStap,
         getBeloningen: self.getBeloningen
     };
 };
 
-dataCaller.getModules = function(studentID, onSucces){
-    var testResult = [
+dataCaller.testResult = [
 		{
 			"id": "t1",
 			"title": "Minder praten tijdens de les",
@@ -229,8 +238,37 @@ dataCaller.getModules = function(studentID, onSucces){
 			]
 		}
 	];
+
+dataCaller.getDoelen = function(studentID, onSucces){    
+    onSucces(dataCaller.testResult);
+};
+
+dataCaller.getDoel = function(studentID, doelID, onSucces){
+    var doel = null;
     
-    onSucces(testResult);
+    dataCaller.testResult.forEach(function(object){
+        if(object.id === doelID){
+            doel = object;
+        }
+    });
+    
+    onSucces(doel);
+};
+
+dataCaller.getStap = function(studentID, doelID, stapID, onSucces){
+    var stap = null;
+    
+    dataCaller.testResult.forEach(function(object){
+        if(object.id === doelID){
+            object.steps.forEach(function(object2){
+               if(object2.id === stapID){
+                   stap = object2;
+               }
+            });
+        }
+    });
+    
+    onSucces(stap);
 };
 
 dataCaller.getBeloningen = function(studentID, onSucces){

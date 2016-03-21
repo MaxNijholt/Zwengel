@@ -4,8 +4,8 @@ var controllers = {};
 controllers.AllController = function($scope, $ionicPlatform, $window, AllData) {
     $scope.page = AllData.page;
     
-    $scope.navTijdlijn = function(){
-        AllData.toPage("Tijdlijn", "#/tijdlijn");
+    $scope.navDoelen = function(){
+        AllData.toPage("Doelen", "#/doelen");
     };
     
     $scope.navBeloningen = function(){
@@ -25,15 +25,15 @@ controllers.AllController = function($scope, $ionicPlatform, $window, AllData) {
 	}, 100);
 };
 
-controllers.TijdlijnController = function($scope, $ionicScrollDelegate, AllData, StudentInfo) {
+controllers.DoelenController = function($scope, $ionicScrollDelegate, AllData, StudentInfo) {
     $ionicScrollDelegate.scrollTop();
     
-    StudentInfo.getModules("test", function(results){
+    StudentInfo.getDoelen("test", function(results){
         $scope.targets = results;
     });
     
-    $scope.toDoel = function(doel){
-        AllData.toPage("Doel", "#/doel", doel);
+    $scope.toDoel = function(doelID){
+        AllData.toPage("Doel", "#/doelen/" + doelID);
     };
 };
 
@@ -64,25 +64,31 @@ controllers.ProfielController = function($scope, $ionicScrollDelegate, AllData) 
     $scope.choice = AllData.pref.doelscreen;
 };
 
-controllers.DoelController = function($scope, $ionicScrollDelegate, AllData) {
+controllers.DoelController = function($scope, $ionicScrollDelegate, $routeParams, AllData, StudentInfo) {
     $ionicScrollDelegate.scrollTop();
+    var doelID;
     
-    $scope.doel = AllData.page.doel;
+    StudentInfo.getDoel("test", $routeParams.doelID, function(results){
+        $scope.doel = results;
+        doelID = results.id;
+    });
     
-    $scope.toStep = function(step){
-        AllData.toPage("Stap", "#/step", null, step);
+    $scope.toStap = function(stapID){
+        AllData.toPage("Stap", "#/doelen/" + doelID + "/" + stapID);
     };
 };
 
-controllers.StepController = function($scope, $ionicScrollDelegate, AllData) {
+controllers.StapController = function($scope, $ionicScrollDelegate, $routeParams, AllData, StudentInfo) {
     $ionicScrollDelegate.scrollTop();
     
-    $scope.step = AllData.page.step;
+    StudentInfo.getStap("test", $routeParams.doelID, $routeParams.stapID, function(results){
+        $scope.stap = results;
+    });
 };
 
 zwengelControllers.controller('AllController', ['$scope', '$ionicPlatform', '$window', 'AllData', controllers.AllController]);
-zwengelControllers.controller('TijdlijnController', ['$scope', '$ionicScrollDelegate', 'AllData', 'StudentInfo', controllers.TijdlijnController]);
+zwengelControllers.controller('DoelenController', ['$scope', '$ionicScrollDelegate', 'AllData', 'StudentInfo', controllers.DoelenController]);
 zwengelControllers.controller('BeloningenController', ['$scope', '$ionicScrollDelegate', 'StudentInfo', controllers.BeloningenController]);
 zwengelControllers.controller('ProfielController', ['$scope', '$ionicScrollDelegate', 'AllData', controllers.ProfielController]);
-zwengelControllers.controller('DoelController', ['$scope', '$ionicScrollDelegate', 'AllData', controllers.DoelController]);
-zwengelControllers.controller('StepController', ['$scope', '$ionicScrollDelegate', 'AllData', controllers.StepController]);
+zwengelControllers.controller('DoelController', ['$scope', '$ionicScrollDelegate', '$routeParams', 'AllData', 'StudentInfo', controllers.DoelController]);
+zwengelControllers.controller('StapController', ['$scope', '$ionicScrollDelegate', '$routeParams', 'AllData', 'StudentInfo', controllers.StapController]);

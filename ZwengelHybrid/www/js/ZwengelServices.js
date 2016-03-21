@@ -5,28 +5,16 @@ var services_zwengel = {};
 services_zwengel.AllData = function(){
     var self = this;
     
-    self.to = function(title, url, doel, step) {
+    self.to = function(title, url) {
         self.page.title = title;
         self.page.url = url;
-        if(doel){
-            self.page.doel = doel;
-        }else{
-            self.page.doel = null;
-        }
-        if(step){
-            self.page.step = step;
-        }else{
-            self.page.step = null;
-        }
         window.location.replace(url);
     }
     
     self.pushHistory = function(){
         var object = {
             title: self.page.title,
-            url: self.page.url,
-            doel: self.page.doel,
-            step: self.page.step
+            url: self.page.url
         };
         
         self.history.push(object);
@@ -34,10 +22,8 @@ services_zwengel.AllData = function(){
     };
     
     self.page = {
-        title: "Tijdlijn",
-        url: "#/tijdlijn",
-        doel: null,
-        step: null
+        title: "Doelen",
+        url: "#/doelen"
     };
     
     self.pref = {
@@ -46,9 +32,9 @@ services_zwengel.AllData = function(){
     
     self.history = [];
     
-    self.toPage = function(title, url, doel, step){
+    self.toPage = function(title, url){
         self.pushHistory();
-        self.to(title, url, doel, step);
+        self.to(title, url);
     };
     
     self.toBack = function(){
@@ -58,7 +44,7 @@ services_zwengel.AllData = function(){
         }else{
             var confirm = window.confirm("Wilt u afsluiten?");
             if (confirm == true) {
-                window.close();
+                navigator.app.exitApp();
             }
         }
     };

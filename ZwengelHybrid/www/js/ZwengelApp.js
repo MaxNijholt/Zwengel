@@ -9,9 +9,17 @@ var zwengelApp = angular.module('zwengelApp', [
 zwengelApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
-        when('/tijdlijn', {
-        	templateUrl: 'views/tijdlijn.html',
-        	controller: 'TijdlijnController'
+        when('/doelen', {
+        	templateUrl: 'views/doelen.html',
+        	controller: 'DoelenController'
+        }).
+        when('/doelen/:doelID', {
+        	templateUrl: 'views/doel.html',
+        	controller: 'DoelController'
+        }).
+        when('/doelen/:doelID/:stapID', {
+        	templateUrl: 'views/stap.html',
+        	controller: 'StapController'
         }).
         when('/voortgang', {
         	templateUrl: 'views/voortgang.html',
@@ -25,16 +33,8 @@ zwengelApp.config(['$routeProvider',
         	templateUrl: 'views/profiel.html',
         	controller: 'ProfielController'
         }).
-        when('/doel', {
-        	templateUrl: 'views/doel.html',
-        	controller: 'DoelController'
-        }).
-        when('/step', {
-        	templateUrl: 'views/step.html',
-        	controller: 'StepController'
-        }).
         otherwise({
-        	redirectTo: '/tijdlijn'
+        	redirectTo: '/doelen'
         });
     }
 ]);
