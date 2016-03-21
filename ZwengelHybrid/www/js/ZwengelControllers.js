@@ -29,6 +29,18 @@ controllers.DoelenController = function($scope, $ionicScrollDelegate, AllData, S
     $ionicScrollDelegate.scrollTop();
     
     StudentInfo.getDoelen("test", function(results){
+        results.forEach(function(object){
+            switch(object.done) {
+                case "good":
+                    object.doneColor = "item-balanced";
+                    break;
+                case "bad":
+                    object.doneColor = "item-assertive";
+                    break;
+                default:
+                    object.doneColor = "item-positive";
+            }
+        });
         $scope.targets = results;
     });
     
