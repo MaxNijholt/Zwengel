@@ -63,3 +63,7 @@ ion-content {
 .filterToggleIcon {
    text-align: center; 
 }
+
+.profileInfo{
+    text-align: right;
+}
