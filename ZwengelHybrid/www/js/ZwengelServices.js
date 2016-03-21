@@ -27,7 +27,8 @@ services_zwengel.AllData = function(){
     };
     
     self.pref = {
-        doelscreen: "list"
+        doelscreen: "list",
+        textIcons: "half"
     };
     
     self.history = [];

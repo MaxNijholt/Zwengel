@@ -61,7 +61,9 @@ controllers.BeloningenController = function($scope, $ionicScrollDelegate, Studen
 controllers.ProfielController = function($scope, $ionicScrollDelegate, AllData) {
     $ionicScrollDelegate.scrollTop();
     
-    $scope.choice = AllData.pref.doelscreen;
+    $scope.doelscreen = AllData.pref.doelscreen;
+    $scope.textIcons = AllData.pref.textIcons;
+    $scope.thema = "default";
 };
 
 controllers.DoelController = function($scope, $ionicScrollDelegate, $routeParams, AllData, StudentInfo) {
