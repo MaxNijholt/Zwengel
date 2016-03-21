@@ -9,7 +9,7 @@
             "description": "De student kan met een medestudent in discussie gaan en de ander van eigen mening overtuigen.",
             "icon": "ion-chatbubbles",
             "done": "doing",
-            "motivation": 0,
+            "motivation": null,
             "startDate": "02-02-2016",
             "endDate": "04-08-2016",
             "steps": [
@@ -49,7 +49,7 @@
             "description": "De student kent de tafels van 1 tot en met 10 uit zijn hoofd.",
             "icon": "ion-calculator",
             "done": "doing",
-            "motivation": 0,
+            "motivation": null,
             "startDate": "01-01-2016",
             "endDate": "04-05-2016",
             "steps": [
@@ -96,7 +96,7 @@
             "description": "De student kent het Wilhelmus uit zijn hoofd.",
             "icon": "ion-volume-high",
             "done": "doing",
-            "motivation": 0,
+            "motivation": null,
             "startDate": "01-02-2016",
             "endDate": "01-04-2016",
             "steps": [
@@ -197,7 +197,7 @@
             "description": "De student kan de planning nakomen die hem aan het begin van de maand gegeven is, nakomen.",
             "icon": "ion-calendar",
             "done": "bad",
-            "motivation": 2,
+            "motivation": 1,
             "startDate": "01-07-2015",
             "endDate": "31-01-2016",
             "steps": [
