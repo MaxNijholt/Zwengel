@@ -32,13 +32,13 @@ controllers.DoelenController = function($scope, $ionicScrollDelegate, AllData, S
         results.forEach(function(object){
             switch(object.done) {
                 case "good":
-                    object.doneColor = "item-balanced";
+                    object.doneColor = "balanced";
                     break;
                 case "bad":
-                    object.doneColor = "item-assertive";
+                    object.doneColor = "assertive";
                     break;
                 default:
-                    object.doneColor = "item-positive";
+                    object.doneColor = "positive";
             }
         });
         $scope.targets = results;
@@ -83,6 +83,19 @@ controllers.DoelController = function($scope, $ionicScrollDelegate, $routeParams
     var doelID;
     
     StudentInfo.getDoel("test", $routeParams.doelID, function(results){
+        results.steps.forEach(function(object){
+            switch(object.done) {
+                case "good":
+                    object.doneColor = "balanced";
+                    break;
+                case "bad":
+                    object.doneColor = "assertive";
+                    break;
+                default:
+                    object.doneColor = "positive";
+            }
+        });
+        
         $scope.doel = results;
         doelID = results.id;
     });
@@ -95,8 +108,18 @@ controllers.DoelController = function($scope, $ionicScrollDelegate, $routeParams
 controllers.StapController = function($scope, $ionicScrollDelegate, $routeParams, AllData, StudentInfo) {
     $ionicScrollDelegate.scrollTop();
     
-    StudentInfo.getStap("test", $routeParams.doelID, $routeParams.stapID, function(results){
-        $scope.stap = results;
+    StudentInfo.getStap("test", $routeParams.doelID, $routeParams.stapID, function(result){
+        switch(result.done) {
+                case "good":
+                    result.doneColor = "balanced";
+                    break;
+                case "bad":
+                    result.doneColor = "assertive";
+                    break;
+                default:
+                    result.doneColor = "positive";
+            }
+        $scope.stap = result;
     });
 };
 

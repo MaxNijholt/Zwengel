@@ -5,7 +5,7 @@
 </div>
 
 <div class="card" ng-repeat="step in doel.steps" ng-click="toStap(step.id)">
-    <div class="item item-divider">
+    <div class="item item-divider item-{{step.doneColor}}">
         {{step.title}}      
     </div>
     <div class="item item-icon-right">
