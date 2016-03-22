@@ -40,7 +40,7 @@
                 </div>
                 <div class="col col-20 behaaldIcon">
                     <div class="button-icon icon ion-checkmark-round balanced" ng-if="reward.behaald"></div>
-                    <button class="button koopKnop button-positive" ng-if="!reward.behaald">{{reward.price}}</button>
+                    <button ng-click="buyReward(reward)" class="button koopKnop button-positive" ng-if="!reward.behaald">{{reward.price}}</button>
                 </div>
 			</div>
 		</div>

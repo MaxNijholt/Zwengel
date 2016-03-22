@@ -57,8 +57,14 @@ controllers.BeloningenController = function($scope, $ionicScrollDelegate, Studen
     StudentInfo.getBeloningen("test" , function(results){
         $scope.rewards = results;
     });
-    
-	
+    	
+    $scope.buyReward = function(reward){
+        var confirm = window.confirm("Koop beloning: " + reward.title);
+        if (confirm == true) {
+            alert("Gekocht");
+        }
+    };
+        
 	$scope.toggleHideFilter = function(bool){
 		if($scope.hideFilter === "ng-hide" && !bool){
 			$scope.hideFilter = "ng-show";
