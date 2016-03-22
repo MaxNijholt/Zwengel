@@ -69,5 +69,5 @@ ion-content {
 }
 
 .pointsIcon{
-    vertical-align: text-bottom;
+    vertical-align: text-bottom !important;
 }
