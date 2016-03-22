@@ -19,6 +19,24 @@
   <preference name="android-installLocation" value="auto"/>
   <gap:plugin name="org.apache.cordova.app"/>
   <gap:plugin name="org.apache.cordova.splashscreen"/>
+  
+  <preference name="SplashScreen" value="screen"/>
+  <preference name="SplashScreenDelay" value="10000"/>
+  <platform name="android">
+    <icon src="icon.png"/>
+
+    <!-- you can use any density that exists in the Android project -->
+    <splash src="icons/android-splash-land-hdpi.png" density="land-hdpi"/>
+    <splash src="icons/android-splash-land-ldpi.png" density="land-ldpi"/>
+    <splash src="icons/android-splash-land-mdpi.png" density="land-mdpi"/>
+    <splash src="icons/android-splash-land-xhdpi.png" density="land-xhdpi"/>
+
+    <splash src="icons/android-splash-port-hdpi.png" density="port-hdpi"/>
+    <splash src="icons/android-splash-port-ldpi.png" density="port-ldpi"/>
+    <splash src="icons/android-splash-port-mdpi.png" density="port-mdpi"/>
+    <splash src="icons/android-splash-port-xhdpi.png" density="port-xhdpi"/>
+  </platform>
+  
   <access origin="*"/>
   <plugin name="cordova-plugin-whitelist" version="1"/>
   <allow-intent href="http://*/*"/>
