@@ -19,9 +19,6 @@
   <preference name="android-installLocation" value="auto"/>
   <gap:plugin name="org.apache.cordova.app"/>
   <gap:plugin name="org.apache.cordova.splashscreen"/>
-  <icon src="icon.png"/>
-  <splash src="res/screen/android/screen-mdpi-portrait.png"/>
-  <preference name="SplashScreenDelay" value="5000"/>
   <access origin="*"/>
   <plugin name="cordova-plugin-whitelist" version="1"/>
   <allow-intent href="http://*/*"/>
