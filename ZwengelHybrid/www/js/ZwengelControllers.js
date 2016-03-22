@@ -21,7 +21,7 @@ controllers.AllController = function($scope, $ionicPlatform, $window, AllData) {
     };
     
     $ionicPlatform.registerBackButtonAction(function () {
-		AllData.toBack();
+		AllData.toBack(true);
 	}, 100);
 };
 

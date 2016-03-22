@@ -38,15 +38,17 @@ services_zwengel.AllData = function(){
         self.to(title, url);
     };
     
-    self.toBack = function(){
+    self.toBack = function(phoneBack){
         if(self.history.length > 0){
             var historyItem = self.history.pop();
             self.to(historyItem.title, historyItem.url, historyItem.doel, historyItem.step);
         }else{
-            var confirm = window.confirm("Wilt u afsluiten?");
-            if (confirm == true) {
-                navigator.app.exitApp();
-            }
+            if(phoneBack){
+                var confirm = window.confirm("Wilt u afsluiten?");
+                if (confirm == true) {
+                    navigator.app.exitApp();
+                }
+            }            
         }
     };
     
