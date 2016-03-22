@@ -67,3 +67,7 @@ ion-content {
 .profileInfo{
     text-align: right;
 }
+
+.pointsIcon{
+    vertical-align: text-bottom;
+}
