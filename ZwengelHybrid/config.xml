@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="zwengelhybrid" version="1.0.0">
   <name>ZwengelHybrid</name>
   <description>Hello World sample application that responds to the deviceready event.</description>
@@ -27,6 +28,7 @@
   <allow-intent href="sms:*"/>
   <allow-intent href="mailto:*"/>
   <allow-intent href="geo:*"/>
+    <icon src="icon.png" />
   <platform name="android">
     <allow-intent href="market:*"/>
   </platform>
