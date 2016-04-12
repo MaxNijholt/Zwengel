@@ -46,7 +46,7 @@ services_zwengel.AllData = function(){
             if(phoneBack){
                 var confirm = window.confirm("Afsluiten");
                 if (confirm == true) {
-                    navigator.app.exitApp();
+                    // navigator.app.exitApp(); //phoneghap error met plugin
                 }
             }            
         }
