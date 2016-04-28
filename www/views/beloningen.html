@@ -1,18 +1,18 @@
 <div class="card">
-	  	<div class="item item-divider item-positive row" ng-click="toggleHideFilter()">
+	  	<div class="item item-divider item-positive row" ng-click="benc.toggleHideFilter()">
 	    	<div class="col col-80">
                 <div class="button-icon icon ion-search"></div>
             </div>
             <div class=" col col-20 filterToggleIcon">
-                <a class="button-icon icon {{filterIcon}}"></a>
+                <a class="button-icon icon {{benc.filterIcon}}"></a>
             </div>
 	  	</div>
 	
-	  	<label class="item item-input {{hideFilter}}">
+	  	<label class="item item-input {{benc.hideFilter}}">
 	    	<span class="input-label">Zoek</span>
 	    	<input type="text" ng-model="searchName">
 	  	</label>
-		<label class="item item-input item-select {{hideFilter}}">
+		<label class="item item-input item-select {{benc.hideFilter}}">
 		    <div class="input-label">
 		      Volgorde
 		    </div>
@@ -23,7 +23,7 @@
 		      	<option value="-price">duur</option>
 		    </select>
 	  	</label>
-		<label class="item item-input item-select {{hideFilter}}">
+		<label class="item item-input item-select {{benc.hideFilter}}">
 		    <div class="input-label">
 		      Behaald
 		    </div>
@@ -35,14 +35,14 @@
 	  	</label>
 </div>
 <div class="card">
-	  	<div ng-repeat="reward in rewards | filter:searchName | orderBy:orderBy | filter: {behaald: filterBehaald}">
+	  	<div ng-repeat="reward in benc.rewards | filter:searchName | orderBy:orderBy | filter: {behaald: filterBehaald}">
 			<div class="row">
                 <div class="col col-80">
                     <h4>{{reward.title}}</h4>
                 </div>
                 <div class="col col-20 behaaldIcon">
                     <div class="button-icon icon ion-checkmark-round balanced" ng-if="reward.behaald"></div>
-                    <button ng-click="buyReward(reward)" class="button koopKnop button-positive" ng-if="!reward.behaald">{{reward.price}}</button>
+                    <button ng-click="benc.buyReward(reward)" class="button koopKnop button-positive" ng-if="!reward.behaald">{{reward.price}}</button>
                 </div>
 			</div>
 		</div>

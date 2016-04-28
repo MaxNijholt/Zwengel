@@ -1,22 +1,24 @@
 var zwengelControllers = angular.module('zwengelControllers', []);
 var controllers = {};
 
-controllers.AllController = function($scope, $ionicPlatform, $window, AllData) {
-    $scope.page = AllData.page;
+controllers.AllController = function($ionicPlatform, $window, AllData) {
+    var self = this;
     
-    $scope.navDoelen = function(){
+    self.page = AllData.page;
+    
+    self.navDoelen = function(){
         AllData.toPage("Doelen", "#/doelen");
     };
     
-    $scope.navBeloningen = function(){
+    self.navBeloningen = function(){
         AllData.toPage("Beloningen", "#/beloningen");
     };
     
-    $scope.navProfiel = function(){
+    self.navProfiel = function(){
         AllData.toPage("Profiel", "#/profiel");
     };
     
-    $scope.back = function(){
+    self.back = function(){
 		AllData.toBack();
     };
     
@@ -25,7 +27,9 @@ controllers.AllController = function($scope, $ionicPlatform, $window, AllData) {
 	}, 100);
 };
 
-controllers.DoelenController = function($scope, $ionicScrollDelegate, AllData, StudentInfo) {
+controllers.DoelenController = function($ionicScrollDelegate, AllData, StudentInfo) {
+    var self = this;
+    
     $ionicScrollDelegate.scrollTop();
     
     StudentInfo.getDoelen("test", function(results){
@@ -41,50 +45,56 @@ controllers.DoelenController = function($scope, $ionicScrollDelegate, AllData, S
                     object.doneColor = "positive";
             }
         });
-        $scope.targets = results;
+        self.targets = results;
     });
     
-    $scope.toDoel = function(doelID){
+    self.toDoel = function(doelID){
         AllData.toPage("Doel", "#/doelen/" + doelID);
     };
 };
 
-controllers.BeloningenController = function($scope, $ionicScrollDelegate, StudentInfo) {
+controllers.BeloningenController = function($ionicScrollDelegate, StudentInfo) {
+    var self = this;
+    
     $ionicScrollDelegate.scrollTop();
     
-    $scope.hideFilter = "ng-hide";
-	$scope.filterIcon = "ion-chevron-down";
+    self.hideFilter = "ng-hide";
+	self.filterIcon = "ion-chevron-down";
     StudentInfo.getBeloningen("test" , function(results){
-        $scope.rewards = results;
+        self.rewards = results;
     });
     	
-    $scope.buyReward = function(reward){
+    self.buyReward = function(reward){
         var confirm = window.confirm("Koop beloning: " + reward.title);
         if (confirm == true) {
             alert("Gekocht");
         }
     };
         
-	$scope.toggleHideFilter = function(bool){
-		if($scope.hideFilter === "ng-hide" && !bool){
-			$scope.hideFilter = "ng-show";
-			$scope.filterIcon = "ion-chevron-up";
+	self.toggleHideFilter = function(bool){
+		if(self.hideFilter === "ng-hide" && !bool){
+			self.hideFilter = "ng-show";
+			self.filterIcon = "ion-chevron-up";
 		}else{
-			$scope.hideFilter = "ng-hide";
-			$scope.filterIcon = "ion-chevron-down";
+			self.hideFilter = "ng-hide";
+			self.filterIcon = "ion-chevron-down";
 		}
 	};
 };
 
-controllers.ProfielController = function($scope, $ionicScrollDelegate, AllData) {
+controllers.ProfielController = function($ionicScrollDelegate, AllData) {
+    var self = this;
+    
     $ionicScrollDelegate.scrollTop();
     
-    $scope.doelscreen = AllData.pref.doelscreen;
-    $scope.textIcons = AllData.pref.textIcons;
-    $scope.thema = "default";
+    self.doelscreen = AllData.pref.doelscreen;
+    self.textIcons = AllData.pref.textIcons;
+    self.thema = "default";
 };
 
-controllers.DoelController = function($scope, $ionicScrollDelegate, $routeParams, AllData, StudentInfo) {
+controllers.DoelController = function($ionicScrollDelegate, $routeParams, AllData, StudentInfo) {
+    var self = this;
+    
     $ionicScrollDelegate.scrollTop();
     var doelID;
     
@@ -102,16 +112,18 @@ controllers.DoelController = function($scope, $ionicScrollDelegate, $routeParams
             }
         });
         
-        $scope.doel = results;
+        self.doel = results;
         doelID = results.id;
     });
     
-    $scope.toStap = function(stapID){
+    self.toStap = function(stapID){
         AllData.toPage("Stap", "#/doelen/" + doelID + "/" + stapID);
     };
 };
 
-controllers.StapController = function($scope, $ionicScrollDelegate, $routeParams, AllData, StudentInfo) {
+controllers.StapController = function($ionicScrollDelegate, $routeParams, AllData, StudentInfo) {
+    var self = this;
+    
     $ionicScrollDelegate.scrollTop();
     
     StudentInfo.getStap("test", $routeParams.doelID, $routeParams.stapID, function(result){
@@ -125,13 +137,13 @@ controllers.StapController = function($scope, $ionicScrollDelegate, $routeParams
                 default:
                     result.doneColor = "positive";
             }
-        $scope.stap = result;
+        self.stap = result;
     });
 };
 
-zwengelControllers.controller('AllController', ['$scope', '$ionicPlatform', '$window', 'AllData', controllers.AllController]);
-zwengelControllers.controller('DoelenController', ['$scope', '$ionicScrollDelegate', 'AllData', 'StudentInfo', controllers.DoelenController]);
-zwengelControllers.controller('BeloningenController', ['$scope', '$ionicScrollDelegate', 'StudentInfo', controllers.BeloningenController]);
-zwengelControllers.controller('ProfielController', ['$scope', '$ionicScrollDelegate', 'AllData', controllers.ProfielController]);
-zwengelControllers.controller('DoelController', ['$scope', '$ionicScrollDelegate', '$routeParams', 'AllData', 'StudentInfo', controllers.DoelController]);
-zwengelControllers.controller('StapController', ['$scope', '$ionicScrollDelegate', '$routeParams', 'AllData', 'StudentInfo', controllers.StapController]);
+zwengelControllers.controller('AllController', ['$ionicPlatform', '$window', 'AllData', controllers.AllController]);
+zwengelControllers.controller('DoelenController', ['$ionicScrollDelegate', 'AllData', 'StudentInfo', controllers.DoelenController]);
+zwengelControllers.controller('BeloningenController', ['$ionicScrollDelegate', 'StudentInfo', controllers.BeloningenController]);
+zwengelControllers.controller('ProfielController', ['$ionicScrollDelegate', 'AllData', controllers.ProfielController]);
+zwengelControllers.controller('DoelController', ['$ionicScrollDelegate', '$routeParams', 'AllData', 'StudentInfo', controllers.DoelController]);
+zwengelControllers.controller('StapController', ['$ionicScrollDelegate', '$routeParams', 'AllData', 'StudentInfo', controllers.StapController]);

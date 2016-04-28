@@ -11,27 +11,23 @@ zwengelApp.config(['$routeProvider',
         $routeProvider.
         when('/doelen', {
         	templateUrl: 'views/doelen.html',
-        	controller: 'DoelenController'
+        	controller: 'DoelenController as denc'
         }).
         when('/doelen/:doelID', {
         	templateUrl: 'views/doel.html',
-        	controller: 'DoelController'
+        	controller: 'DoelController as dc'
         }).
         when('/doelen/:doelID/:stapID', {
         	templateUrl: 'views/stap.html',
-        	controller: 'StapController'
-        }).
-        when('/voortgang', {
-        	templateUrl: 'views/voortgang.html',
-        	controller: 'VoortgangController'
+        	controller: 'StapController as sc'
         }).
         when('/beloningen', {
         	templateUrl: 'views/beloningen.html',
-        	controller: 'BeloningenController'
+        	controller: 'BeloningenController as benc'
         }).
         when('/profiel', {
         	templateUrl: 'views/profiel.html',
-        	controller: 'ProfielController'
+        	controller: 'ProfielController as pc'
         }).
         otherwise({
         	redirectTo: '/doelen'
