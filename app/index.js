@@ -42,3 +42,5 @@ var app = {
         //angular.bootstrap(document, ['zwengelApp']);
     }
 };
+
+app.initialize();

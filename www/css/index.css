@@ -1,0 +1,73 @@
+ion-footer-bar {
+    padding: 0 !important;
+}
+
+#footerMenu {
+    width: 100%;
+    height: 100%;
+}
+
+#footerMenu :active {
+    background-color: grey;
+}
+
+#footerMenu div {
+    width: 33.4%;
+    height: 100%;
+    text-align: center;
+    padding: 12px;
+    border-left: 1px groove grey;
+    border-right: 1px groove grey;
+}
+
+ion-content {
+    padding: 10px;
+}
+
+.profileImage {
+    width: 100%;
+}
+
+.no_margin_bot {
+    margin-bottom: 0px !important;
+}
+
+.no_margin_top {
+    margin-top: 0px !important;
+}
+
+.thema .button {
+    width: 100%;
+}
+
+.scroll-bar-indicator {
+	display: none;
+}
+
+.koopKnop {
+    width: 100%;
+}
+
+.profileName {
+    text-align: right;
+}
+
+.behaaldIcon {
+    text-align: center;
+}
+
+.bewerkThemaIcon {
+    text-align: right;
+}
+
+.filterToggleIcon {
+   text-align: center; 
+}
+
+.profileInfo{
+    text-align: right;
+}
+
+.pointsIcon{
+    vertical-align: text-bottom !important;
+}

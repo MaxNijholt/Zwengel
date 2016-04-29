@@ -1,0 +1,16 @@
+<div ng-repeat="target in denc.targets | orderBy:endDate" class="row timecard">
+    <div class="col col-10 col-center">
+        <i class="button-icon icon {{target.icon}}"></i>
+    </div>
+    <div class="col col-90">
+        <div class="card" ng-click="denc.toDoel(target.id)">
+            <div class="item item-divider item-{{target.doneColor}}">
+                {{target.title}}
+            </div>
+            <div class="item item-icon-right">
+                <i class="icon ion-calendar"></i>
+                {{target.endDate}}
+            </div>
+        </div>
+    </div>
+</div>

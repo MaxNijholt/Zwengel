@@ -1,0 +1,2559 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '--save-dev',
+1 verbose cli   'cordova' ]
+2 info using npm@3.3.12
+3 info using node@v5.4.1
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData cordova
+8 silly fetchNamedPackageData cordova
+9 silly mapToRegistry name cordova
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry uri https://registry.npmjs.org/cordova
+13 verbose request uri https://registry.npmjs.org/cordova
+14 verbose request no auth needed
+15 info attempt registry request try #1 at 1:14:06 PM
+16 verbose request id bc19b8bb03085858
+17 verbose etag "89O89SFTFNYXOHE1124A9764E"
+18 http request GET https://registry.npmjs.org/cordova
+19 http 200 https://registry.npmjs.org/cordova
+20 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+20 verbose headers   etag: '"7WGJZTNR4J3IBLMIIMSZCL3KI"',
+20 verbose headers   'content-type': 'application/json',
+20 verbose headers   'cache-control': 'max-age=300',
+20 verbose headers   'content-length': '369610',
+20 verbose headers   'accept-ranges': 'bytes',
+20 verbose headers   date: 'Fri, 29 Apr 2016 11:13:39 GMT',
+20 verbose headers   via: '1.1 varnish',
+20 verbose headers   age: '0',
+20 verbose headers   connection: 'keep-alive',
+20 verbose headers   'x-served-by': 'cache-lcy1125-LCY',
+20 verbose headers   'x-cache': 'HIT',
+20 verbose headers   'x-cache-hits': '1',
+20 verbose headers   'x-timer': 'S1461928419.869497,VS0,VE93',
+20 verbose headers   vary: 'Accept-Encoding' }
+21 silly get cb [ 200,
+21 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+21 silly get     etag: '"7WGJZTNR4J3IBLMIIMSZCL3KI"',
+21 silly get     'content-type': 'application/json',
+21 silly get     'cache-control': 'max-age=300',
+21 silly get     'content-length': '369610',
+21 silly get     'accept-ranges': 'bytes',
+21 silly get     date: 'Fri, 29 Apr 2016 11:13:39 GMT',
+21 silly get     via: '1.1 varnish',
+21 silly get     age: '0',
+21 silly get     connection: 'keep-alive',
+21 silly get     'x-served-by': 'cache-lcy1125-LCY',
+21 silly get     'x-cache': 'HIT',
+21 silly get     'x-cache-hits': '1',
+21 silly get     'x-timer': 'S1461928419.869497,VS0,VE93',
+21 silly get     vary: 'Accept-Encoding' } ]
+22 verbose get saving cordova to C:\Users\bram5\AppData\Roaming\npm-cache\registry.npmjs.org\cordova\.cache.json
+23 silly install normalizeTree
+24 silly loadCurrentTree Finishing
+25 silly loadIdealTree Starting
+26 silly install loadIdealTree
+27 silly cloneCurrentTree Starting
+28 silly install cloneCurrentTreeToIdealTree
+29 silly cloneCurrentTree Finishing
+30 silly loadShrinkwrap Starting
+31 silly install loadShrinkwrap
+32 silly loadShrinkwrap Finishing
+33 silly loadAllDepsIntoIdealTree Starting
+34 silly install loadAllDepsIntoIdealTree
+35 silly resolveWithNewModule cordova@6.1.1 checking installable status
+36 silly cache add args [ 'cordova', null ]
+37 verbose cache add spec cordova
+38 silly cache add parsed spec Result {
+38 silly cache add   raw: 'cordova',
+38 silly cache add   scope: null,
+38 silly cache add   name: 'cordova',
+38 silly cache add   rawSpec: '',
+38 silly cache add   spec: '*',
+38 silly cache add   type: 'range' }
+39 silly addNamed cordova@*
+40 verbose addNamed "*" is a valid semver range for cordova
+41 silly addNameRange { name: 'cordova', range: '*', hasData: false }
+42 silly mapToRegistry name cordova
+43 silly mapToRegistry using default registry
+44 silly mapToRegistry registry https://registry.npmjs.org/
+45 silly mapToRegistry uri https://registry.npmjs.org/cordova
+46 verbose addNameRange registry:https://registry.npmjs.org/cordova not in flight; fetching
+47 verbose get https://registry.npmjs.org/cordova not expired, no request
+48 silly addNameRange number 2 { name: 'cordova', range: '*', hasData: true }
+49 silly addNameRange versions [ 'cordova',
+49 silly addNameRange   [ '0.0.1',
+49 silly addNameRange     '0.0.2',
+49 silly addNameRange     '0.0.3',
+49 silly addNameRange     '0.0.4',
+49 silly addNameRange     '0.0.5',
+49 silly addNameRange     '0.0.6',
+49 silly addNameRange     '0.0.7',
+49 silly addNameRange     '0.0.8',
+49 silly addNameRange     '0.0.9',
+49 silly addNameRange     '0.1.0',
+49 silly addNameRange     '0.1.1',
+49 silly addNameRange     '0.1.2',
+49 silly addNameRange     '0.1.3',
+49 silly addNameRange     '0.1.4',
+49 silly addNameRange     '0.1.5',
+49 silly addNameRange     '0.1.6',
+49 silly addNameRange     '0.1.7',
+49 silly addNameRange     '0.1.8',
+49 silly addNameRange     '0.1.9',
+49 silly addNameRange     '0.1.10',
+49 silly addNameRange     '0.1.11',
+49 silly addNameRange     '0.1.12',
+49 silly addNameRange     '0.1.13',
+49 silly addNameRange     '0.1.14',
+49 silly addNameRange     '2.2.0',
+49 silly addNameRange     '2.3.0',
+49 silly addNameRange     '2.3.1',
+49 silly addNameRange     '2.3.2',
+49 silly addNameRange     '2.3.3',
+49 silly addNameRange     '2.3.5',
+49 silly addNameRange     '2.3.6',
+49 silly addNameRange     '2.4.0',
+49 silly addNameRange     '2.4.1',
+49 silly addNameRange     '2.4.2',
+49 silly addNameRange     '2.4.3',
+49 silly addNameRange     '2.4.4',
+49 silly addNameRange     '2.4.5',
+49 silly addNameRange     '2.4.6',
+49 silly addNameRange     '2.4.7',
+49 silly addNameRange     '2.4.8',
+49 silly addNameRange     '2.4.9',
+49 silly addNameRange     '2.4.10',
+49 silly addNameRange     '2.5.0',
+49 silly addNameRange     '2.5.2',
+49 silly addNameRange     '2.5.3',
+49 silly addNameRange     '2.5.4',
+49 silly addNameRange     '2.5.5',
+49 silly addNameRange     '2.6.0',
+49 silly addNameRange     '2.6.1',
+49 silly addNameRange     '2.6.2',
+49 silly addNameRange     '2.7.0-rc.1',
+49 silly addNameRange     '2.7.1-rc.1',
+49 silly addNameRange     '2.7.2',
+49 silly addNameRange     '2.7.3',
+49 silly addNameRange     '2.7.4',
+49 silly addNameRange     '2.8.0',
+49 silly addNameRange     '2.8.1',
+49 silly addNameRange     '2.8.2',
+49 silly addNameRange     '2.8.3',
+49 silly addNameRange     '2.8.4',
+49 silly addNameRange     '2.8.5',
+49 silly addNameRange     '2.8.6',
+49 silly addNameRange     '2.8.7',
+49 silly addNameRange     '2.8.8',
+49 silly addNameRange     '2.8.9',
+49 silly addNameRange     '2.8.10',
+49 silly addNameRange     '2.8.11',
+49 silly addNameRange     '2.8.12',
+49 silly addNameRange     '2.8.13',
+49 silly addNameRange     '2.8.14',
+49 silly addNameRange     '2.8.15',
+49 silly addNameRange     '2.8.16',
+49 silly addNameRange     '2.8.17',
+49 silly addNameRange     '2.8.18',
+49 silly addNameRange     '2.8.19',
+49 silly addNameRange     '2.8.20',
+49 silly addNameRange     '2.8.21',
+49 silly addNameRange     '2.8.22',
+49 silly addNameRange     '2.8.23',
+49 silly addNameRange     '2.8.24',
+49 silly addNameRange     '2.8.25',
+49 silly addNameRange     '2.9.0',
+49 silly addNameRange     '2.9.1',
+49 silly addNameRange     '2.9.2',
+49 silly addNameRange     '2.9.3',
+49 silly addNameRange     '2.9.4',
+49 silly addNameRange     '2.9.5',
+49 silly addNameRange     '2.9.6',
+49 silly addNameRange     '2.9.7',
+49 silly addNameRange     '3.0.0-rc1',
+49 silly addNameRange     '3.0.0-rc1-1',
+49 silly addNameRange     '3.0.0-rc1-3',
+49 silly addNameRange     '3.0.0',
+49 silly addNameRange     '3.0.1',
+49 silly addNameRange     '3.0.2',
+49 silly addNameRange     '3.0.3',
+49 silly addNameRange     '3.0.4',
+49 silly addNameRange     '3.0.5',
+49 silly addNameRange     '3.0.6',
+49 silly addNameRange     '3.0.7',
+49 silly addNameRange     '3.0.8',
+49 silly addNameRange     '3.0.9',
+49 silly addNameRange     '3.0.10',
+49 silly addNameRange     '3.1.0-0.1.0',
+49 silly addNameRange     '3.1.0-0.2.0',
+49 silly addNameRange     '3.2.0-rc.1',
+49 silly addNameRange     '3.2.0-0.1.0',
+49 silly addNameRange     '3.2.0-0.2.0',
+49 silly addNameRange     '3.2.0-0.3.0',
+49 silly addNameRange     '3.2.0-0.4.0',
+49 silly addNameRange     '3.3.0-rc.1',
+49 silly addNameRange     '3.3.0-0.1.1',
+49 silly addNameRange     '3.3.1-0.1.2',
+49 silly addNameRange     '2.9.0-rc1',
+49 silly addNameRange     '3.3.1-0.3.0',
+49 silly addNameRange     '3.3.1-0.3.1',
+49 silly addNameRange     '3.3.1-0.4.1',
+49 silly addNameRange     '3.3.1-0.4.2',
+49 silly addNameRange     '3.4.0-0.1.0',
+49 silly addNameRange     '3.4.0-0.1.1',
+49 silly addNameRange     '3.4.0-0.1.2',
+49 silly addNameRange     '3.4.0-0.1.3',
+49 silly addNameRange     '0.0.0-fake',
+49 silly addNameRange     '3.4.1-0.1.0',
+49 silly addNameRange     '3.5.0-0.2.0',
+49 silly addNameRange     '3.5.0-0.2.1',
+49 silly addNameRange     '3.5.0-0.2.2',
+49 silly addNameRange     '3.5.0-0.2.3',
+49 silly addNameRange     '3.5.0-0.2.4',
+49 silly addNameRange     '3.5.0-0.2.6',
+49 silly addNameRange     '3.5.0-0.2.7',
+49 silly addNameRange     '3.6.0-0.2.8',
+49 silly addNameRange     '3.6.0-0.2.9',
+49 silly addNameRange     '3.6.1-0.2.10',
+49 silly addNameRange     '3.6.3-0.2.11',
+49 silly addNameRange     '3.6.3-0.2.12',
+49 silly addNameRange     '3.6.3-0.2.13',
+49 silly addNameRange     '4.0.0',
+49 silly addNameRange     '4.0.1',
+49 silly addNameRange     '4.1.0',
+49 silly addNameRange     '4.1.1',
+49 silly addNameRange     '4.1.2',
+49 silly addNameRange     '4.1.3-nightly.2014.10.21',
+49 silly addNameRange     '4.2.0',
+49 silly addNameRange     '4.3.0',
+49 silly addNameRange     '5.0.0',
+49 silly addNameRange     '4.3.1',
+49 silly addNameRange     '5.1.1',
+49 silly addNameRange     '5.2.0',
+49 silly addNameRange     '5.3.1',
+49 silly addNameRange     '5.3.3',
+49 silly addNameRange     '5.4.0',
+49 silly addNameRange     '5.4.1',
+49 silly addNameRange     '6.0.0',
+49 silly addNameRange     '6.1.0',
+49 silly addNameRange     '6.1.1' ] ]
+50 silly addNamed cordova@6.1.1
+51 verbose addNamed "6.1.1" is a plain semver version for cordova
+52 silly mapToRegistry name cordova
+53 silly mapToRegistry using default registry
+54 silly mapToRegistry registry https://registry.npmjs.org/
+55 silly mapToRegistry uri https://registry.npmjs.org/cordova
+56 verbose addRemoteTarball https://registry.npmjs.org/cordova/-/cordova-6.1.1.tgz not in flight; adding
+57 verbose addRemoteTarball [ 'https://registry.npmjs.org/cordova/-/cordova-6.1.1.tgz',
+57 verbose addRemoteTarball   '156488fe453182941e6034516d4e0f2f85dd47bc' ]
+58 info retry fetch attempt 1 at 1:14:07 PM
+59 info attempt registry request try #1 at 1:14:07 PM
+60 http fetch GET https://registry.npmjs.org/cordova/-/cordova-6.1.1.tgz
+61 http fetch 200 https://registry.npmjs.org/cordova/-/cordova-6.1.1.tgz
+62 silly fetchAndShaCheck shasum 156488fe453182941e6034516d4e0f2f85dd47bc
+63 verbose addTmpTarball C:\Users\bram5\AppData\Local\Temp\npm-5788-f522159b\registry.npmjs.org\cordova\-\cordova-6.1.1.tgz not in flight; adding
+64 verbose addTmpTarball already have metadata; skipping unpack for cordova@6.1.1
+65 silly cache afterAdd cordova@6.1.1
+66 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\cordova\6.1.1\package\package.json not in flight; writing
+67 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\cordova\6.1.1\package\package.json written
+68 silly fetchNamedPackageData ansi
+69 silly mapToRegistry name ansi
+70 silly mapToRegistry using default registry
+71 silly mapToRegistry registry https://registry.npmjs.org/
+72 silly mapToRegistry uri https://registry.npmjs.org/ansi
+73 silly fetchNamedPackageData cordova-lib
+74 silly mapToRegistry name cordova-lib
+75 silly mapToRegistry using default registry
+76 silly mapToRegistry registry https://registry.npmjs.org/
+77 silly mapToRegistry uri https://registry.npmjs.org/cordova-lib
+78 silly fetchNamedPackageData cordova-common
+79 silly mapToRegistry name cordova-common
+80 silly mapToRegistry using default registry
+81 silly mapToRegistry registry https://registry.npmjs.org/
+82 silly mapToRegistry uri https://registry.npmjs.org/cordova-common
+83 silly fetchNamedPackageData q
+84 silly mapToRegistry name q
+85 silly mapToRegistry using default registry
+86 silly mapToRegistry registry https://registry.npmjs.org/
+87 silly mapToRegistry uri https://registry.npmjs.org/q
+88 silly fetchNamedPackageData nopt
+89 silly mapToRegistry name nopt
+90 silly mapToRegistry using default registry
+91 silly mapToRegistry registry https://registry.npmjs.org/
+92 silly mapToRegistry uri https://registry.npmjs.org/nopt
+93 silly fetchNamedPackageData underscore
+94 silly mapToRegistry name underscore
+95 silly mapToRegistry using default registry
+96 silly mapToRegistry registry https://registry.npmjs.org/
+97 silly mapToRegistry uri https://registry.npmjs.org/underscore
+98 silly fetchNamedPackageData update-notifier
+99 silly mapToRegistry name update-notifier
+100 silly mapToRegistry using default registry
+101 silly mapToRegistry registry https://registry.npmjs.org/
+102 silly mapToRegistry uri https://registry.npmjs.org/update-notifier
+103 verbose request uri https://registry.npmjs.org/ansi
+104 verbose request no auth needed
+105 info attempt registry request try #1 at 1:14:07 PM
+106 http request GET https://registry.npmjs.org/ansi
+107 verbose request uri https://registry.npmjs.org/cordova-common
+108 verbose request no auth needed
+109 info attempt registry request try #1 at 1:14:07 PM
+110 verbose etag "7VC4VIJD8SFLLTVK4RQ0O5F3R"
+111 http request GET https://registry.npmjs.org/cordova-common
+112 verbose request uri https://registry.npmjs.org/nopt
+113 verbose request no auth needed
+114 info attempt registry request try #1 at 1:14:07 PM
+115 http request GET https://registry.npmjs.org/nopt
+116 verbose request uri https://registry.npmjs.org/cordova-lib
+117 verbose request no auth needed
+118 info attempt registry request try #1 at 1:14:07 PM
+119 verbose etag "36GUEKOE5KSRS5Q34VHA01I42"
+120 http request GET https://registry.npmjs.org/cordova-lib
+121 verbose request uri https://registry.npmjs.org/update-notifier
+122 verbose request no auth needed
+123 info attempt registry request try #1 at 1:14:07 PM
+124 verbose etag "2D4OC2H6UU8RYA6HXSF2CTCP7"
+125 http request GET https://registry.npmjs.org/update-notifier
+126 verbose request uri https://registry.npmjs.org/underscore
+127 verbose request no auth needed
+128 info attempt registry request try #1 at 1:14:07 PM
+129 verbose etag "5U2C90741S0OGYJZDF5NSSBSD"
+130 http request GET https://registry.npmjs.org/underscore
+131 verbose request uri https://registry.npmjs.org/q
+132 verbose request no auth needed
+133 info attempt registry request try #1 at 1:14:07 PM
+134 verbose etag "BEZDDWAMMM25NBPKV93NG4ARV"
+135 http request GET https://registry.npmjs.org/q
+136 http 304 https://registry.npmjs.org/underscore
+137 verbose headers { date: 'Fri, 29 Apr 2016 11:13:41 GMT',
+137 verbose headers   via: '1.1 varnish',
+137 verbose headers   'cache-control': 'max-age=300',
+137 verbose headers   etag: '"5U2C90741S0OGYJZDF5NSSBSD"',
+137 verbose headers   age: '3',
+137 verbose headers   connection: 'keep-alive',
+137 verbose headers   'x-served-by': 'cache-lcy1130-LCY',
+137 verbose headers   'x-cache': 'HIT',
+137 verbose headers   'x-cache-hits': '1',
+137 verbose headers   'x-timer': 'S1461928421.001603,VS0,VE0',
+137 verbose headers   vary: 'Accept-Encoding' }
+138 silly get cb [ 304,
+138 silly get   { date: 'Fri, 29 Apr 2016 11:13:41 GMT',
+138 silly get     via: '1.1 varnish',
+138 silly get     'cache-control': 'max-age=300',
+138 silly get     etag: '"5U2C90741S0OGYJZDF5NSSBSD"',
+138 silly get     age: '3',
+138 silly get     connection: 'keep-alive',
+138 silly get     'x-served-by': 'cache-lcy1130-LCY',
+138 silly get     'x-cache': 'HIT',
+138 silly get     'x-cache-hits': '1',
+138 silly get     'x-timer': 'S1461928421.001603,VS0,VE0',
+138 silly get     vary: 'Accept-Encoding' } ]
+139 verbose etag https://registry.npmjs.org/underscore from cache
+140 verbose get saving underscore to C:\Users\bram5\AppData\Roaming\npm-cache\registry.npmjs.org\underscore\.cache.json
+141 http 200 https://registry.npmjs.org/update-notifier
+142 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+142 verbose headers   etag: '"9CLJKAG052PSWL0PJIXLOTMH4"',
+142 verbose headers   'content-type': 'application/json',
+142 verbose headers   'content-encoding': 'gzip',
+142 verbose headers   'cache-control': 'max-age=300',
+142 verbose headers   'content-length': '6759',
+142 verbose headers   'accept-ranges': 'bytes',
+142 verbose headers   date: 'Fri, 29 Apr 2016 11:13:41 GMT',
+142 verbose headers   via: '1.1 varnish',
+142 verbose headers   age: '186',
+142 verbose headers   connection: 'keep-alive',
+142 verbose headers   'x-served-by': 'cache-lcy1125-LCY',
+142 verbose headers   'x-cache': 'HIT',
+142 verbose headers   'x-cache-hits': '4',
+142 verbose headers   'x-timer': 'S1461928421.003057,VS0,VE0',
+142 verbose headers   vary: 'Accept-Encoding' }
+143 silly get cb [ 200,
+143 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+143 silly get     etag: '"9CLJKAG052PSWL0PJIXLOTMH4"',
+143 silly get     'content-type': 'application/json',
+143 silly get     'content-encoding': 'gzip',
+143 silly get     'cache-control': 'max-age=300',
+143 silly get     'content-length': '6759',
+143 silly get     'accept-ranges': 'bytes',
+143 silly get     date: 'Fri, 29 Apr 2016 11:13:41 GMT',
+143 silly get     via: '1.1 varnish',
+143 silly get     age: '186',
+143 silly get     connection: 'keep-alive',
+143 silly get     'x-served-by': 'cache-lcy1125-LCY',
+143 silly get     'x-cache': 'HIT',
+143 silly get     'x-cache-hits': '4',
+143 silly get     'x-timer': 'S1461928421.003057,VS0,VE0',
+143 silly get     vary: 'Accept-Encoding' } ]
+144 verbose get saving update-notifier to C:\Users\bram5\AppData\Roaming\npm-cache\registry.npmjs.org\update-notifier\.cache.json
+145 silly resolveWithNewModule underscore@1.7.0 checking installable status
+146 silly cache add args [ 'underscore@1.7.0', null ]
+147 verbose cache add spec underscore@1.7.0
+148 silly cache add parsed spec Result {
+148 silly cache add   raw: 'underscore@1.7.0',
+148 silly cache add   scope: null,
+148 silly cache add   name: 'underscore',
+148 silly cache add   rawSpec: '1.7.0',
+148 silly cache add   spec: '1.7.0',
+148 silly cache add   type: 'version' }
+149 silly addNamed underscore@1.7.0
+150 verbose addNamed "1.7.0" is a plain semver version for underscore
+151 silly mapToRegistry name underscore
+152 silly mapToRegistry using default registry
+153 silly mapToRegistry registry https://registry.npmjs.org/
+154 silly mapToRegistry uri https://registry.npmjs.org/underscore
+155 verbose addNameVersion registry:https://registry.npmjs.org/underscore not in flight; fetching
+156 silly resolveWithNewModule update-notifier@0.5.0 checking installable status
+157 silly cache add args [ 'update-notifier@^0.5.0', null ]
+158 verbose cache add spec update-notifier@^0.5.0
+159 silly cache add parsed spec Result {
+159 silly cache add   raw: 'update-notifier@^0.5.0',
+159 silly cache add   scope: null,
+159 silly cache add   name: 'update-notifier',
+159 silly cache add   rawSpec: '^0.5.0',
+159 silly cache add   spec: '>=0.5.0 <0.6.0',
+159 silly cache add   type: 'range' }
+160 silly addNamed update-notifier@>=0.5.0 <0.6.0
+161 verbose addNamed ">=0.5.0 <0.6.0" is a valid semver range for update-notifier
+162 silly addNameRange { name: 'update-notifier',
+162 silly addNameRange   range: '>=0.5.0 <0.6.0',
+162 silly addNameRange   hasData: false }
+163 silly mapToRegistry name update-notifier
+164 silly mapToRegistry using default registry
+165 silly mapToRegistry registry https://registry.npmjs.org/
+166 silly mapToRegistry uri https://registry.npmjs.org/update-notifier
+167 verbose addNameRange registry:https://registry.npmjs.org/update-notifier not in flight; fetching
+168 verbose get https://registry.npmjs.org/underscore not expired, no request
+169 verbose get https://registry.npmjs.org/update-notifier not expired, no request
+170 silly addNameRange number 2 { name: 'update-notifier',
+170 silly addNameRange   range: '>=0.5.0 <0.6.0',
+170 silly addNameRange   hasData: true }
+171 silly addNameRange versions [ 'update-notifier',
+171 silly addNameRange   [ '0.1.0',
+171 silly addNameRange     '0.1.1',
+171 silly addNameRange     '0.1.2',
+171 silly addNameRange     '0.1.3',
+171 silly addNameRange     '0.1.4',
+171 silly addNameRange     '0.1.5',
+171 silly addNameRange     '0.1.6',
+171 silly addNameRange     '0.1.7',
+171 silly addNameRange     '0.1.8',
+171 silly addNameRange     '0.1.9',
+171 silly addNameRange     '0.1.10',
+171 silly addNameRange     '0.2.0',
+171 silly addNameRange     '0.2.1',
+171 silly addNameRange     '0.2.2',
+171 silly addNameRange     '0.3.0',
+171 silly addNameRange     '0.3.1',
+171 silly addNameRange     '0.3.2',
+171 silly addNameRange     '0.4.0',
+171 silly addNameRange     '0.5.0',
+171 silly addNameRange     '0.6.0',
+171 silly addNameRange     '0.6.1',
+171 silly addNameRange     '0.6.2',
+171 silly addNameRange     '0.6.3' ] ]
+172 silly addNamed update-notifier@0.5.0
+173 verbose addNamed "0.5.0" is a plain semver version for update-notifier
+174 http 200 https://registry.npmjs.org/cordova-common
+175 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+175 verbose headers   etag: '"BZR3QL6QWHBUDGTFN7YS1IW5D"',
+175 verbose headers   'content-type': 'application/json',
+175 verbose headers   'cache-control': 'max-age=300',
+175 verbose headers   'content-length': '16290',
+175 verbose headers   'accept-ranges': 'bytes',
+175 verbose headers   date: 'Fri, 29 Apr 2016 11:13:40 GMT',
+175 verbose headers   via: '1.1 varnish',
+175 verbose headers   age: '186',
+175 verbose headers   connection: 'keep-alive',
+175 verbose headers   'x-served-by': 'cache-lcy1122-LCY',
+175 verbose headers   'x-cache': 'HIT',
+175 verbose headers   'x-cache-hits': '2',
+175 verbose headers   'x-timer': 'S1461928420.999606,VS0,VE0',
+175 verbose headers   vary: 'Accept-Encoding' }
+176 silly get cb [ 200,
+176 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+176 silly get     etag: '"BZR3QL6QWHBUDGTFN7YS1IW5D"',
+176 silly get     'content-type': 'application/json',
+176 silly get     'cache-control': 'max-age=300',
+176 silly get     'content-length': '16290',
+176 silly get     'accept-ranges': 'bytes',
+176 silly get     date: 'Fri, 29 Apr 2016 11:13:40 GMT',
+176 silly get     via: '1.1 varnish',
+176 silly get     age: '186',
+176 silly get     connection: 'keep-alive',
+176 silly get     'x-served-by': 'cache-lcy1122-LCY',
+176 silly get     'x-cache': 'HIT',
+176 silly get     'x-cache-hits': '2',
+176 silly get     'x-timer': 'S1461928420.999606,VS0,VE0',
+176 silly get     vary: 'Accept-Encoding' } ]
+177 verbose get saving cordova-common to C:\Users\bram5\AppData\Roaming\npm-cache\registry.npmjs.org\cordova-common\.cache.json
+178 http 200 https://registry.npmjs.org/ansi
+179 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+179 verbose headers   etag: '"52EQH3Q4OLUFN9UJXDL38YCCS"',
+179 verbose headers   'content-type': 'application/json',
+179 verbose headers   'cache-control': 'max-age=300',
+179 verbose headers   'content-length': '16056',
+179 verbose headers   'accept-ranges': 'bytes',
+179 verbose headers   date: 'Fri, 29 Apr 2016 11:13:41 GMT',
+179 verbose headers   via: '1.1 varnish',
+179 verbose headers   age: '83',
+179 verbose headers   connection: 'keep-alive',
+179 verbose headers   'x-served-by': 'cache-lcy1131-LCY',
+179 verbose headers   'x-cache': 'HIT',
+179 verbose headers   'x-cache-hits': '2',
+179 verbose headers   'x-timer': 'S1461928421.003977,VS0,VE0',
+179 verbose headers   vary: 'Accept-Encoding' }
+180 silly get cb [ 200,
+180 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+180 silly get     etag: '"52EQH3Q4OLUFN9UJXDL38YCCS"',
+180 silly get     'content-type': 'application/json',
+180 silly get     'cache-control': 'max-age=300',
+180 silly get     'content-length': '16056',
+180 silly get     'accept-ranges': 'bytes',
+180 silly get     date: 'Fri, 29 Apr 2016 11:13:41 GMT',
+180 silly get     via: '1.1 varnish',
+180 silly get     age: '83',
+180 silly get     connection: 'keep-alive',
+180 silly get     'x-served-by': 'cache-lcy1131-LCY',
+180 silly get     'x-cache': 'HIT',
+180 silly get     'x-cache-hits': '2',
+180 silly get     'x-timer': 'S1461928421.003977,VS0,VE0',
+180 silly get     vary: 'Accept-Encoding' } ]
+181 verbose get saving ansi to C:\Users\bram5\AppData\Roaming\npm-cache\registry.npmjs.org\ansi\.cache.json
+182 http 200 https://registry.npmjs.org/nopt
+183 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+183 verbose headers   etag: '"53NWQ6XY2NLAFB30G2E3W8W60"',
+183 verbose headers   'content-type': 'application/json',
+183 verbose headers   'cache-control': 'max-age=300',
+183 verbose headers   'content-length': '31322',
+183 verbose headers   'accept-ranges': 'bytes',
+183 verbose headers   date: 'Fri, 29 Apr 2016 11:13:41 GMT',
+183 verbose headers   via: '1.1 varnish',
+183 verbose headers   age: '26',
+183 verbose headers   connection: 'keep-alive',
+183 verbose headers   'x-served-by': 'cache-lcy1126-LCY',
+183 verbose headers   'x-cache': 'HIT',
+183 verbose headers   'x-cache-hits': '4',
+183 verbose headers   'x-timer': 'S1461928421.003834,VS0,VE0',
+183 verbose headers   vary: 'Accept-Encoding' }
+184 silly get cb [ 200,
+184 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+184 silly get     etag: '"53NWQ6XY2NLAFB30G2E3W8W60"',
+184 silly get     'content-type': 'application/json',
+184 silly get     'cache-control': 'max-age=300',
+184 silly get     'content-length': '31322',
+184 silly get     'accept-ranges': 'bytes',
+184 silly get     date: 'Fri, 29 Apr 2016 11:13:41 GMT',
+184 silly get     via: '1.1 varnish',
+184 silly get     age: '26',
+184 silly get     connection: 'keep-alive',
+184 silly get     'x-served-by': 'cache-lcy1126-LCY',
+184 silly get     'x-cache': 'HIT',
+184 silly get     'x-cache-hits': '4',
+184 silly get     'x-timer': 'S1461928421.003834,VS0,VE0',
+184 silly get     vary: 'Accept-Encoding' } ]
+185 verbose get saving nopt to C:\Users\bram5\AppData\Roaming\npm-cache\registry.npmjs.org\nopt\.cache.json
+186 silly cache afterAdd update-notifier@0.5.0
+187 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\update-notifier\0.5.0\package\package.json not in flight; writing
+188 silly cache afterAdd underscore@1.7.0
+189 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\underscore\1.7.0\package\package.json not in flight; writing
+190 silly resolveWithNewModule ansi@0.3.1 checking installable status
+191 silly cache add args [ 'ansi@^0.3.0', null ]
+192 verbose cache add spec ansi@^0.3.0
+193 silly cache add parsed spec Result {
+193 silly cache add   raw: 'ansi@^0.3.0',
+193 silly cache add   scope: null,
+193 silly cache add   name: 'ansi',
+193 silly cache add   rawSpec: '^0.3.0',
+193 silly cache add   spec: '>=0.3.0 <0.4.0',
+193 silly cache add   type: 'range' }
+194 silly addNamed ansi@>=0.3.0 <0.4.0
+195 verbose addNamed ">=0.3.0 <0.4.0" is a valid semver range for ansi
+196 silly addNameRange { name: 'ansi', range: '>=0.3.0 <0.4.0', hasData: false }
+197 silly mapToRegistry name ansi
+198 silly mapToRegistry using default registry
+199 silly mapToRegistry registry https://registry.npmjs.org/
+200 silly mapToRegistry uri https://registry.npmjs.org/ansi
+201 verbose addNameRange registry:https://registry.npmjs.org/ansi not in flight; fetching
+202 silly resolveWithNewModule cordova-common@1.2.0 checking installable status
+203 silly cache add args [ 'cordova-common@^1.1.0', null ]
+204 verbose cache add spec cordova-common@^1.1.0
+205 silly cache add parsed spec Result {
+205 silly cache add   raw: 'cordova-common@^1.1.0',
+205 silly cache add   scope: null,
+205 silly cache add   name: 'cordova-common',
+205 silly cache add   rawSpec: '^1.1.0',
+205 silly cache add   spec: '>=1.1.0 <2.0.0',
+205 silly cache add   type: 'range' }
+206 silly addNamed cordova-common@>=1.1.0 <2.0.0
+207 verbose addNamed ">=1.1.0 <2.0.0" is a valid semver range for cordova-common
+208 silly addNameRange { name: 'cordova-common',
+208 silly addNameRange   range: '>=1.1.0 <2.0.0',
+208 silly addNameRange   hasData: false }
+209 silly mapToRegistry name cordova-common
+210 silly mapToRegistry using default registry
+211 silly mapToRegistry registry https://registry.npmjs.org/
+212 silly mapToRegistry uri https://registry.npmjs.org/cordova-common
+213 verbose addNameRange registry:https://registry.npmjs.org/cordova-common not in flight; fetching
+214 verbose get https://registry.npmjs.org/ansi not expired, no request
+215 silly addNameRange number 2 { name: 'ansi', range: '>=0.3.0 <0.4.0', hasData: true }
+216 silly addNameRange versions [ 'ansi',
+216 silly addNameRange   [ '0.0.1',
+216 silly addNameRange     '0.0.2',
+216 silly addNameRange     '0.0.3',
+216 silly addNameRange     '0.0.4',
+216 silly addNameRange     '0.1.0',
+216 silly addNameRange     '0.1.1',
+216 silly addNameRange     '0.1.2',
+216 silly addNameRange     '0.2.0',
+216 silly addNameRange     '0.2.1',
+216 silly addNameRange     '0.3.0',
+216 silly addNameRange     '0.3.1' ] ]
+217 silly addNamed ansi@0.3.1
+218 verbose addNamed "0.3.1" is a plain semver version for ansi
+219 http 200 https://registry.npmjs.org/cordova-lib
+220 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+220 verbose headers   etag: '"6L9J8Z2ETYBQ4VSWA53RF7RW5"',
+220 verbose headers   'content-type': 'application/json',
+220 verbose headers   'content-encoding': 'gzip',
+220 verbose headers   'cache-control': 'max-age=300',
+220 verbose headers   'content-length': '10796',
+220 verbose headers   'accept-ranges': 'bytes',
+220 verbose headers   date: 'Fri, 29 Apr 2016 11:13:41 GMT',
+220 verbose headers   via: '1.1 varnish',
+220 verbose headers   age: '287',
+220 verbose headers   connection: 'keep-alive',
+220 verbose headers   'x-served-by': 'cache-lcy1123-LCY',
+220 verbose headers   'x-cache': 'HIT',
+220 verbose headers   'x-cache-hits': '2',
+220 verbose headers   'x-timer': 'S1461928421.004011,VS0,VE0',
+220 verbose headers   vary: 'Accept-Encoding' }
+221 silly get cb [ 200,
+221 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+221 silly get     etag: '"6L9J8Z2ETYBQ4VSWA53RF7RW5"',
+221 silly get     'content-type': 'application/json',
+221 silly get     'content-encoding': 'gzip',
+221 silly get     'cache-control': 'max-age=300',
+221 silly get     'content-length': '10796',
+221 silly get     'accept-ranges': 'bytes',
+221 silly get     date: 'Fri, 29 Apr 2016 11:13:41 GMT',
+221 silly get     via: '1.1 varnish',
+221 silly get     age: '287',
+221 silly get     connection: 'keep-alive',
+221 silly get     'x-served-by': 'cache-lcy1123-LCY',
+221 silly get     'x-cache': 'HIT',
+221 silly get     'x-cache-hits': '2',
+221 silly get     'x-timer': 'S1461928421.004011,VS0,VE0',
+221 silly get     vary: 'Accept-Encoding' } ]
+222 verbose get saving cordova-lib to C:\Users\bram5\AppData\Roaming\npm-cache\registry.npmjs.org\cordova-lib\.cache.json
+223 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\update-notifier\0.5.0\package\package.json written
+224 verbose get https://registry.npmjs.org/cordova-common not expired, no request
+225 silly addNameRange number 2 { name: 'cordova-common',
+225 silly addNameRange   range: '>=1.1.0 <2.0.0',
+225 silly addNameRange   hasData: true }
+226 silly addNameRange versions [ 'cordova-common',
+226 silly addNameRange   [ '0.1.0', '1.0.0', '1.1.0', '1.1.1', '1.2.0' ] ]
+227 silly addNamed cordova-common@1.2.0
+228 verbose addNamed "1.2.0" is a plain semver version for cordova-common
+229 silly resolveWithNewModule nopt@3.0.1 checking installable status
+230 silly cache add args [ 'nopt@3.0.1', null ]
+231 verbose cache add spec nopt@3.0.1
+232 silly cache add parsed spec Result {
+232 silly cache add   raw: 'nopt@3.0.1',
+232 silly cache add   scope: null,
+232 silly cache add   name: 'nopt',
+232 silly cache add   rawSpec: '3.0.1',
+232 silly cache add   spec: '3.0.1',
+232 silly cache add   type: 'version' }
+233 silly addNamed nopt@3.0.1
+234 verbose addNamed "3.0.1" is a plain semver version for nopt
+235 silly mapToRegistry name nopt
+236 silly mapToRegistry using default registry
+237 silly mapToRegistry registry https://registry.npmjs.org/
+238 silly mapToRegistry uri https://registry.npmjs.org/nopt
+239 verbose addNameVersion registry:https://registry.npmjs.org/nopt not in flight; fetching
+240 silly mapToRegistry name cordova-common
+241 silly mapToRegistry using default registry
+242 silly mapToRegistry registry https://registry.npmjs.org/
+243 silly mapToRegistry uri https://registry.npmjs.org/cordova-common
+244 verbose addRemoteTarball https://registry.npmjs.org/cordova-common/-/cordova-common-1.2.0.tgz not in flight; adding
+245 verbose addRemoteTarball [ 'https://registry.npmjs.org/cordova-common/-/cordova-common-1.2.0.tgz',
+245 verbose addRemoteTarball   '474b7f77c6c89d3f995c947d96046edf2e8c404d' ]
+246 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\underscore\1.7.0\package\package.json written
+247 info retry fetch attempt 1 at 1:14:07 PM
+248 info attempt registry request try #1 at 1:14:07 PM
+249 http fetch GET https://registry.npmjs.org/cordova-common/-/cordova-common-1.2.0.tgz
+250 silly cache afterAdd ansi@0.3.1
+251 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\ansi\0.3.1\package\package.json not in flight; writing
+252 verbose get https://registry.npmjs.org/nopt not expired, no request
+253 silly resolveWithNewModule cordova-lib@6.1.1 checking installable status
+254 silly cache add args [ 'cordova-lib@6.1.1', null ]
+255 verbose cache add spec cordova-lib@6.1.1
+256 silly cache add parsed spec Result {
+256 silly cache add   raw: 'cordova-lib@6.1.1',
+256 silly cache add   scope: null,
+256 silly cache add   name: 'cordova-lib',
+256 silly cache add   rawSpec: '6.1.1',
+256 silly cache add   spec: '6.1.1',
+256 silly cache add   type: 'version' }
+257 silly addNamed cordova-lib@6.1.1
+258 verbose addNamed "6.1.1" is a plain semver version for cordova-lib
+259 silly mapToRegistry name cordova-lib
+260 silly mapToRegistry using default registry
+261 silly mapToRegistry registry https://registry.npmjs.org/
+262 silly mapToRegistry uri https://registry.npmjs.org/cordova-lib
+263 verbose addNameVersion registry:https://registry.npmjs.org/cordova-lib not in flight; fetching
+264 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\ansi\0.3.1\package\package.json written
+265 verbose get https://registry.npmjs.org/cordova-lib not expired, no request
+266 silly cache afterAdd nopt@3.0.1
+267 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\nopt\3.0.1\package\package.json not in flight; writing
+268 silly mapToRegistry name cordova-lib
+269 silly mapToRegistry using default registry
+270 silly mapToRegistry registry https://registry.npmjs.org/
+271 silly mapToRegistry uri https://registry.npmjs.org/cordova-lib
+272 verbose addRemoteTarball https://registry.npmjs.org/cordova-lib/-/cordova-lib-6.1.1.tgz not in flight; adding
+273 verbose addRemoteTarball [ 'https://registry.npmjs.org/cordova-lib/-/cordova-lib-6.1.1.tgz',
+273 verbose addRemoteTarball   'd527ceca6f91476ad759d339886f26f7d7af810f' ]
+274 info retry fetch attempt 1 at 1:14:07 PM
+275 info attempt registry request try #1 at 1:14:07 PM
+276 http fetch GET https://registry.npmjs.org/cordova-lib/-/cordova-lib-6.1.1.tgz
+277 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\nopt\3.0.1\package\package.json written
+278 http 200 https://registry.npmjs.org/q
+279 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+279 verbose headers   etag: '"1GS0Z1KG61RVFBV8KC7JB4RKI"',
+279 verbose headers   'content-type': 'application/json',
+279 verbose headers   'cache-control': 'max-age=300',
+279 verbose headers   'content-length': '145028',
+279 verbose headers   'accept-ranges': 'bytes',
+279 verbose headers   date: 'Fri, 29 Apr 2016 11:13:41 GMT',
+279 verbose headers   via: '1.1 varnish',
+279 verbose headers   age: '247',
+279 verbose headers   connection: 'keep-alive',
+279 verbose headers   'x-served-by': 'cache-lcy1128-LCY',
+279 verbose headers   'x-cache': 'HIT',
+279 verbose headers   'x-cache-hits': '7',
+279 verbose headers   'x-timer': 'S1461928421.001863,VS0,VE0',
+279 verbose headers   vary: 'Accept-Encoding' }
+280 silly get cb [ 200,
+280 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+280 silly get     etag: '"1GS0Z1KG61RVFBV8KC7JB4RKI"',
+280 silly get     'content-type': 'application/json',
+280 silly get     'cache-control': 'max-age=300',
+280 silly get     'content-length': '145028',
+280 silly get     'accept-ranges': 'bytes',
+280 silly get     date: 'Fri, 29 Apr 2016 11:13:41 GMT',
+280 silly get     via: '1.1 varnish',
+280 silly get     age: '247',
+280 silly get     connection: 'keep-alive',
+280 silly get     'x-served-by': 'cache-lcy1128-LCY',
+280 silly get     'x-cache': 'HIT',
+280 silly get     'x-cache-hits': '7',
+280 silly get     'x-timer': 'S1461928421.001863,VS0,VE0',
+280 silly get     vary: 'Accept-Encoding' } ]
+281 verbose get saving q to C:\Users\bram5\AppData\Roaming\npm-cache\registry.npmjs.org\q\.cache.json
+282 silly resolveWithNewModule q@1.0.1 checking installable status
+283 silly cache add args [ 'q@1.0.1', null ]
+284 verbose cache add spec q@1.0.1
+285 silly cache add parsed spec Result {
+285 silly cache add   raw: 'q@1.0.1',
+285 silly cache add   scope: null,
+285 silly cache add   name: 'q',
+285 silly cache add   rawSpec: '1.0.1',
+285 silly cache add   spec: '1.0.1',
+285 silly cache add   type: 'version' }
+286 silly addNamed q@1.0.1
+287 verbose addNamed "1.0.1" is a plain semver version for q
+288 silly mapToRegistry name q
+289 silly mapToRegistry using default registry
+290 silly mapToRegistry registry https://registry.npmjs.org/
+291 silly mapToRegistry uri https://registry.npmjs.org/q
+292 verbose addNameVersion registry:https://registry.npmjs.org/q not in flight; fetching
+293 verbose get https://registry.npmjs.org/q not expired, no request
+294 silly cache afterAdd q@1.0.1
+295 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\q\1.0.1\package\package.json not in flight; writing
+296 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\q\1.0.1\package\package.json written
+297 http fetch 200 https://registry.npmjs.org/cordova-common/-/cordova-common-1.2.0.tgz
+298 silly fetchAndShaCheck shasum 474b7f77c6c89d3f995c947d96046edf2e8c404d
+299 verbose addTmpTarball C:\Users\bram5\AppData\Local\Temp\npm-5788-f522159b\registry.npmjs.org\cordova-common\-\cordova-common-1.2.0.tgz not in flight; adding
+300 verbose addTmpTarball already have metadata; skipping unpack for cordova-common@1.2.0
+301 http fetch 200 https://registry.npmjs.org/cordova-lib/-/cordova-lib-6.1.1.tgz
+302 silly cache afterAdd cordova-common@1.2.0
+303 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\cordova-common\1.2.0\package\package.json not in flight; writing
+304 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\cordova-common\1.2.0\package\package.json written
+305 silly fetchAndShaCheck shasum d527ceca6f91476ad759d339886f26f7d7af810f
+306 verbose addTmpTarball C:\Users\bram5\AppData\Local\Temp\npm-5788-f522159b\registry.npmjs.org\cordova-lib\-\cordova-lib-6.1.1.tgz not in flight; adding
+307 verbose addTmpTarball already have metadata; skipping unpack for cordova-lib@6.1.1
+308 silly cache afterAdd cordova-lib@6.1.1
+309 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\cordova-lib\6.1.1\package\package.json not in flight; writing
+310 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\cordova-lib\6.1.1\package\package.json written
+311 verbose addBundled extract C:\Users\bram5\AppData\Roaming\npm-cache\cordova-lib\6.1.1\package.tgz
+312 verbose tar unpack C:\Users\bram5\AppData\Roaming\npm-cache\cordova-lib\6.1.1\package.tgz
+313 verbose tar unpacking to C:\Users\bram5\AppData\Local\Temp\npm-5788-f522159b\unpack-11108c1f43f141426c38bafe66909c26
+314 silly gentlyRm C:\Users\bram5\AppData\Local\Temp\npm-5788-f522159b\unpack-11108c1f43f141426c38bafe66909c26 is being purged
+315 verbose gentlyRm don't care about contents; nuking C:\Users\bram5\AppData\Local\Temp\npm-5788-f522159b\unpack-11108c1f43f141426c38bafe66909c26
+316 silly gunzTarPerm modes [ '777', '666' ]
+317 silly gunzTarPerm extractEntry package.json
+318 silly gunzTarPerm extractEntry .npmignore
+319 silly gunzTarPerm extractEntry README.md
+320 silly gunzTarPerm extractEntry cordova-lib.js
+321 silly gunzTarPerm extractEntry RELEASENOTES.md
+322 silly gunzTarPerm extractEntry .ratignore
+323 silly gunzTarPerm extractEntry .jshintignore
+324 silly gunzTarPerm extractEntry src/CordovaExternalToolErrorContext.js
+325 silly gunzTarPerm extractEntry src/gitclone.js
+326 silly gunzTarPerm extractEntry src/.jshintrc
+327 silly gunzTarPerm extractEntry src/cordova/build.js
+328 silly gunzTarPerm extractEntry src/cordova/info.js
+329 silly gunzTarPerm extractEntry src/cordova/lazy_load.js
+330 silly gunzTarPerm extractEntry src/cordova/targets.js
+331 silly gunzTarPerm extractEntry src/cordova/platform.js
+332 silly gunzTarPerm extractEntry src/cordova/emulate.js
+333 silly gunzTarPerm extractEntry src/cordova/plugin.js
+334 silly gunzTarPerm extractEntry src/cordova/plugin_parser.js
+335 silly gunzTarPerm extractEntry src/cordova/prepare.js
+336 silly gunzTarPerm extractEntry src/cordova/project_metadata.js
+337 silly gunzTarPerm extractEntry src/cordova/remote_load.js
+338 silly gunzTarPerm extractEntry src/cordova/create.js
+339 silly gunzTarPerm extractEntry src/cordova/requirements.js
+340 silly gunzTarPerm extractEntry src/cordova/cordova.js
+341 silly gunzTarPerm extractEntry src/cordova/restore-util.js
+342 silly gunzTarPerm extractEntry src/cordova/config.js
+343 silly gunzTarPerm extractEntry src/cordova/run.js
+344 silly gunzTarPerm extractEntry src/cordova/compile.js
+345 silly gunzTarPerm extractEntry src/cordova/serve.js
+346 silly gunzTarPerm extractEntry src/cordova/clean.js
+347 silly gunzTarPerm extractEntry src/cordova/util.js
+348 silly gunzTarPerm extractEntry src/cordova/platform_metadata.js
+349 silly gunzTarPerm extractEntry src/cordova/metadata/amazon_fireos_parser.js
+350 silly gunzTarPerm extractEntry src/cordova/metadata/blackberry10_parser.js
+351 silly gunzTarPerm extractEntry src/cordova/metadata/browser_parser.js
+352 silly gunzTarPerm extractEntry src/cordova/metadata/firefoxos_parser.js
+353 silly gunzTarPerm extractEntry src/cordova/metadata/ios_parser.js
+354 silly gunzTarPerm extractEntry src/cordova/metadata/android_parser.js
+355 silly gunzTarPerm extractEntry src/cordova/metadata/parser.js
+356 silly gunzTarPerm extractEntry src/cordova/metadata/windows_parser.js
+357 silly gunzTarPerm extractEntry src/cordova/metadata/ubuntu_parser.js
+358 silly gunzTarPerm extractEntry src/cordova/metadata/webos_parser.js
+359 silly gunzTarPerm extractEntry src/cordova/metadata/wp8_parser.js
+360 silly gunzTarPerm extractEntry src/cordova/metadata/osx_parser.js
+361 silly gunzTarPerm extractEntry src/cordova/metadata/parserhelper/ParserHelper.js
+362 silly gunzTarPerm extractEntry src/cordova/metadata/parserhelper/preferences.js
+363 silly gunzTarPerm extractEntry src/hooks/Context.js
+364 silly gunzTarPerm extractEntry src/hooks/HooksRunner.js
+365 silly gunzTarPerm extractEntry src/hooks/scriptsFinder.js
+366 silly gunzTarPerm extractEntry src/platforms/PlatformApiPoly.js
+367 silly gunzTarPerm extractEntry src/platforms/platforms.js
+368 silly gunzTarPerm extractEntry src/platforms/platformsConfig.json
+369 silly gunzTarPerm extractEntry src/plugman/browserify.js
+370 silly gunzTarPerm extractEntry src/plugman/fetch.js
+371 silly gunzTarPerm extractEntry src/plugman/help.js
+372 silly gunzTarPerm extractEntry src/plugman/uninstall.js
+373 silly gunzTarPerm extractEntry src/plugman/info.js
+374 silly gunzTarPerm extractEntry src/plugman/createpackagejson.js
+375 silly gunzTarPerm extractEntry src/plugman/config.js
+376 silly gunzTarPerm extractEntry src/plugman/owner.js
+377 silly gunzTarPerm extractEntry src/plugman/platform.js
+378 silly gunzTarPerm extractEntry src/plugman/platform_operation.js
+379 silly gunzTarPerm extractEntry src/plugman/search.js
+380 silly gunzTarPerm extractEntry src/plugman/create.js
+381 silly gunzTarPerm extractEntry src/plugman/plugman.js
+382 silly gunzTarPerm extractEntry src/plugman/init-defaults.js
+383 silly gunzTarPerm extractEntry src/plugman/install.js
+384 silly gunzTarPerm extractEntry src/plugman/registry/manifest.js
+385 silly gunzTarPerm extractEntry src/plugman/registry/registry.js
+386 silly gunzTarPerm extractEntry src/plugman/registry/whitelist.js
+387 silly gunzTarPerm extractEntry src/plugman/platforms/amazon-fireos.js
+388 silly gunzTarPerm extractEntry src/plugman/platforms/blackberry10.js
+389 silly gunzTarPerm extractEntry src/plugman/platforms/browser.js
+390 silly gunzTarPerm extractEntry src/plugman/platforms/common.js
+391 silly gunzTarPerm extractEntry src/plugman/platforms/firefoxos.js
+392 silly gunzTarPerm extractEntry src/plugman/platforms/android.js
+393 silly gunzTarPerm extractEntry src/plugman/platforms/tizen.js
+394 silly gunzTarPerm extractEntry src/plugman/platforms/ubuntu.js
+395 silly gunzTarPerm extractEntry src/plugman/platforms/webos.js
+396 silly gunzTarPerm extractEntry src/plugman/platforms/windows.js
+397 silly gunzTarPerm extractEntry src/plugman/platforms/wp8.js
+398 silly gunzTarPerm extractEntry src/plugman/platforms/ios.js
+399 silly gunzTarPerm extractEntry src/plugman/help.txt
+400 silly gunzTarPerm extractEntry src/plugman/util/android-project.js
+401 silly gunzTarPerm extractEntry src/plugman/util/default-engines.js
+402 silly gunzTarPerm extractEntry src/plugman/util/dependencies.js
+403 silly gunzTarPerm extractEntry src/plugman/util/metadata.js
+404 silly gunzTarPerm extractEntry src/plugman/util/plist-helpers.js
+405 silly gunzTarPerm extractEntry src/plugman/util/plugins.js
+406 silly gunzTarPerm extractEntry src/plugman/util/search-and-replace.js
+407 silly gunzTarPerm extractEntry src/plugman/util/strip-license.js
+408 silly gunzTarPerm extractEntry src/util/npm-helper.js
+409 silly gunzTarPerm extractEntry src/util/promise-util.js
+410 silly gunzTarPerm extractEntry src/util/unpack.js
+411 silly gunzTarPerm extractEntry src/util/windows/csproj.js
+412 silly gunzTarPerm extractEntry src/util/windows/jsprojManager.js
+413 silly gunzTarPerm extractEntry .jscs.json
+414 silly gunzTarPerm extractEntry templates/base.js
+415 silly gunzTarPerm extractEntry templates/platforms/android/android.xml
+416 silly gunzTarPerm extractEntry templates/platforms/android/base.java
+417 silly gunzTarPerm extractEntry templates/platforms/ios/base.m
+418 silly gunzTarPerm extractEntry templates/platforms/ios/ios.xml
+419 silly gunzTarPerm extractEntry templates/platforms/windows/base.js
+420 silly gunzTarPerm extractEntry templates/platforms/windows/windows.xml
+421 silly gunzTarPerm extractEntry node_modules/lodash/package.json
+422 silly gunzTarPerm extractEntry node_modules/lodash/README.md
+423 silly gunzTarPerm extractEntry node_modules/lodash/LICENSE
+424 silly gunzTarPerm extractEntry node_modules/lodash/chain.js
+425 silly gunzTarPerm extractEntry node_modules/lodash/string.js
+426 silly gunzTarPerm extractEntry node_modules/lodash/collection.js
+427 silly gunzTarPerm extractEntry node_modules/lodash/array.js
+428 silly gunzTarPerm extractEntry node_modules/lodash/date.js
+429 silly gunzTarPerm extractEntry node_modules/lodash/number.js
+430 silly gunzTarPerm extractEntry node_modules/lodash/function.js
+431 silly gunzTarPerm extractEntry node_modules/lodash/index.js
+432 silly gunzTarPerm extractEntry node_modules/lodash/math.js
+433 silly gunzTarPerm extractEntry node_modules/lodash/support.js
+434 silly gunzTarPerm extractEntry node_modules/lodash/lang.js
+435 silly gunzTarPerm extractEntry node_modules/lodash/object.js
+436 silly gunzTarPerm extractEntry node_modules/lodash/utility.js
+437 silly gunzTarPerm extractEntry node_modules/lodash/collection/all.js
+438 silly gunzTarPerm extractEntry node_modules/lodash/collection/forEachRight.js
+439 silly gunzTarPerm extractEntry node_modules/lodash/collection/groupBy.js
+440 silly gunzTarPerm extractEntry node_modules/lodash/collection/include.js
+441 silly gunzTarPerm extractEntry node_modules/lodash/collection/includes.js
+442 silly gunzTarPerm extractEntry node_modules/lodash/collection/forEach.js
+443 silly gunzTarPerm extractEntry node_modules/lodash/collection/inject.js
+444 silly gunzTarPerm extractEntry node_modules/lodash/collection/invoke.js
+445 silly gunzTarPerm extractEntry node_modules/lodash/collection/map.js
+446 silly gunzTarPerm extractEntry node_modules/lodash/collection/max.js
+447 silly gunzTarPerm extractEntry node_modules/lodash/collection/min.js
+448 silly gunzTarPerm extractEntry node_modules/lodash/collection/foldr.js
+449 silly gunzTarPerm extractEntry node_modules/lodash/collection/partition.js
+450 silly gunzTarPerm extractEntry node_modules/lodash/collection/foldl.js
+451 silly gunzTarPerm extractEntry node_modules/lodash/collection/pluck.js
+452 silly gunzTarPerm extractEntry node_modules/lodash/collection/findWhere.js
+453 silly gunzTarPerm extractEntry node_modules/lodash/collection/reduce.js
+454 silly gunzTarPerm extractEntry node_modules/lodash/collection/findLast.js
+455 silly gunzTarPerm extractEntry node_modules/lodash/collection/reduceRight.js
+456 silly gunzTarPerm extractEntry node_modules/lodash/collection/find.js
+457 silly gunzTarPerm extractEntry node_modules/lodash/collection/reject.js
+458 silly gunzTarPerm extractEntry node_modules/lodash/collection/filter.js
+459 silly gunzTarPerm extractEntry node_modules/lodash/collection/sample.js
+460 silly gunzTarPerm extractEntry node_modules/lodash/collection/every.js
+461 silly gunzTarPerm extractEntry node_modules/lodash/collection/select.js
+462 silly gunzTarPerm extractEntry node_modules/lodash/collection/eachRight.js
+463 silly gunzTarPerm extractEntry node_modules/lodash/collection/shuffle.js
+464 silly gunzTarPerm extractEntry node_modules/lodash/collection/each.js
+465 silly gunzTarPerm extractEntry node_modules/lodash/collection/size.js
+466 silly gunzTarPerm extractEntry node_modules/lodash/collection/detect.js
+467 silly gunzTarPerm extractEntry node_modules/lodash/collection/some.js
+468 silly gunzTarPerm extractEntry node_modules/lodash/collection/countBy.js
+469 silly gunzTarPerm extractEntry node_modules/lodash/collection/sortBy.js
+470 silly gunzTarPerm extractEntry node_modules/lodash/collection/contains.js
+471 silly gunzTarPerm extractEntry node_modules/lodash/collection/sortByAll.js
+472 silly gunzTarPerm extractEntry node_modules/lodash/collection/collect.js
+473 silly gunzTarPerm extractEntry node_modules/lodash/collection/sortByOrder.js
+474 silly gunzTarPerm extractEntry node_modules/lodash/collection/at.js
+475 silly gunzTarPerm extractEntry node_modules/lodash/collection/sum.js
+476 silly gunzTarPerm extractEntry node_modules/lodash/collection/any.js
+477 silly gunzTarPerm extractEntry node_modules/lodash/collection/where.js
+478 silly gunzTarPerm extractEntry node_modules/lodash/collection/indexBy.js
+479 silly gunzTarPerm extractEntry node_modules/lodash/math/add.js
+480 silly gunzTarPerm extractEntry node_modules/lodash/math/ceil.js
+481 silly gunzTarPerm extractEntry node_modules/lodash/math/floor.js
+482 silly gunzTarPerm extractEntry node_modules/lodash/math/max.js
+483 silly gunzTarPerm extractEntry node_modules/lodash/math/min.js
+484 silly gunzTarPerm extractEntry node_modules/lodash/math/round.js
+485 silly gunzTarPerm extractEntry node_modules/lodash/math/sum.js
+486 silly gunzTarPerm extractEntry node_modules/lodash/number/inRange.js
+487 silly gunzTarPerm extractEntry node_modules/lodash/number/random.js
+488 silly gunzTarPerm extractEntry node_modules/lodash/function/after.js
+489 silly gunzTarPerm extractEntry node_modules/lodash/function/curryRight.js
+490 silly gunzTarPerm extractEntry node_modules/lodash/function/debounce.js
+491 silly gunzTarPerm extractEntry node_modules/lodash/function/defer.js
+492 silly gunzTarPerm extractEntry node_modules/lodash/function/delay.js
+493 silly gunzTarPerm extractEntry node_modules/lodash/function/curry.js
+494 silly gunzTarPerm extractEntry node_modules/lodash/function/flowRight.js
+495 silly gunzTarPerm extractEntry node_modules/lodash/function/memoize.js
+496 silly gunzTarPerm extractEntry node_modules/lodash/function/modArgs.js
+497 silly gunzTarPerm extractEntry node_modules/lodash/function/negate.js
+498 silly gunzTarPerm extractEntry node_modules/lodash/function/once.js
+499 silly gunzTarPerm extractEntry node_modules/lodash/function/compose.js
+500 silly gunzTarPerm extractEntry node_modules/lodash/function/partial.js
+501 silly gunzTarPerm extractEntry node_modules/lodash/function/bindKey.js
+502 silly gunzTarPerm extractEntry node_modules/lodash/function/partialRight.js
+503 silly gunzTarPerm extractEntry node_modules/lodash/function/bindAll.js
+504 silly gunzTarPerm extractEntry node_modules/lodash/function/rearg.js
+505 silly gunzTarPerm extractEntry node_modules/lodash/function/bind.js
+506 silly gunzTarPerm extractEntry node_modules/lodash/function/restParam.js
+507 silly gunzTarPerm extractEntry node_modules/lodash/function/before.js
+508 silly gunzTarPerm extractEntry node_modules/lodash/function/spread.js
+509 silly gunzTarPerm extractEntry node_modules/lodash/function/backflow.js
+510 silly gunzTarPerm extractEntry node_modules/lodash/function/throttle.js
+511 silly gunzTarPerm extractEntry node_modules/lodash/function/ary.js
+512 silly gunzTarPerm extractEntry node_modules/lodash/function/wrap.js
+513 silly gunzTarPerm extractEntry node_modules/lodash/function/flow.js
+514 silly gunzTarPerm extractEntry node_modules/lodash/object/assign.js
+515 silly gunzTarPerm extractEntry node_modules/lodash/object/functions.js
+516 silly gunzTarPerm extractEntry node_modules/lodash/object/get.js
+517 silly gunzTarPerm extractEntry node_modules/lodash/object/has.js
+518 silly gunzTarPerm extractEntry node_modules/lodash/object/forOwnRight.js
+519 silly gunzTarPerm extractEntry node_modules/lodash/object/keys.js
+520 silly gunzTarPerm extractEntry node_modules/lodash/object/keysIn.js
+521 silly gunzTarPerm extractEntry node_modules/lodash/object/mapKeys.js
+522 silly gunzTarPerm extractEntry node_modules/lodash/object/mapValues.js
+523 silly gunzTarPerm extractEntry node_modules/lodash/object/merge.js
+524 silly gunzTarPerm extractEntry node_modules/lodash/object/forOwn.js
+525 silly gunzTarPerm extractEntry node_modules/lodash/object/methods.js
+526 silly gunzTarPerm extractEntry node_modules/lodash/object/forInRight.js
+527 silly gunzTarPerm extractEntry node_modules/lodash/object/omit.js
+528 silly gunzTarPerm extractEntry node_modules/lodash/object/forIn.js
+529 silly gunzTarPerm extractEntry node_modules/lodash/object/pairs.js
+530 silly gunzTarPerm extractEntry node_modules/lodash/object/findLastKey.js
+531 silly gunzTarPerm extractEntry node_modules/lodash/object/pick.js
+532 silly gunzTarPerm extractEntry node_modules/lodash/object/findKey.js
+533 silly gunzTarPerm extractEntry node_modules/lodash/object/result.js
+534 silly gunzTarPerm extractEntry node_modules/lodash/object/extend.js
+535 silly gunzTarPerm extractEntry node_modules/lodash/object/set.js
+536 silly gunzTarPerm extractEntry node_modules/lodash/object/defaultsDeep.js
+537 silly gunzTarPerm extractEntry node_modules/lodash/object/transform.js
+538 silly gunzTarPerm extractEntry node_modules/lodash/object/defaults.js
+539 silly gunzTarPerm extractEntry node_modules/lodash/object/values.js
+540 silly gunzTarPerm extractEntry node_modules/lodash/object/create.js
+541 silly gunzTarPerm extractEntry node_modules/lodash/object/valuesIn.js
+542 silly gunzTarPerm extractEntry node_modules/lodash/object/invert.js
+543 silly gunzTarPerm extractEntry node_modules/lodash/date/now.js
+544 silly gunzTarPerm extractEntry node_modules/lodash/internal/LazyWrapper.js
+545 silly gunzTarPerm extractEntry node_modules/lodash/internal/compareAscending.js
+546 silly gunzTarPerm extractEntry node_modules/lodash/internal/compareMultiple.js
+547 silly gunzTarPerm extractEntry node_modules/lodash/internal/composeArgs.js
+548 silly gunzTarPerm extractEntry node_modules/lodash/internal/charsRightIndex.js
+549 silly gunzTarPerm extractEntry node_modules/lodash/internal/createAggregator.js
+550 silly gunzTarPerm extractEntry node_modules/lodash/internal/createAssigner.js
+551 silly gunzTarPerm extractEntry node_modules/lodash/internal/createBaseEach.js
+552 silly gunzTarPerm extractEntry node_modules/lodash/internal/createBaseFor.js
+553 silly gunzTarPerm extractEntry node_modules/lodash/internal/createBindWrapper.js
+554 silly gunzTarPerm extractEntry node_modules/lodash/internal/charsLeftIndex.js
+555 silly gunzTarPerm extractEntry node_modules/lodash/internal/createCache.js
+556 silly gunzTarPerm extractEntry node_modules/lodash/internal/cachePush.js
+557 silly gunzTarPerm extractEntry node_modules/lodash/internal/createCompounder.js
+558 silly gunzTarPerm extractEntry node_modules/lodash/internal/cacheIndexOf.js
+559 silly gunzTarPerm extractEntry node_modules/lodash/internal/createCtorWrapper.js
+560 silly gunzTarPerm extractEntry node_modules/lodash/internal/bufferClone.js
+561 silly gunzTarPerm extractEntry node_modules/lodash/internal/createCurry.js
+562 silly gunzTarPerm extractEntry node_modules/lodash/internal/bindCallback.js
+563 silly gunzTarPerm extractEntry node_modules/lodash/internal/createDefaults.js
+564 silly gunzTarPerm extractEntry node_modules/lodash/internal/binaryIndexBy.js
+565 silly gunzTarPerm extractEntry node_modules/lodash/internal/createExtremum.js
+566 silly gunzTarPerm extractEntry node_modules/lodash/internal/binaryIndex.js
+567 silly gunzTarPerm extractEntry node_modules/lodash/internal/createFind.js
+568 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseWrapperValue.js
+569 silly gunzTarPerm extractEntry node_modules/lodash/internal/createFindIndex.js
+570 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseWhile.js
+571 silly gunzTarPerm extractEntry node_modules/lodash/internal/createFindKey.js
+572 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseValues.js
+573 silly gunzTarPerm extractEntry node_modules/lodash/internal/createFlow.js
+574 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseUniq.js
+575 silly gunzTarPerm extractEntry node_modules/lodash/internal/createForEach.js
+576 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseToString.js
+577 silly gunzTarPerm extractEntry node_modules/lodash/internal/createForIn.js
+578 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseSum.js
+579 silly gunzTarPerm extractEntry node_modules/lodash/internal/createForOwn.js
+580 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseSortByOrder.js
+581 silly gunzTarPerm extractEntry node_modules/lodash/internal/createHybridWrapper.js
+582 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseSortBy.js
+583 silly gunzTarPerm extractEntry node_modules/lodash/internal/createObjectMapper.js
+584 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseSome.js
+585 silly gunzTarPerm extractEntry node_modules/lodash/internal/createPadDir.js
+586 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseSlice.js
+587 silly gunzTarPerm extractEntry node_modules/lodash/internal/createPadding.js
+588 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseSetData.js
+589 silly gunzTarPerm extractEntry node_modules/lodash/internal/createPartial.js
+590 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseReduce.js
+591 silly gunzTarPerm extractEntry node_modules/lodash/internal/createPartialWrapper.js
+592 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseRandom.js
+593 silly gunzTarPerm extractEntry node_modules/lodash/internal/createReduce.js
+594 silly gunzTarPerm extractEntry node_modules/lodash/internal/basePullAt.js
+595 silly gunzTarPerm extractEntry node_modules/lodash/internal/createRound.js
+596 silly gunzTarPerm extractEntry node_modules/lodash/internal/basePropertyDeep.js
+597 silly gunzTarPerm extractEntry node_modules/lodash/internal/createSortedIndex.js
+598 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseProperty.js
+599 silly gunzTarPerm extractEntry node_modules/lodash/internal/createWrapper.js
+600 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseMergeDeep.js
+601 silly gunzTarPerm extractEntry node_modules/lodash/internal/deburrLetter.js
+602 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseMerge.js
+603 silly gunzTarPerm extractEntry node_modules/lodash/internal/equalArrays.js
+604 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseMatchesProperty.js
+605 silly gunzTarPerm extractEntry node_modules/lodash/internal/equalByTag.js
+606 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseMatches.js
+607 silly gunzTarPerm extractEntry node_modules/lodash/internal/equalObjects.js
+608 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseMap.js
+609 silly gunzTarPerm extractEntry node_modules/lodash/internal/escapeHtmlChar.js
+610 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseLodash.js
+611 silly gunzTarPerm extractEntry node_modules/lodash/internal/escapeRegExpChar.js
+612 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseIsMatch.js
+613 silly gunzTarPerm extractEntry node_modules/lodash/internal/escapeStringChar.js
+614 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseIsFunction.js
+615 silly gunzTarPerm extractEntry node_modules/lodash/internal/getData.js
+616 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseIsEqualDeep.js
+617 silly gunzTarPerm extractEntry node_modules/lodash/internal/getFuncName.js
+618 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseIsEqual.js
+619 silly gunzTarPerm extractEntry node_modules/lodash/internal/getLength.js
+620 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseIndexOf.js
+621 silly gunzTarPerm extractEntry node_modules/lodash/internal/getMatchData.js
+622 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseGet.js
+623 silly gunzTarPerm extractEntry node_modules/lodash/internal/getNative.js
+624 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseFunctions.js
+625 silly gunzTarPerm extractEntry node_modules/lodash/internal/getView.js
+626 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseForRight.js
+627 silly gunzTarPerm extractEntry node_modules/lodash/internal/indexOfNaN.js
+628 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseForOwnRight.js
+629 silly gunzTarPerm extractEntry node_modules/lodash/internal/initCloneArray.js
+630 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseForOwn.js
+631 silly gunzTarPerm extractEntry node_modules/lodash/internal/initCloneByTag.js
+632 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseForIn.js
+633 silly gunzTarPerm extractEntry node_modules/lodash/internal/initCloneObject.js
+634 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseFor.js
+635 silly gunzTarPerm extractEntry node_modules/lodash/internal/invokePath.js
+636 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseFlatten.js
+637 silly gunzTarPerm extractEntry node_modules/lodash/internal/isArrayLike.js
+638 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseFindIndex.js
+639 silly gunzTarPerm extractEntry node_modules/lodash/internal/isIndex.js
+640 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseFind.js
+641 silly gunzTarPerm extractEntry node_modules/lodash/internal/isIterateeCall.js
+642 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseFilter.js
+643 silly gunzTarPerm extractEntry node_modules/lodash/internal/isKey.js
+644 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseFill.js
+645 silly gunzTarPerm extractEntry node_modules/lodash/internal/isLaziable.js
+646 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseExtremum.js
+647 silly gunzTarPerm extractEntry node_modules/lodash/internal/isLength.js
+648 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseEvery.js
+649 silly gunzTarPerm extractEntry node_modules/lodash/internal/isObjectLike.js
+650 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseEachRight.js
+651 silly gunzTarPerm extractEntry node_modules/lodash/internal/isSpace.js
+652 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseEach.js
+653 silly gunzTarPerm extractEntry node_modules/lodash/internal/isStrictComparable.js
+654 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseDifference.js
+655 silly gunzTarPerm extractEntry node_modules/lodash/internal/lazyClone.js
+656 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseDelay.js
+657 silly gunzTarPerm extractEntry node_modules/lodash/internal/lazyReverse.js
+658 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseCreate.js
+659 silly gunzTarPerm extractEntry node_modules/lodash/internal/lazyValue.js
+660 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseCopy.js
+661 silly gunzTarPerm extractEntry node_modules/lodash/internal/mapDelete.js
+662 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseCompareAscending.js
+663 silly gunzTarPerm extractEntry node_modules/lodash/internal/mapGet.js
+664 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseClone.js
+665 silly gunzTarPerm extractEntry node_modules/lodash/internal/mapHas.js
+666 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseCallback.js
+667 silly gunzTarPerm extractEntry node_modules/lodash/internal/mapSet.js
+668 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseAt.js
+669 silly gunzTarPerm extractEntry node_modules/lodash/internal/mergeData.js
+670 silly gunzTarPerm extractEntry node_modules/lodash/internal/baseAssign.js
+671 silly gunzTarPerm extractEntry node_modules/lodash/internal/mergeDefaults.js
+672 silly gunzTarPerm extractEntry node_modules/lodash/internal/assignWith.js
+673 silly gunzTarPerm extractEntry node_modules/lodash/internal/metaMap.js
+674 silly gunzTarPerm extractEntry node_modules/lodash/internal/assignOwnDefaults.js
+675 silly gunzTarPerm extractEntry node_modules/lodash/internal/pickByArray.js
+676 silly gunzTarPerm extractEntry node_modules/lodash/internal/assignDefaults.js
+677 silly gunzTarPerm extractEntry node_modules/lodash/internal/pickByCallback.js
+678 silly gunzTarPerm extractEntry node_modules/lodash/internal/arraySum.js
+679 silly gunzTarPerm extractEntry node_modules/lodash/internal/reEscape.js
+680 silly gunzTarPerm extractEntry node_modules/lodash/internal/arraySome.js
+681 silly gunzTarPerm extractEntry node_modules/lodash/internal/reEvaluate.js
+682 silly gunzTarPerm extractEntry node_modules/lodash/internal/arrayReduceRight.js
+683 silly gunzTarPerm extractEntry node_modules/lodash/internal/reInterpolate.js
+684 silly gunzTarPerm extractEntry node_modules/lodash/internal/arrayReduce.js
+685 silly gunzTarPerm extractEntry node_modules/lodash/internal/realNames.js
+686 silly gunzTarPerm extractEntry node_modules/lodash/internal/arrayPush.js
+687 silly gunzTarPerm extractEntry node_modules/lodash/internal/reorder.js
+688 silly gunzTarPerm extractEntry node_modules/lodash/internal/arrayMap.js
+689 silly gunzTarPerm extractEntry node_modules/lodash/internal/replaceHolders.js
+690 silly gunzTarPerm extractEntry node_modules/lodash/internal/arrayFilter.js
+691 silly gunzTarPerm extractEntry node_modules/lodash/internal/setData.js
+692 silly gunzTarPerm extractEntry node_modules/lodash/internal/arrayExtremum.js
+693 silly gunzTarPerm extractEntry node_modules/lodash/internal/shimKeys.js
+694 silly gunzTarPerm extractEntry node_modules/lodash/internal/arrayEvery.js
+695 silly gunzTarPerm extractEntry node_modules/lodash/internal/sortedUniq.js
+696 silly gunzTarPerm extractEntry node_modules/lodash/internal/arrayEachRight.js
+697 silly gunzTarPerm extractEntry node_modules/lodash/internal/toIterable.js
+698 silly gunzTarPerm extractEntry node_modules/lodash/internal/arrayEach.js
+699 silly gunzTarPerm extractEntry node_modules/lodash/internal/toObject.js
+700 silly gunzTarPerm extractEntry node_modules/lodash/internal/arrayCopy.js
+701 silly gunzTarPerm extractEntry node_modules/lodash/internal/toPath.js
+702 silly gunzTarPerm extractEntry node_modules/lodash/internal/arrayConcat.js
+703 silly gunzTarPerm extractEntry node_modules/lodash/internal/trimmedLeftIndex.js
+704 silly gunzTarPerm extractEntry node_modules/lodash/internal/SetCache.js
+705 silly gunzTarPerm extractEntry node_modules/lodash/internal/trimmedRightIndex.js
+706 silly gunzTarPerm extractEntry node_modules/lodash/internal/MapCache.js
+707 silly gunzTarPerm extractEntry node_modules/lodash/internal/unescapeHtmlChar.js
+708 silly gunzTarPerm extractEntry node_modules/lodash/internal/LodashWrapper.js
+709 silly gunzTarPerm extractEntry node_modules/lodash/internal/wrapperClone.js
+710 silly gunzTarPerm extractEntry node_modules/lodash/internal/composeArgsRight.js
+711 silly gunzTarPerm extractEntry node_modules/lodash/string/camelCase.js
+712 silly gunzTarPerm extractEntry node_modules/lodash/string/padLeft.js
+713 silly gunzTarPerm extractEntry node_modules/lodash/string/padRight.js
+714 silly gunzTarPerm extractEntry node_modules/lodash/string/parseInt.js
+715 silly gunzTarPerm extractEntry node_modules/lodash/string/pad.js
+716 silly gunzTarPerm extractEntry node_modules/lodash/string/snakeCase.js
+717 silly gunzTarPerm extractEntry node_modules/lodash/string/startCase.js
+718 silly gunzTarPerm extractEntry node_modules/lodash/string/startsWith.js
+719 silly gunzTarPerm extractEntry node_modules/lodash/string/template.js
+720 silly gunzTarPerm extractEntry node_modules/lodash/string/templateSettings.js
+721 silly gunzTarPerm extractEntry node_modules/lodash/string/kebabCase.js
+722 silly gunzTarPerm extractEntry node_modules/lodash/string/trim.js
+723 silly gunzTarPerm extractEntry node_modules/lodash/string/escapeRegExp.js
+724 silly gunzTarPerm extractEntry node_modules/lodash/string/trimLeft.js
+725 silly gunzTarPerm extractEntry node_modules/lodash/string/escape.js
+726 silly gunzTarPerm extractEntry node_modules/lodash/string/trimRight.js
+727 silly gunzTarPerm extractEntry node_modules/lodash/string/endsWith.js
+728 silly gunzTarPerm extractEntry node_modules/lodash/string/trunc.js
+729 silly gunzTarPerm extractEntry node_modules/lodash/string/deburr.js
+730 silly gunzTarPerm extractEntry node_modules/lodash/string/unescape.js
+731 silly gunzTarPerm extractEntry node_modules/lodash/string/capitalize.js
+732 silly gunzTarPerm extractEntry node_modules/lodash/string/words.js
+733 silly gunzTarPerm extractEntry node_modules/lodash/string/repeat.js
+734 silly gunzTarPerm extractEntry node_modules/lodash/chain/chain.js
+735 silly gunzTarPerm extractEntry node_modules/lodash/chain/run.js
+736 silly gunzTarPerm extractEntry node_modules/lodash/chain/tap.js
+737 silly gunzTarPerm extractEntry node_modules/lodash/chain/thru.js
+738 silly gunzTarPerm extractEntry node_modules/lodash/chain/toJSON.js
+739 silly gunzTarPerm extractEntry node_modules/lodash/chain/reverse.js
+740 silly gunzTarPerm extractEntry node_modules/lodash/chain/value.js
+741 silly gunzTarPerm extractEntry node_modules/lodash/chain/valueOf.js
+742 silly gunzTarPerm extractEntry node_modules/lodash/chain/wrapperChain.js
+743 silly gunzTarPerm extractEntry node_modules/lodash/chain/wrapperCommit.js
+744 silly gunzTarPerm extractEntry node_modules/lodash/chain/wrapperConcat.js
+745 silly gunzTarPerm extractEntry node_modules/lodash/chain/plant.js
+746 silly gunzTarPerm extractEntry node_modules/lodash/chain/wrapperPlant.js
+747 silly gunzTarPerm extractEntry node_modules/lodash/chain/lodash.js
+748 silly gunzTarPerm extractEntry node_modules/lodash/chain/wrapperReverse.js
+749 silly gunzTarPerm extractEntry node_modules/lodash/chain/concat.js
+750 silly gunzTarPerm extractEntry node_modules/lodash/chain/wrapperToString.js
+751 silly gunzTarPerm extractEntry node_modules/lodash/chain/commit.js
+752 silly gunzTarPerm extractEntry node_modules/lodash/chain/wrapperValue.js
+753 silly gunzTarPerm extractEntry node_modules/lodash/chain/toString.js
+754 silly gunzTarPerm extractEntry node_modules/lodash/array/chunk.js
+755 silly gunzTarPerm extractEntry node_modules/lodash/array/last.js
+756 silly gunzTarPerm extractEntry node_modules/lodash/array/lastIndexOf.js
+757 silly gunzTarPerm extractEntry node_modules/lodash/array/object.js
+758 silly gunzTarPerm extractEntry node_modules/lodash/array/pull.js
+759 silly gunzTarPerm extractEntry node_modules/lodash/array/intersection.js
+760 silly gunzTarPerm extractEntry node_modules/lodash/array/remove.js
+761 silly gunzTarPerm extractEntry node_modules/lodash/array/rest.js
+762 silly gunzTarPerm extractEntry node_modules/lodash/array/slice.js
+763 silly gunzTarPerm extractEntry node_modules/lodash/array/sortedIndex.js
+764 silly gunzTarPerm extractEntry node_modules/lodash/array/sortedLastIndex.js
+765 silly gunzTarPerm extractEntry node_modules/lodash/array/initial.js
+766 silly gunzTarPerm extractEntry node_modules/lodash/array/tail.js
+767 silly gunzTarPerm extractEntry node_modules/lodash/array/indexOf.js
+768 silly gunzTarPerm extractEntry node_modules/lodash/array/take.js
+769 silly gunzTarPerm extractEntry node_modules/lodash/array/head.js
+770 silly gunzTarPerm extractEntry node_modules/lodash/array/takeRight.js
+771 silly gunzTarPerm extractEntry node_modules/lodash/array/flattenDeep.js
+772 silly gunzTarPerm extractEntry node_modules/lodash/array/takeRightWhile.js
+773 silly gunzTarPerm extractEntry node_modules/lodash/array/flatten.js
+774 silly gunzTarPerm extractEntry node_modules/lodash/array/takeWhile.js
+775 silly gunzTarPerm extractEntry node_modules/lodash/array/first.js
+776 silly gunzTarPerm extractEntry node_modules/lodash/array/union.js
+777 silly gunzTarPerm extractEntry node_modules/lodash/array/findLastIndex.js
+778 silly gunzTarPerm extractEntry node_modules/lodash/array/uniq.js
+779 silly gunzTarPerm extractEntry node_modules/lodash/array/findIndex.js
+780 silly gunzTarPerm extractEntry node_modules/lodash/array/unique.js
+781 silly gunzTarPerm extractEntry node_modules/lodash/array/fill.js
+782 silly gunzTarPerm extractEntry node_modules/lodash/array/unzip.js
+783 silly gunzTarPerm extractEntry node_modules/lodash/array/dropWhile.js
+784 silly gunzTarPerm extractEntry node_modules/lodash/array/unzipWith.js
+785 silly gunzTarPerm extractEntry node_modules/lodash/array/dropRightWhile.js
+786 silly gunzTarPerm extractEntry node_modules/lodash/array/without.js
+787 silly gunzTarPerm extractEntry node_modules/lodash/array/dropRight.js
+788 silly gunzTarPerm extractEntry node_modules/lodash/array/xor.js
+789 silly gunzTarPerm extractEntry node_modules/lodash/array/drop.js
+790 silly gunzTarPerm extractEntry node_modules/lodash/array/zip.js
+791 silly gunzTarPerm extractEntry node_modules/lodash/array/difference.js
+792 silly gunzTarPerm extractEntry node_modules/lodash/array/zipObject.js
+793 silly gunzTarPerm extractEntry node_modules/lodash/array/compact.js
+794 silly gunzTarPerm extractEntry node_modules/lodash/array/zipWith.js
+795 silly gunzTarPerm extractEntry node_modules/lodash/array/pullAt.js
+796 silly gunzTarPerm extractEntry node_modules/lodash/utility/attempt.js
+797 silly gunzTarPerm extractEntry node_modules/lodash/utility/iteratee.js
+798 silly gunzTarPerm extractEntry node_modules/lodash/utility/matches.js
+799 silly gunzTarPerm extractEntry node_modules/lodash/utility/matchesProperty.js
+800 silly gunzTarPerm extractEntry node_modules/lodash/utility/method.js
+801 silly gunzTarPerm extractEntry node_modules/lodash/utility/identity.js
+802 silly gunzTarPerm extractEntry node_modules/lodash/utility/mixin.js
+803 silly gunzTarPerm extractEntry node_modules/lodash/utility/noop.js
+804 silly gunzTarPerm extractEntry node_modules/lodash/utility/property.js
+805 silly gunzTarPerm extractEntry node_modules/lodash/utility/propertyOf.js
+806 silly gunzTarPerm extractEntry node_modules/lodash/utility/range.js
+807 silly gunzTarPerm extractEntry node_modules/lodash/utility/constant.js
+808 silly gunzTarPerm extractEntry node_modules/lodash/utility/times.js
+809 silly gunzTarPerm extractEntry node_modules/lodash/utility/callback.js
+810 silly gunzTarPerm extractEntry node_modules/lodash/utility/uniqueId.js
+811 silly gunzTarPerm extractEntry node_modules/lodash/utility/methodOf.js
+812 silly gunzTarPerm extractEntry node_modules/lodash/lang/clone.js
+813 silly gunzTarPerm extractEntry node_modules/lodash/lang/isEqual.js
+814 silly gunzTarPerm extractEntry node_modules/lodash/lang/isError.js
+815 silly gunzTarPerm extractEntry node_modules/lodash/lang/isFinite.js
+816 silly gunzTarPerm extractEntry node_modules/lodash/lang/isFunction.js
+817 silly gunzTarPerm extractEntry node_modules/lodash/lang/isEmpty.js
+818 silly gunzTarPerm extractEntry node_modules/lodash/lang/isNaN.js
+819 silly gunzTarPerm extractEntry node_modules/lodash/lang/isNative.js
+820 silly gunzTarPerm extractEntry node_modules/lodash/lang/isNull.js
+821 silly gunzTarPerm extractEntry node_modules/lodash/lang/isNumber.js
+822 silly gunzTarPerm extractEntry node_modules/lodash/lang/isObject.js
+823 silly gunzTarPerm extractEntry node_modules/lodash/lang/isElement.js
+824 silly gunzTarPerm extractEntry node_modules/lodash/lang/isPlainObject.js
+825 silly gunzTarPerm extractEntry node_modules/lodash/lang/isDate.js
+826 silly gunzTarPerm extractEntry node_modules/lodash/lang/isRegExp.js
+827 silly gunzTarPerm extractEntry node_modules/lodash/lang/isBoolean.js
+828 silly gunzTarPerm extractEntry node_modules/lodash/lang/isString.js
+829 silly gunzTarPerm extractEntry node_modules/lodash/lang/isArray.js
+830 silly gunzTarPerm extractEntry node_modules/lodash/lang/isTypedArray.js
+831 silly gunzTarPerm extractEntry node_modules/lodash/lang/isArguments.js
+832 silly gunzTarPerm extractEntry node_modules/lodash/lang/isUndefined.js
+833 silly gunzTarPerm extractEntry node_modules/lodash/lang/gte.js
+834 silly gunzTarPerm extractEntry node_modules/lodash/lang/lt.js
+835 silly gunzTarPerm extractEntry node_modules/lodash/lang/gt.js
+836 silly gunzTarPerm extractEntry node_modules/lodash/lang/lte.js
+837 silly gunzTarPerm extractEntry node_modules/lodash/lang/eq.js
+838 silly gunzTarPerm extractEntry node_modules/lodash/lang/toArray.js
+839 silly gunzTarPerm extractEntry node_modules/lodash/lang/cloneDeep.js
+840 silly gunzTarPerm extractEntry node_modules/lodash/lang/toPlainObject.js
+841 silly gunzTarPerm extractEntry node_modules/lodash/lang/isMatch.js
+842 silly gunzTarPerm extractEntry node_modules/ansi/package.json
+843 silly gunzTarPerm extractEntry node_modules/ansi/.npmignore
+844 silly gunzTarPerm extractEntry node_modules/ansi/README.md
+845 silly gunzTarPerm extractEntry node_modules/ansi/LICENSE
+846 silly gunzTarPerm extractEntry node_modules/ansi/.jshintrc
+847 silly gunzTarPerm extractEntry node_modules/ansi/History.md
+848 silly gunzTarPerm extractEntry node_modules/ansi/examples/cursorPosition.js
+849 silly gunzTarPerm extractEntry node_modules/ansi/examples/beep/index.js
+850 silly gunzTarPerm extractEntry node_modules/ansi/examples/clear/index.js
+851 silly gunzTarPerm extractEntry node_modules/ansi/examples/progress/index.js
+852 silly gunzTarPerm extractEntry node_modules/ansi/lib/ansi.js
+853 silly gunzTarPerm extractEntry node_modules/ansi/lib/newlines.js
+854 silly gunzTarPerm extractEntry node_modules/base64-js/package.json
+855 silly gunzTarPerm extractEntry node_modules/base64-js/README.md
+856 silly gunzTarPerm extractEntry node_modules/base64-js/.travis.yml
+857 silly gunzTarPerm extractEntry node_modules/base64-js/LICENSE.MIT
+858 silly gunzTarPerm extractEntry node_modules/base64-js/bench/bench.js
+859 silly gunzTarPerm extractEntry node_modules/base64-js/lib/b64.js
+860 silly gunzTarPerm extractEntry node_modules/base64-js/test/convert.js
+861 silly gunzTarPerm extractEntry node_modules/base64-js/test/url-safe.js
+862 silly gunzTarPerm extractEntry node_modules/big-integer/package.json
+863 silly gunzTarPerm extractEntry node_modules/big-integer/README.md
+864 silly gunzTarPerm extractEntry node_modules/big-integer/BigInteger.js
+865 silly gunzTarPerm extractEntry node_modules/big-integer/BigInteger.min.js
+866 silly gunzTarPerm extractEntry node_modules/bplist-parser/package.json
+867 silly gunzTarPerm extractEntry node_modules/bplist-parser/.npmignore
+868 silly gunzTarPerm extractEntry node_modules/bplist-parser/README.md
+869 silly gunzTarPerm extractEntry node_modules/bplist-parser/bplistParser.js
+870 silly gunzTarPerm extractEntry node_modules/bplist-parser/test/parseTest.js
+871 silly gunzTarPerm extractEntry node_modules/bplist-parser/test/airplay.bplist
+872 silly gunzTarPerm extractEntry node_modules/bplist-parser/test/iTunes-small.bplist
+873 silly gunzTarPerm extractEntry node_modules/bplist-parser/test/int64.bplist
+874 silly gunzTarPerm extractEntry node_modules/bplist-parser/test/int64.xml
+875 silly gunzTarPerm extractEntry node_modules/bplist-parser/test/sample1.bplist
+876 silly gunzTarPerm extractEntry node_modules/bplist-parser/test/sample2.bplist
+877 silly gunzTarPerm extractEntry node_modules/bplist-parser/test/uid.bplist
+878 silly gunzTarPerm extractEntry node_modules/bplist-parser/test/utf16.bplist
+879 silly gunzTarPerm extractEntry node_modules/bplist-parser/test/utf16_chinese.plist
+880 silly gunzTarPerm extractEntry node_modules/brace-expansion/package.json
+881 silly gunzTarPerm extractEntry node_modules/brace-expansion/.npmignore
+882 silly gunzTarPerm extractEntry node_modules/brace-expansion/README.md
+883 silly gunzTarPerm extractEntry node_modules/brace-expansion/example.js
+884 silly gunzTarPerm extractEntry node_modules/brace-expansion/index.js
+885 silly gunzTarPerm extractEntry node_modules/concat-map/package.json
+886 silly gunzTarPerm extractEntry node_modules/concat-map/LICENSE
+887 silly gunzTarPerm extractEntry node_modules/concat-map/index.js
+888 silly gunzTarPerm extractEntry node_modules/concat-map/.travis.yml
+889 silly gunzTarPerm extractEntry node_modules/concat-map/README.markdown
+890 silly gunzTarPerm extractEntry node_modules/concat-map/example/map.js
+891 silly gunzTarPerm extractEntry node_modules/concat-map/test/map.js
+892 silly gunzTarPerm extractEntry node_modules/cordova-common/package.json
+893 silly gunzTarPerm extractEntry node_modules/cordova-common/.npmignore
+894 silly gunzTarPerm extractEntry node_modules/cordova-common/README.md
+895 silly gunzTarPerm extractEntry node_modules/cordova-common/cordova-common.js
+896 silly gunzTarPerm extractEntry node_modules/cordova-common/.jscs.json
+897 silly gunzTarPerm extractEntry node_modules/cordova-common/.jshintignore
+898 silly gunzTarPerm extractEntry node_modules/cordova-common/.ratignore
+899 silly gunzTarPerm extractEntry node_modules/cordova-common/RELEASENOTES.md
+900 silly gunzTarPerm extractEntry node_modules/cordova-common/src/CordovaLogger.js
+901 silly gunzTarPerm extractEntry node_modules/cordova-common/src/ActionStack.js
+902 silly gunzTarPerm extractEntry node_modules/cordova-common/src/PlatformJson.js
+903 silly gunzTarPerm extractEntry node_modules/cordova-common/src/events.js
+904 silly gunzTarPerm extractEntry node_modules/cordova-common/src/superspawn.js
+905 silly gunzTarPerm extractEntry node_modules/cordova-common/src/.jshintrc
+906 silly gunzTarPerm extractEntry node_modules/cordova-common/src/ConfigChanges/ConfigChanges.js
+907 silly gunzTarPerm extractEntry node_modules/cordova-common/src/ConfigChanges/ConfigFile.js
+908 silly gunzTarPerm extractEntry node_modules/cordova-common/src/ConfigChanges/ConfigKeeper.js
+909 silly gunzTarPerm extractEntry node_modules/cordova-common/src/ConfigChanges/munge-util.js
+910 silly gunzTarPerm extractEntry node_modules/cordova-common/src/PluginInfo/PluginInfo.js
+911 silly gunzTarPerm extractEntry node_modules/cordova-common/src/PluginInfo/PluginInfoProvider.js
+912 silly gunzTarPerm extractEntry node_modules/cordova-common/src/ConfigParser/README.md
+913 silly gunzTarPerm extractEntry node_modules/cordova-common/src/ConfigParser/ConfigParser.js
+914 silly gunzTarPerm extractEntry node_modules/cordova-common/src/CordovaError/CordovaError.js
+915 silly gunzTarPerm extractEntry node_modules/cordova-common/src/CordovaError/CordovaExternalToolErrorContext.js
+916 silly gunzTarPerm extractEntry node_modules/cordova-common/src/util/plist-helpers.js
+917 silly gunzTarPerm extractEntry node_modules/cordova-common/src/util/xml-helpers.js
+918 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/q/package.json
+919 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/q/README.md
+920 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/q/LICENSE
+921 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/q/q.js
+922 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/q/queue.js
+923 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/q/CHANGES.md
+924 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/semver/package.json
+925 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/semver/.npmignore
+926 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/semver/README.md
+927 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/semver/LICENSE
+928 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/semver/semver.js
+929 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/semver/.travis.yml
+930 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/semver/bin/semver
+931 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/semver/range.bnf
+932 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/semver/test/big-numbers.js
+933 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/semver/test/clean.js
+934 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/semver/test/gtr.js
+935 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/semver/test/index.js
+936 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/semver/test/ltr.js
+937 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/semver/test/major-minor-patch.js
+938 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/package.json
+939 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/.npmignore
+940 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/README.md
+941 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/LICENSE
+942 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/global.js
+943 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/make.js
+944 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/shell.js
+945 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/bin/shjs
+946 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/.documentup.json
+947 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/.travis.yml
+948 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/RELEASE.md
+949 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/scripts/generate-docs.js
+950 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/scripts/run-tests.js
+951 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/.jshintrc
+952 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/cat.js
+953 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/find.js
+954 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/grep.js
+955 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/ln.js
+956 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/exec.js
+957 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/mkdir.js
+958 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/mv.js
+959 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/popd.js
+960 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/pushd.js
+961 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/pwd.js
+962 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/error.js
+963 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/rm.js
+964 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/echo.js
+965 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/sed.js
+966 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/dirs.js
+967 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/tempdir.js
+968 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/cp.js
+969 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/test.js
+970 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/common.js
+971 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/to.js
+972 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/chmod.js
+973 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/toEnd.js
+974 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/cd.js
+975 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/which.js
+976 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/shelljs/src/ls.js
+977 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/underscore/package.json
+978 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/underscore/README.md
+979 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/underscore/LICENSE
+980 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/underscore/underscore-min.js
+981 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/underscore/underscore.js
+982 silly gunzTarPerm extractEntry node_modules/cordova-common/node_modules/underscore/underscore-min.map
+983 silly gunzTarPerm extractEntry node_modules/cordova-registry-mapper/package.json
+984 silly gunzTarPerm extractEntry node_modules/cordova-registry-mapper/.npmignore
+985 silly gunzTarPerm extractEntry node_modules/cordova-registry-mapper/README.md
+986 silly gunzTarPerm extractEntry node_modules/cordova-registry-mapper/index.js
+987 silly gunzTarPerm extractEntry node_modules/cordova-registry-mapper/.travis.yml
+988 silly gunzTarPerm extractEntry node_modules/cordova-registry-mapper/tests/test.js
+989 silly gunzTarPerm extractEntry node_modules/elementtree/package.json
+990 silly gunzTarPerm extractEntry node_modules/elementtree/.npmignore
+991 silly gunzTarPerm extractEntry node_modules/elementtree/README.md
+992 silly gunzTarPerm extractEntry node_modules/elementtree/.travis.yml
+993 silly gunzTarPerm extractEntry node_modules/elementtree/CHANGES.md
+994 silly gunzTarPerm extractEntry node_modules/elementtree/LICENSE.txt
+995 silly gunzTarPerm extractEntry node_modules/elementtree/Makefile
+996 silly gunzTarPerm extractEntry node_modules/elementtree/NOTICE
+997 silly gunzTarPerm extractEntry node_modules/elementtree/lib/constants.js
+998 silly gunzTarPerm extractEntry node_modules/elementtree/lib/elementpath.js
+999 silly gunzTarPerm extractEntry node_modules/elementtree/lib/elementtree.js
+1000 silly gunzTarPerm extractEntry node_modules/elementtree/lib/errors.js
+1001 silly gunzTarPerm extractEntry node_modules/elementtree/lib/parser.js
+1002 silly gunzTarPerm extractEntry node_modules/elementtree/lib/sprintf.js
+1003 silly gunzTarPerm extractEntry node_modules/elementtree/lib/treebuilder.js
+1004 silly gunzTarPerm extractEntry node_modules/elementtree/lib/utils.js
+1005 silly gunzTarPerm extractEntry node_modules/elementtree/lib/parsers/index.js
+1006 silly gunzTarPerm extractEntry node_modules/elementtree/lib/parsers/sax.js
+1007 silly gunzTarPerm extractEntry node_modules/elementtree/tests/test-simple.js
+1008 silly gunzTarPerm extractEntry node_modules/elementtree/tests/data/xml1.xml
+1009 silly gunzTarPerm extractEntry node_modules/elementtree/tests/data/xml2.xml
+1010 silly gunzTarPerm extractEntry node_modules/glob/package.json
+1011 silly gunzTarPerm extractEntry node_modules/glob/README.md
+1012 silly gunzTarPerm extractEntry node_modules/glob/LICENSE
+1013 silly gunzTarPerm extractEntry node_modules/glob/common.js
+1014 silly gunzTarPerm extractEntry node_modules/glob/glob.js
+1015 silly gunzTarPerm extractEntry node_modules/glob/sync.js
+1016 silly gunzTarPerm extractEntry node_modules/inflight/package.json
+1017 silly gunzTarPerm extractEntry node_modules/inflight/README.md
+1018 silly gunzTarPerm extractEntry node_modules/inflight/LICENSE
+1019 silly gunzTarPerm extractEntry node_modules/inflight/inflight.js
+1020 silly gunzTarPerm extractEntry node_modules/inflight/test.js
+1021 silly gunzTarPerm extractEntry node_modules/inflight/.eslintrc
+1022 silly gunzTarPerm extractEntry node_modules/inherits/package.json
+1023 silly gunzTarPerm extractEntry node_modules/inherits/README.md
+1024 silly gunzTarPerm extractEntry node_modules/inherits/LICENSE
+1025 silly gunzTarPerm extractEntry node_modules/inherits/inherits.js
+1026 silly gunzTarPerm extractEntry node_modules/inherits/inherits_browser.js
+1027 silly gunzTarPerm extractEntry node_modules/inherits/test.js
+1028 silly gunzTarPerm extractEntry node_modules/balanced-match/package.json
+1029 silly gunzTarPerm extractEntry node_modules/balanced-match/.npmignore
+1030 silly gunzTarPerm extractEntry node_modules/balanced-match/README.md
+1031 silly gunzTarPerm extractEntry node_modules/balanced-match/example.js
+1032 silly gunzTarPerm extractEntry node_modules/balanced-match/index.js
+1033 silly gunzTarPerm extractEntry node_modules/balanced-match/.travis.yml
+1034 silly gunzTarPerm extractEntry node_modules/balanced-match/LICENSE.md
+1035 silly gunzTarPerm extractEntry node_modules/balanced-match/Makefile
+1036 silly gunzTarPerm extractEntry node_modules/balanced-match/test/balanced.js
+1037 silly gunzTarPerm extractEntry node_modules/minimatch/package.json
+1038 silly gunzTarPerm extractEntry node_modules/minimatch/README.md
+1039 silly gunzTarPerm extractEntry node_modules/minimatch/LICENSE
+1040 silly gunzTarPerm extractEntry node_modules/minimatch/minimatch.js
+1041 silly gunzTarPerm extractEntry node_modules/once/package.json
+1042 silly gunzTarPerm extractEntry node_modules/once/README.md
+1043 silly gunzTarPerm extractEntry node_modules/once/LICENSE
+1044 silly gunzTarPerm extractEntry node_modules/once/once.js
+1045 silly gunzTarPerm extractEntry node_modules/os-homedir/package.json
+1046 silly gunzTarPerm extractEntry node_modules/os-homedir/index.js
+1047 silly gunzTarPerm extractEntry node_modules/os-homedir/license
+1048 silly gunzTarPerm extractEntry node_modules/os-homedir/readme.md
+1049 silly gunzTarPerm extractEntry node_modules/os-tmpdir/package.json
+1050 silly gunzTarPerm extractEntry node_modules/os-tmpdir/index.js
+1051 silly gunzTarPerm extractEntry node_modules/os-tmpdir/license
+1052 silly gunzTarPerm extractEntry node_modules/os-tmpdir/readme.md
+1053 silly gunzTarPerm extractEntry node_modules/osenv/package.json
+1054 silly gunzTarPerm extractEntry node_modules/osenv/.npmignore
+1055 silly gunzTarPerm extractEntry node_modules/osenv/README.md
+1056 silly gunzTarPerm extractEntry node_modules/osenv/LICENSE
+1057 silly gunzTarPerm extractEntry node_modules/osenv/osenv.js
+1058 silly gunzTarPerm extractEntry node_modules/osenv/.travis.yml
+1059 silly gunzTarPerm extractEntry node_modules/osenv/test/unix.js
+1060 silly gunzTarPerm extractEntry node_modules/osenv/test/windows.js
+1061 silly gunzTarPerm extractEntry node_modules/osenv/x.tap
+1062 silly gunzTarPerm extractEntry node_modules/path-is-absolute/package.json
+1063 silly gunzTarPerm extractEntry node_modules/path-is-absolute/index.js
+1064 silly gunzTarPerm extractEntry node_modules/path-is-absolute/license
+1065 silly gunzTarPerm extractEntry node_modules/path-is-absolute/readme.md
+1066 silly gunzTarPerm extractEntry node_modules/plist/package.json
+1067 silly gunzTarPerm extractEntry node_modules/plist/README.md
+1068 silly gunzTarPerm extractEntry node_modules/plist/LICENSE
+1069 silly gunzTarPerm extractEntry node_modules/plist/.jshintrc
+1070 silly gunzTarPerm extractEntry node_modules/plist/.travis.yml
+1071 silly gunzTarPerm extractEntry node_modules/plist/History.md
+1072 silly gunzTarPerm extractEntry node_modules/plist/Makefile
+1073 silly gunzTarPerm extractEntry node_modules/plist/dist/plist-build.js
+1074 silly gunzTarPerm extractEntry node_modules/plist/dist/plist-parse.js
+1075 silly gunzTarPerm extractEntry node_modules/plist/dist/plist.js
+1076 silly gunzTarPerm extractEntry node_modules/plist/examples/browser/index.html
+1077 silly gunzTarPerm extractEntry node_modules/plist/lib/build.js
+1078 silly gunzTarPerm extractEntry node_modules/plist/lib/node.js
+1079 silly gunzTarPerm extractEntry node_modules/plist/lib/parse.js
+1080 silly gunzTarPerm extractEntry node_modules/plist/lib/plist.js
+1081 silly gunzTarPerm extractEntry node_modules/sax/package.json
+1082 silly gunzTarPerm extractEntry node_modules/sax/README.md
+1083 silly gunzTarPerm extractEntry node_modules/sax/LICENSE
+1084 silly gunzTarPerm extractEntry node_modules/sax/AUTHORS
+1085 silly gunzTarPerm extractEntry node_modules/sax/examples/pretty-print.js
+1086 silly gunzTarPerm extractEntry node_modules/sax/examples/get-products.js
+1087 silly gunzTarPerm extractEntry node_modules/sax/examples/hello-world.js
+1088 silly gunzTarPerm extractEntry node_modules/sax/examples/example.js
+1089 silly gunzTarPerm extractEntry node_modules/sax/examples/switch-bench.js
+1090 silly gunzTarPerm extractEntry node_modules/sax/examples/big-not-pretty.xml
+1091 silly gunzTarPerm extractEntry node_modules/sax/examples/shopping.xml
+1092 silly gunzTarPerm extractEntry node_modules/sax/examples/strict.dtd
+1093 silly gunzTarPerm extractEntry node_modules/sax/examples/not-pretty.xml
+1094 silly gunzTarPerm extractEntry node_modules/sax/examples/test.html
+1095 silly gunzTarPerm extractEntry node_modules/sax/examples/test.xml
+1096 silly gunzTarPerm extractEntry node_modules/sax/lib/sax.js
+1097 silly gunzTarPerm extractEntry node_modules/sax/test/buffer-overrun.js
+1098 silly gunzTarPerm extractEntry node_modules/sax/test/issue-47.js
+1099 silly gunzTarPerm extractEntry node_modules/sax/test/issue-49.js
+1100 silly gunzTarPerm extractEntry node_modules/sax/test/parser-position.js
+1101 silly gunzTarPerm extractEntry node_modules/sax/test/issue-35.js
+1102 silly gunzTarPerm extractEntry node_modules/sax/test/self-closing-child-strict.js
+1103 silly gunzTarPerm extractEntry node_modules/sax/test/self-closing-child.js
+1104 silly gunzTarPerm extractEntry node_modules/sax/test/self-closing-tag.js
+1105 silly gunzTarPerm extractEntry node_modules/sax/test/stray-ending.js
+1106 silly gunzTarPerm extractEntry node_modules/sax/test/trailing-non-whitespace.js
+1107 silly gunzTarPerm extractEntry node_modules/sax/test/issue-30.js
+1108 silly gunzTarPerm extractEntry node_modules/sax/test/unquoted.js
+1109 silly gunzTarPerm extractEntry node_modules/sax/test/issue-23.js
+1110 silly gunzTarPerm extractEntry node_modules/sax/test/xmlns-issue-41.js
+1111 silly gunzTarPerm extractEntry node_modules/sax/test/index.js
+1112 silly gunzTarPerm extractEntry node_modules/sax/test/xmlns-rebinding.js
+1113 silly gunzTarPerm extractEntry node_modules/sax/test/cdata.js
+1114 silly gunzTarPerm extractEntry node_modules/sax/test/xmlns-strict.js
+1115 silly gunzTarPerm extractEntry node_modules/sax/test/cdata-multiple.js
+1116 silly gunzTarPerm extractEntry node_modules/sax/test/xmlns-unbound.js
+1117 silly gunzTarPerm extractEntry node_modules/sax/test/cdata-fake-end.js
+1118 silly gunzTarPerm extractEntry node_modules/sax/test/xmlns-xml-default-prefix-attribute.js
+1119 silly gunzTarPerm extractEntry node_modules/sax/test/cdata-end-split.js
+1120 silly gunzTarPerm extractEntry node_modules/sax/test/xmlns-xml-default-prefix.js
+1121 silly gunzTarPerm extractEntry node_modules/sax/test/cdata-chunked.js
+1122 silly gunzTarPerm extractEntry node_modules/sax/test/xmlns-xml-default-redefine.js
+1123 silly gunzTarPerm extractEntry node_modules/sax/test/script.js
+1124 silly gunzTarPerm extractEntry node_modules/unorm/package.json
+1125 silly gunzTarPerm extractEntry node_modules/unorm/README.md
+1126 silly gunzTarPerm extractEntry node_modules/unorm/LICENSE.md
+1127 silly gunzTarPerm extractEntry node_modules/unorm/lib/unorm.js
+1128 silly gunzTarPerm extractEntry node_modules/util-deprecate/package.json
+1129 silly gunzTarPerm extractEntry node_modules/util-deprecate/README.md
+1130 silly gunzTarPerm extractEntry node_modules/util-deprecate/LICENSE
+1131 silly gunzTarPerm extractEntry node_modules/util-deprecate/browser.js
+1132 silly gunzTarPerm extractEntry node_modules/util-deprecate/node.js
+1133 silly gunzTarPerm extractEntry node_modules/util-deprecate/History.md
+1134 silly gunzTarPerm extractEntry node_modules/wrappy/package.json
+1135 silly gunzTarPerm extractEntry node_modules/wrappy/README.md
+1136 silly gunzTarPerm extractEntry node_modules/wrappy/LICENSE
+1137 silly gunzTarPerm extractEntry node_modules/wrappy/wrappy.js
+1138 silly gunzTarPerm extractEntry node_modules/wrappy/test/basic.js
+1139 silly gunzTarPerm extractEntry node_modules/xmlbuilder/package.json
+1140 silly gunzTarPerm extractEntry node_modules/xmlbuilder/.npmignore
+1141 silly gunzTarPerm extractEntry node_modules/xmlbuilder/README.md
+1142 silly gunzTarPerm extractEntry node_modules/xmlbuilder/LICENSE
+1143 silly gunzTarPerm extractEntry node_modules/xmlbuilder/lib/XMLAttribute.js
+1144 silly gunzTarPerm extractEntry node_modules/xmlbuilder/lib/XMLDTDElement.js
+1145 silly gunzTarPerm extractEntry node_modules/xmlbuilder/lib/XMLDTDEntity.js
+1146 silly gunzTarPerm extractEntry node_modules/xmlbuilder/lib/XMLDTDNotation.js
+1147 silly gunzTarPerm extractEntry node_modules/xmlbuilder/lib/XMLDTDAttList.js
+1148 silly gunzTarPerm extractEntry node_modules/xmlbuilder/lib/XMLDocType.js
+1149 silly gunzTarPerm extractEntry node_modules/xmlbuilder/lib/XMLElement.js
+1150 silly gunzTarPerm extractEntry node_modules/xmlbuilder/lib/XMLNode.js
+1151 silly gunzTarPerm extractEntry node_modules/xmlbuilder/lib/XMLProcessingInstruction.js
+1152 silly gunzTarPerm extractEntry node_modules/xmlbuilder/lib/XMLRaw.js
+1153 silly gunzTarPerm extractEntry node_modules/xmlbuilder/lib/XMLComment.js
+1154 silly gunzTarPerm extractEntry node_modules/xmlbuilder/lib/XMLStringifier.js
+1155 silly gunzTarPerm extractEntry node_modules/xmlbuilder/lib/XMLCData.js
+1156 silly gunzTarPerm extractEntry node_modules/xmlbuilder/lib/XMLText.js
+1157 silly gunzTarPerm extractEntry node_modules/xmlbuilder/lib/XMLBuilder.js
+1158 silly gunzTarPerm extractEntry node_modules/xmlbuilder/lib/index.js
+1159 silly gunzTarPerm extractEntry node_modules/xmlbuilder/lib/XMLDeclaration.js
+1160 silly gunzTarPerm extractEntry node_modules/xmldom/package.json
+1161 silly gunzTarPerm extractEntry node_modules/xmldom/.npmignore
+1162 silly gunzTarPerm extractEntry node_modules/xmldom/LICENSE
+1163 silly gunzTarPerm extractEntry node_modules/xmldom/__package__.js
+1164 silly gunzTarPerm extractEntry node_modules/xmldom/dom.js
+1165 silly gunzTarPerm extractEntry node_modules/xmldom/dom-parser.js
+1166 silly gunzTarPerm extractEntry node_modules/xmldom/sax.js
+1167 silly gunzTarPerm extractEntry node_modules/xmldom/.travis.yml
+1168 silly gunzTarPerm extractEntry node_modules/xmldom/changelog
+1169 silly gunzTarPerm extractEntry node_modules/xmldom/readme.md
+1170 silly gunzTarPerm extractEntry node_modules/xmldom/component.json
+1171 silly addBundled read tarball
+1172 silly cleanup remove extracted module
+1173 silly fetchNamedPackageData bplist-parser
+1174 silly mapToRegistry name bplist-parser
+1175 silly mapToRegistry using default registry
+1176 silly mapToRegistry registry https://registry.npmjs.org/
+1177 silly mapToRegistry uri https://registry.npmjs.org/bplist-parser
+1178 silly fetchNamedPackageData cordova-registry-mapper
+1179 silly mapToRegistry name cordova-registry-mapper
+1180 silly mapToRegistry using default registry
+1181 silly mapToRegistry registry https://registry.npmjs.org/
+1182 silly mapToRegistry uri https://registry.npmjs.org/cordova-registry-mapper
+1183 silly fetchNamedPackageData elementtree
+1184 silly mapToRegistry name elementtree
+1185 silly mapToRegistry using default registry
+1186 silly mapToRegistry registry https://registry.npmjs.org/
+1187 silly mapToRegistry uri https://registry.npmjs.org/elementtree
+1188 silly fetchNamedPackageData glob
+1189 silly mapToRegistry name glob
+1190 silly mapToRegistry using default registry
+1191 silly mapToRegistry registry https://registry.npmjs.org/
+1192 silly mapToRegistry uri https://registry.npmjs.org/glob
+1193 silly fetchNamedPackageData osenv
+1194 silly mapToRegistry name osenv
+1195 silly mapToRegistry using default registry
+1196 silly mapToRegistry registry https://registry.npmjs.org/
+1197 silly mapToRegistry uri https://registry.npmjs.org/osenv
+1198 silly fetchNamedPackageData plist
+1199 silly mapToRegistry name plist
+1200 silly mapToRegistry using default registry
+1201 silly mapToRegistry registry https://registry.npmjs.org/
+1202 silly mapToRegistry uri https://registry.npmjs.org/plist
+1203 silly fetchNamedPackageData q
+1204 silly mapToRegistry name q
+1205 silly mapToRegistry using default registry
+1206 silly mapToRegistry registry https://registry.npmjs.org/
+1207 silly mapToRegistry uri https://registry.npmjs.org/q
+1208 silly resolveWithNewModule q@1.4.1 checking installable status
+1209 silly cache add args [ 'q@^1.4.1', null ]
+1210 verbose cache add spec q@^1.4.1
+1211 silly fetchNamedPackageData shelljs
+1212 silly mapToRegistry name shelljs
+1213 silly mapToRegistry using default registry
+1214 silly mapToRegistry registry https://registry.npmjs.org/
+1215 silly mapToRegistry uri https://registry.npmjs.org/shelljs
+1216 silly fetchNamedPackageData underscore
+1217 silly mapToRegistry name underscore
+1218 silly mapToRegistry using default registry
+1219 silly mapToRegistry registry https://registry.npmjs.org/
+1220 silly mapToRegistry uri https://registry.npmjs.org/underscore
+1221 silly resolveWithNewModule underscore@1.8.3 checking installable status
+1222 silly cache add args [ 'underscore@^1.8.3', null ]
+1223 verbose cache add spec underscore@^1.8.3
+1224 silly fetchNamedPackageData unorm
+1225 silly mapToRegistry name unorm
+1226 silly mapToRegistry using default registry
+1227 silly mapToRegistry registry https://registry.npmjs.org/
+1228 silly mapToRegistry uri https://registry.npmjs.org/unorm
+1229 silly cache add parsed spec Result {
+1229 silly cache add   raw: 'q@^1.4.1',
+1229 silly cache add   scope: null,
+1229 silly cache add   name: 'q',
+1229 silly cache add   rawSpec: '^1.4.1',
+1229 silly cache add   spec: '>=1.4.1 <2.0.0',
+1229 silly cache add   type: 'range' }
+1230 silly addNamed q@>=1.4.1 <2.0.0
+1231 verbose addNamed ">=1.4.1 <2.0.0" is a valid semver range for q
+1232 silly addNameRange { name: 'q', range: '>=1.4.1 <2.0.0', hasData: false }
+1233 silly mapToRegistry name q
+1234 silly mapToRegistry using default registry
+1235 silly mapToRegistry registry https://registry.npmjs.org/
+1236 silly mapToRegistry uri https://registry.npmjs.org/q
+1237 verbose addNameRange registry:https://registry.npmjs.org/q not in flight; fetching
+1238 silly cache add parsed spec Result {
+1238 silly cache add   raw: 'underscore@^1.8.3',
+1238 silly cache add   scope: null,
+1238 silly cache add   name: 'underscore',
+1238 silly cache add   rawSpec: '^1.8.3',
+1238 silly cache add   spec: '>=1.8.3 <2.0.0',
+1238 silly cache add   type: 'range' }
+1239 silly addNamed underscore@>=1.8.3 <2.0.0
+1240 verbose addNamed ">=1.8.3 <2.0.0" is a valid semver range for underscore
+1241 silly addNameRange { name: 'underscore', range: '>=1.8.3 <2.0.0', hasData: false }
+1242 silly mapToRegistry name underscore
+1243 silly mapToRegistry using default registry
+1244 silly mapToRegistry registry https://registry.npmjs.org/
+1245 silly mapToRegistry uri https://registry.npmjs.org/underscore
+1246 verbose addNameRange registry:https://registry.npmjs.org/underscore not in flight; fetching
+1247 verbose request uri https://registry.npmjs.org/glob
+1248 verbose request no auth needed
+1249 info attempt registry request try #1 at 1:14:13 PM
+1250 http request GET https://registry.npmjs.org/glob
+1251 verbose request uri https://registry.npmjs.org/bplist-parser
+1252 verbose request no auth needed
+1253 info attempt registry request try #1 at 1:14:13 PM
+1254 verbose etag "AGWSPFCRLNGDFFNZ3XI793Q8Q"
+1255 http request GET https://registry.npmjs.org/bplist-parser
+1256 verbose request uri https://registry.npmjs.org/cordova-registry-mapper
+1257 verbose request no auth needed
+1258 info attempt registry request try #1 at 1:14:13 PM
+1259 verbose etag "3EKERN3RJWID7WVFFT08VRDIA"
+1260 http request GET https://registry.npmjs.org/cordova-registry-mapper
+1261 verbose request uri https://registry.npmjs.org/elementtree
+1262 verbose request no auth needed
+1263 info attempt registry request try #1 at 1:14:13 PM
+1264 verbose etag "8V5YWNLCKS60WI5VSLXSYZ93O"
+1265 http request GET https://registry.npmjs.org/elementtree
+1266 verbose request uri https://registry.npmjs.org/osenv
+1267 verbose request no auth needed
+1268 info attempt registry request try #1 at 1:14:13 PM
+1269 http request GET https://registry.npmjs.org/osenv
+1270 verbose get https://registry.npmjs.org/q not expired, no request
+1271 silly addNameRange number 2 { name: 'q', range: '>=1.4.1 <2.0.0', hasData: true }
+1272 silly addNameRange versions [ 'q',
+1272 silly addNameRange   [ '0.0.0',
+1272 silly addNameRange     '0.0.1',
+1272 silly addNameRange     '0.0.2',
+1272 silly addNameRange     '0.0.3',
+1272 silly addNameRange     '0.1.0',
+1272 silly addNameRange     '0.1.1',
+1272 silly addNameRange     '0.1.2',
+1272 silly addNameRange     '0.1.3',
+1272 silly addNameRange     '0.1.4',
+1272 silly addNameRange     '0.1.5',
+1272 silly addNameRange     '0.1.6',
+1272 silly addNameRange     '0.1.7',
+1272 silly addNameRange     '0.1.8',
+1272 silly addNameRange     '0.1.9',
+1272 silly addNameRange     '0.2.0-rc1',
+1272 silly addNameRange     '0.2.0',
+1272 silly addNameRange     '0.2.1',
+1272 silly addNameRange     '0.2.2',
+1272 silly addNameRange     '0.2.3',
+1272 silly addNameRange     '0.2.4',
+1272 silly addNameRange     '0.2.5',
+1272 silly addNameRange     '0.2.6',
+1272 silly addNameRange     '0.2.7',
+1272 silly addNameRange     '0.2.8',
+1272 silly addNameRange     '0.2.9',
+1272 silly addNameRange     '0.3.0',
+1272 silly addNameRange     '0.2.10',
+1272 silly addNameRange     '0.4.0',
+1272 silly addNameRange     '0.4.1',
+1272 silly addNameRange     '0.4.2',
+1272 silly addNameRange     '0.4.4',
+1272 silly addNameRange     '0.5.0',
+1272 silly addNameRange     '0.5.1',
+1272 silly addNameRange     '0.5.2',
+1272 silly addNameRange     '0.5.3',
+1272 silly addNameRange     '0.6.0',
+1272 silly addNameRange     '0.7.0',
+1272 silly addNameRange     '0.7.1',
+1272 silly addNameRange     '0.7.2',
+1272 silly addNameRange     '0.8.0',
+1272 silly addNameRange     '0.8.1',
+1272 silly addNameRange     '0.8.2',
+1272 silly addNameRange     '0.8.3',
+1272 silly addNameRange     '0.8.4',
+1272 silly addNameRange     '0.8.5',
+1272 silly addNameRange     '0.8.6',
+1272 silly addNameRange     '0.8.7',
+1272 silly addNameRange     '0.8.8',
+1272 silly addNameRange     '0.8.9',
+1272 silly addNameRange     '0.8.10',
+1272 silly addNameRange     '0.8.11',
+1272 silly addNameRange     '0.8.12',
+1272 silly addNameRange     '0.9.0',
+1272 silly addNameRange     '0.9.1',
+1272 silly addNameRange     '0.9.2',
+1272 silly addNameRange     '0.9.3',
+1272 silly addNameRange     '0.9.4',
+1272 silly addNameRange     '0.9.5',
+1272 silly addNameRange     '0.9.6',
+1272 silly addNameRange     '0.9.7',
+1272 silly addNameRange     '1.0.0',
+1272 silly addNameRange     '1.0.1',
+1272 silly addNameRange     '2.0.0',
+1272 silly addNameRange     '2.0.1',
+1272 silly addNameRange     '2.0.2',
+1272 silly addNameRange     '1.1.0',
+1272 silly addNameRange     '1.1.1',
+1272 silly addNameRange     '1.1.2',
+1272 silly addNameRange     '2.0.3',
+1272 silly addNameRange     '1.2.0',
+1272 silly addNameRange     '1.2.1',
+1272 silly addNameRange     '1.3.0',
+1272 silly addNameRange     '1.4.0',
+1272 silly addNameRange     '1.4.1' ] ]
+1273 silly addNamed q@1.4.1
+1274 verbose addNamed "1.4.1" is a plain semver version for q
+1275 verbose get https://registry.npmjs.org/underscore not expired, no request
+1276 silly addNameRange number 2 { name: 'underscore', range: '>=1.8.3 <2.0.0', hasData: true }
+1277 silly addNameRange versions [ 'underscore',
+1277 silly addNameRange   [ '1.0.3',
+1277 silly addNameRange     '1.0.4',
+1277 silly addNameRange     '1.1.0',
+1277 silly addNameRange     '1.1.1',
+1277 silly addNameRange     '1.1.2',
+1277 silly addNameRange     '1.1.3',
+1277 silly addNameRange     '1.1.4',
+1277 silly addNameRange     '1.1.5',
+1277 silly addNameRange     '1.1.6',
+1277 silly addNameRange     '1.1.7',
+1277 silly addNameRange     '1.2.0',
+1277 silly addNameRange     '1.2.1',
+1277 silly addNameRange     '1.2.2',
+1277 silly addNameRange     '1.2.3',
+1277 silly addNameRange     '1.2.4',
+1277 silly addNameRange     '1.3.0',
+1277 silly addNameRange     '1.3.1',
+1277 silly addNameRange     '1.3.2',
+1277 silly addNameRange     '1.3.3',
+1277 silly addNameRange     '1.4.0',
+1277 silly addNameRange     '1.4.1',
+1277 silly addNameRange     '1.4.2',
+1277 silly addNameRange     '1.4.3',
+1277 silly addNameRange     '1.4.4',
+1277 silly addNameRange     '1.5.0',
+1277 silly addNameRange     '1.5.1',
+1277 silly addNameRange     '1.5.2',
+1277 silly addNameRange     '1.6.0',
+1277 silly addNameRange     '1.7.0',
+1277 silly addNameRange     '1.8.0',
+1277 silly addNameRange     '1.8.1',
+1277 silly addNameRange     '1.8.2',
+1277 silly addNameRange     '1.8.3' ] ]
+1278 silly addNamed underscore@1.8.3
+1279 verbose addNamed "1.8.3" is a plain semver version for underscore
+1280 verbose request uri https://registry.npmjs.org/plist
+1281 verbose request no auth needed
+1282 info attempt registry request try #1 at 1:14:13 PM
+1283 verbose etag "2KJ1CKUE1UVRW3BVV1TEIE6KX"
+1284 http request GET https://registry.npmjs.org/plist
+1285 verbose request uri https://registry.npmjs.org/unorm
+1286 verbose request no auth needed
+1287 info attempt registry request try #1 at 1:14:13 PM
+1288 verbose etag "BFJ6KFVXW04UKA6NZOL5Z4WPF"
+1289 http request GET https://registry.npmjs.org/unorm
+1290 verbose request uri https://registry.npmjs.org/shelljs
+1291 verbose request no auth needed
+1292 info attempt registry request try #1 at 1:14:13 PM
+1293 verbose etag "3GSBCS2W3AQEH4KHTZE82JC5R"
+1294 http request GET https://registry.npmjs.org/shelljs
+1295 silly cache afterAdd underscore@1.8.3
+1296 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\underscore\1.8.3\package\package.json not in flight; writing
+1297 silly cache afterAdd q@1.4.1
+1298 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\q\1.4.1\package\package.json not in flight; writing
+1299 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\underscore\1.8.3\package\package.json written
+1300 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\q\1.4.1\package\package.json written
+1301 http 304 https://registry.npmjs.org/elementtree
+1302 verbose headers { date: 'Fri, 29 Apr 2016 11:13:46 GMT',
+1302 verbose headers   via: '1.1 varnish',
+1302 verbose headers   'cache-control': 'max-age=300',
+1302 verbose headers   etag: '"8V5YWNLCKS60WI5VSLXSYZ93O"',
+1302 verbose headers   age: '180',
+1302 verbose headers   connection: 'keep-alive',
+1302 verbose headers   'x-served-by': 'cache-lcy1122-LCY',
+1302 verbose headers   'x-cache': 'HIT',
+1302 verbose headers   'x-cache-hits': '61',
+1302 verbose headers   'x-timer': 'S1461928426.726863,VS0,VE0',
+1302 verbose headers   vary: 'Accept-Encoding' }
+1303 silly get cb [ 304,
+1303 silly get   { date: 'Fri, 29 Apr 2016 11:13:46 GMT',
+1303 silly get     via: '1.1 varnish',
+1303 silly get     'cache-control': 'max-age=300',
+1303 silly get     etag: '"8V5YWNLCKS60WI5VSLXSYZ93O"',
+1303 silly get     age: '180',
+1303 silly get     connection: 'keep-alive',
+1303 silly get     'x-served-by': 'cache-lcy1122-LCY',
+1303 silly get     'x-cache': 'HIT',
+1303 silly get     'x-cache-hits': '61',
+1303 silly get     'x-timer': 'S1461928426.726863,VS0,VE0',
+1303 silly get     vary: 'Accept-Encoding' } ]
+1304 verbose etag https://registry.npmjs.org/elementtree from cache
+1305 verbose get saving elementtree to C:\Users\bram5\AppData\Roaming\npm-cache\registry.npmjs.org\elementtree\.cache.json
+1306 http 200 https://registry.npmjs.org/osenv
+1307 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+1307 verbose headers   etag: '"5PEBCGQI27PB8P8C7TGV8M0K7"',
+1307 verbose headers   'content-type': 'application/json',
+1307 verbose headers   'content-encoding': 'gzip',
+1307 verbose headers   'cache-control': 'max-age=300',
+1307 verbose headers   'content-length': '2375',
+1307 verbose headers   'accept-ranges': 'bytes',
+1307 verbose headers   date: 'Fri, 29 Apr 2016 11:13:46 GMT',
+1307 verbose headers   via: '1.1 varnish',
+1307 verbose headers   age: '2',
+1307 verbose headers   connection: 'keep-alive',
+1307 verbose headers   'x-served-by': 'cache-lcy1131-LCY',
+1307 verbose headers   'x-cache': 'HIT',
+1307 verbose headers   'x-cache-hits': '2',
+1307 verbose headers   'x-timer': 'S1461928426.726852,VS0,VE0',
+1307 verbose headers   vary: 'Accept-Encoding' }
+1308 silly get cb [ 200,
+1308 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+1308 silly get     etag: '"5PEBCGQI27PB8P8C7TGV8M0K7"',
+1308 silly get     'content-type': 'application/json',
+1308 silly get     'content-encoding': 'gzip',
+1308 silly get     'cache-control': 'max-age=300',
+1308 silly get     'content-length': '2375',
+1308 silly get     'accept-ranges': 'bytes',
+1308 silly get     date: 'Fri, 29 Apr 2016 11:13:46 GMT',
+1308 silly get     via: '1.1 varnish',
+1308 silly get     age: '2',
+1308 silly get     connection: 'keep-alive',
+1308 silly get     'x-served-by': 'cache-lcy1131-LCY',
+1308 silly get     'x-cache': 'HIT',
+1308 silly get     'x-cache-hits': '2',
+1308 silly get     'x-timer': 'S1461928426.726852,VS0,VE0',
+1308 silly get     vary: 'Accept-Encoding' } ]
+1309 verbose get saving osenv to C:\Users\bram5\AppData\Roaming\npm-cache\registry.npmjs.org\osenv\.cache.json
+1310 silly resolveWithNewModule elementtree@0.1.6 checking installable status
+1311 silly cache add args [ 'elementtree@^0.1.6', null ]
+1312 verbose cache add spec elementtree@^0.1.6
+1313 silly cache add parsed spec Result {
+1313 silly cache add   raw: 'elementtree@^0.1.6',
+1313 silly cache add   scope: null,
+1313 silly cache add   name: 'elementtree',
+1313 silly cache add   rawSpec: '^0.1.6',
+1313 silly cache add   spec: '>=0.1.6 <0.2.0',
+1313 silly cache add   type: 'range' }
+1314 silly addNamed elementtree@>=0.1.6 <0.2.0
+1315 verbose addNamed ">=0.1.6 <0.2.0" is a valid semver range for elementtree
+1316 silly addNameRange { name: 'elementtree', range: '>=0.1.6 <0.2.0', hasData: false }
+1317 silly mapToRegistry name elementtree
+1318 silly mapToRegistry using default registry
+1319 silly mapToRegistry registry https://registry.npmjs.org/
+1320 silly mapToRegistry uri https://registry.npmjs.org/elementtree
+1321 verbose addNameRange registry:https://registry.npmjs.org/elementtree not in flight; fetching
+1322 silly resolveWithNewModule osenv@0.1.3 checking installable status
+1323 silly cache add args [ 'osenv@^0.1.3', null ]
+1324 verbose cache add spec osenv@^0.1.3
+1325 silly cache add parsed spec Result {
+1325 silly cache add   raw: 'osenv@^0.1.3',
+1325 silly cache add   scope: null,
+1325 silly cache add   name: 'osenv',
+1325 silly cache add   rawSpec: '^0.1.3',
+1325 silly cache add   spec: '>=0.1.3 <0.2.0',
+1325 silly cache add   type: 'range' }
+1326 silly addNamed osenv@>=0.1.3 <0.2.0
+1327 verbose addNamed ">=0.1.3 <0.2.0" is a valid semver range for osenv
+1328 silly addNameRange { name: 'osenv', range: '>=0.1.3 <0.2.0', hasData: false }
+1329 silly mapToRegistry name osenv
+1330 silly mapToRegistry using default registry
+1331 silly mapToRegistry registry https://registry.npmjs.org/
+1332 silly mapToRegistry uri https://registry.npmjs.org/osenv
+1333 verbose addNameRange registry:https://registry.npmjs.org/osenv not in flight; fetching
+1334 verbose get https://registry.npmjs.org/elementtree not expired, no request
+1335 silly addNameRange number 2 { name: 'elementtree', range: '>=0.1.6 <0.2.0', hasData: true }
+1336 silly addNameRange versions [ 'elementtree',
+1336 silly addNameRange   [ '0.1.0', '0.1.1', '0.1.2', '0.1.3', '0.1.4', '0.1.5', '0.1.6' ] ]
+1337 silly addNamed elementtree@0.1.6
+1338 verbose addNamed "0.1.6" is a plain semver version for elementtree
+1339 verbose get https://registry.npmjs.org/osenv not expired, no request
+1340 silly addNameRange number 2 { name: 'osenv', range: '>=0.1.3 <0.2.0', hasData: true }
+1341 silly addNameRange versions [ 'osenv',
+1341 silly addNameRange   [ '0.0.1', '0.0.2', '0.0.3', '0.1.0', '0.1.1', '0.1.2', '0.1.3' ] ]
+1342 silly addNamed osenv@0.1.3
+1343 verbose addNamed "0.1.3" is a plain semver version for osenv
+1344 silly cache afterAdd elementtree@0.1.6
+1345 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\elementtree\0.1.6\package\package.json not in flight; writing
+1346 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\elementtree\0.1.6\package\package.json written
+1347 http 304 https://registry.npmjs.org/shelljs
+1348 verbose headers { date: 'Fri, 29 Apr 2016 11:13:46 GMT',
+1348 verbose headers   via: '1.1 varnish',
+1348 verbose headers   'cache-control': 'max-age=300',
+1348 verbose headers   etag: '"3GSBCS2W3AQEH4KHTZE82JC5R"',
+1348 verbose headers   age: '279',
+1348 verbose headers   connection: 'keep-alive',
+1348 verbose headers   'x-served-by': 'cache-lcy1125-LCY',
+1348 verbose headers   'x-cache': 'HIT',
+1348 verbose headers   'x-cache-hits': '6',
+1348 verbose headers   'x-timer': 'S1461928426.729856,VS0,VE0',
+1348 verbose headers   vary: 'Accept-Encoding' }
+1349 silly get cb [ 304,
+1349 silly get   { date: 'Fri, 29 Apr 2016 11:13:46 GMT',
+1349 silly get     via: '1.1 varnish',
+1349 silly get     'cache-control': 'max-age=300',
+1349 silly get     etag: '"3GSBCS2W3AQEH4KHTZE82JC5R"',
+1349 silly get     age: '279',
+1349 silly get     connection: 'keep-alive',
+1349 silly get     'x-served-by': 'cache-lcy1125-LCY',
+1349 silly get     'x-cache': 'HIT',
+1349 silly get     'x-cache-hits': '6',
+1349 silly get     'x-timer': 'S1461928426.729856,VS0,VE0',
+1349 silly get     vary: 'Accept-Encoding' } ]
+1350 verbose etag https://registry.npmjs.org/shelljs from cache
+1351 verbose get saving shelljs to C:\Users\bram5\AppData\Roaming\npm-cache\registry.npmjs.org\shelljs\.cache.json
+1352 http 304 https://registry.npmjs.org/bplist-parser
+1353 verbose headers { date: 'Fri, 29 Apr 2016 11:13:46 GMT',
+1353 verbose headers   via: '1.1 varnish',
+1353 verbose headers   'cache-control': 'max-age=300',
+1353 verbose headers   etag: '"AGWSPFCRLNGDFFNZ3XI793Q8Q"',
+1353 verbose headers   age: '190',
+1353 verbose headers   connection: 'keep-alive',
+1353 verbose headers   'x-served-by': 'cache-lcy1129-LCY',
+1353 verbose headers   'x-cache': 'HIT',
+1353 verbose headers   'x-cache-hits': '2',
+1353 verbose headers   'x-timer': 'S1461928426.730662,VS0,VE0',
+1353 verbose headers   vary: 'Accept-Encoding' }
+1354 silly get cb [ 304,
+1354 silly get   { date: 'Fri, 29 Apr 2016 11:13:46 GMT',
+1354 silly get     via: '1.1 varnish',
+1354 silly get     'cache-control': 'max-age=300',
+1354 silly get     etag: '"AGWSPFCRLNGDFFNZ3XI793Q8Q"',
+1354 silly get     age: '190',
+1354 silly get     connection: 'keep-alive',
+1354 silly get     'x-served-by': 'cache-lcy1129-LCY',
+1354 silly get     'x-cache': 'HIT',
+1354 silly get     'x-cache-hits': '2',
+1354 silly get     'x-timer': 'S1461928426.730662,VS0,VE0',
+1354 silly get     vary: 'Accept-Encoding' } ]
+1355 verbose etag https://registry.npmjs.org/bplist-parser from cache
+1356 verbose get saving bplist-parser to C:\Users\bram5\AppData\Roaming\npm-cache\registry.npmjs.org\bplist-parser\.cache.json
+1357 http 304 https://registry.npmjs.org/plist
+1358 verbose headers { date: 'Fri, 29 Apr 2016 11:13:46 GMT',
+1358 verbose headers   via: '1.1 varnish',
+1358 verbose headers   'cache-control': 'max-age=300',
+1358 verbose headers   etag: '"2KJ1CKUE1UVRW3BVV1TEIE6KX"',
+1358 verbose headers   age: '194',
+1358 verbose headers   connection: 'keep-alive',
+1358 verbose headers   'x-served-by': 'cache-lcy1126-LCY',
+1358 verbose headers   'x-cache': 'HIT',
+1358 verbose headers   'x-cache-hits': '1',
+1358 verbose headers   'x-timer': 'S1461928426.730789,VS0,VE0',
+1358 verbose headers   vary: 'Accept-Encoding' }
+1359 silly get cb [ 304,
+1359 silly get   { date: 'Fri, 29 Apr 2016 11:13:46 GMT',
+1359 silly get     via: '1.1 varnish',
+1359 silly get     'cache-control': 'max-age=300',
+1359 silly get     etag: '"2KJ1CKUE1UVRW3BVV1TEIE6KX"',
+1359 silly get     age: '194',
+1359 silly get     connection: 'keep-alive',
+1359 silly get     'x-served-by': 'cache-lcy1126-LCY',
+1359 silly get     'x-cache': 'HIT',
+1359 silly get     'x-cache-hits': '1',
+1359 silly get     'x-timer': 'S1461928426.730789,VS0,VE0',
+1359 silly get     vary: 'Accept-Encoding' } ]
+1360 verbose etag https://registry.npmjs.org/plist from cache
+1361 verbose get saving plist to C:\Users\bram5\AppData\Roaming\npm-cache\registry.npmjs.org\plist\.cache.json
+1362 http 304 https://registry.npmjs.org/cordova-registry-mapper
+1363 verbose headers { date: 'Fri, 29 Apr 2016 11:13:46 GMT',
+1363 verbose headers   via: '1.1 varnish',
+1363 verbose headers   'cache-control': 'max-age=300',
+1363 verbose headers   etag: '"3EKERN3RJWID7WVFFT08VRDIA"',
+1363 verbose headers   age: '181',
+1363 verbose headers   connection: 'keep-alive',
+1363 verbose headers   'x-served-by': 'cache-lcy1121-LCY',
+1363 verbose headers   'x-cache': 'HIT',
+1363 verbose headers   'x-cache-hits': '1',
+1363 verbose headers   'x-timer': 'S1461928426.731083,VS0,VE0',
+1363 verbose headers   vary: 'Accept-Encoding' }
+1364 silly get cb [ 304,
+1364 silly get   { date: 'Fri, 29 Apr 2016 11:13:46 GMT',
+1364 silly get     via: '1.1 varnish',
+1364 silly get     'cache-control': 'max-age=300',
+1364 silly get     etag: '"3EKERN3RJWID7WVFFT08VRDIA"',
+1364 silly get     age: '181',
+1364 silly get     connection: 'keep-alive',
+1364 silly get     'x-served-by': 'cache-lcy1121-LCY',
+1364 silly get     'x-cache': 'HIT',
+1364 silly get     'x-cache-hits': '1',
+1364 silly get     'x-timer': 'S1461928426.731083,VS0,VE0',
+1364 silly get     vary: 'Accept-Encoding' } ]
+1365 verbose etag https://registry.npmjs.org/cordova-registry-mapper from cache
+1366 verbose get saving cordova-registry-mapper to C:\Users\bram5\AppData\Roaming\npm-cache\registry.npmjs.org\cordova-registry-mapper\.cache.json
+1367 http 304 https://registry.npmjs.org/unorm
+1368 verbose headers { date: 'Fri, 29 Apr 2016 11:13:46 GMT',
+1368 verbose headers   via: '1.1 varnish',
+1368 verbose headers   'cache-control': 'max-age=300',
+1368 verbose headers   etag: '"BFJ6KFVXW04UKA6NZOL5Z4WPF"',
+1368 verbose headers   age: '181',
+1368 verbose headers   connection: 'keep-alive',
+1368 verbose headers   'x-served-by': 'cache-lcy1129-LCY',
+1368 verbose headers   'x-cache': 'HIT',
+1368 verbose headers   'x-cache-hits': '1',
+1368 verbose headers   'x-timer': 'S1461928426.730784,VS0,VE0',
+1368 verbose headers   vary: 'Accept-Encoding' }
+1369 silly get cb [ 304,
+1369 silly get   { date: 'Fri, 29 Apr 2016 11:13:46 GMT',
+1369 silly get     via: '1.1 varnish',
+1369 silly get     'cache-control': 'max-age=300',
+1369 silly get     etag: '"BFJ6KFVXW04UKA6NZOL5Z4WPF"',
+1369 silly get     age: '181',
+1369 silly get     connection: 'keep-alive',
+1369 silly get     'x-served-by': 'cache-lcy1129-LCY',
+1369 silly get     'x-cache': 'HIT',
+1369 silly get     'x-cache-hits': '1',
+1369 silly get     'x-timer': 'S1461928426.730784,VS0,VE0',
+1369 silly get     vary: 'Accept-Encoding' } ]
+1370 verbose etag https://registry.npmjs.org/unorm from cache
+1371 verbose get saving unorm to C:\Users\bram5\AppData\Roaming\npm-cache\registry.npmjs.org\unorm\.cache.json
+1372 silly resolveWithNewModule shelljs@0.5.3 checking installable status
+1373 silly cache add args [ 'shelljs@^0.5.3', null ]
+1374 verbose cache add spec shelljs@^0.5.3
+1375 silly cache add parsed spec Result {
+1375 silly cache add   raw: 'shelljs@^0.5.3',
+1375 silly cache add   scope: null,
+1375 silly cache add   name: 'shelljs',
+1375 silly cache add   rawSpec: '^0.5.3',
+1375 silly cache add   spec: '>=0.5.3 <0.6.0',
+1375 silly cache add   type: 'range' }
+1376 silly addNamed shelljs@>=0.5.3 <0.6.0
+1377 verbose addNamed ">=0.5.3 <0.6.0" is a valid semver range for shelljs
+1378 silly addNameRange { name: 'shelljs', range: '>=0.5.3 <0.6.0', hasData: false }
+1379 silly mapToRegistry name shelljs
+1380 silly mapToRegistry using default registry
+1381 silly mapToRegistry registry https://registry.npmjs.org/
+1382 silly mapToRegistry uri https://registry.npmjs.org/shelljs
+1383 verbose addNameRange registry:https://registry.npmjs.org/shelljs not in flight; fetching
+1384 silly resolveWithNewModule cordova-registry-mapper@1.1.15 checking installable status
+1385 silly cache add args [ 'cordova-registry-mapper@^1.1.8', null ]
+1386 verbose cache add spec cordova-registry-mapper@^1.1.8
+1387 silly cache add parsed spec Result {
+1387 silly cache add   raw: 'cordova-registry-mapper@^1.1.8',
+1387 silly cache add   scope: null,
+1387 silly cache add   name: 'cordova-registry-mapper',
+1387 silly cache add   rawSpec: '^1.1.8',
+1387 silly cache add   spec: '>=1.1.8 <2.0.0',
+1387 silly cache add   type: 'range' }
+1388 silly addNamed cordova-registry-mapper@>=1.1.8 <2.0.0
+1389 verbose addNamed ">=1.1.8 <2.0.0" is a valid semver range for cordova-registry-mapper
+1390 silly addNameRange { name: 'cordova-registry-mapper',
+1390 silly addNameRange   range: '>=1.1.8 <2.0.0',
+1390 silly addNameRange   hasData: false }
+1391 silly mapToRegistry name cordova-registry-mapper
+1392 silly mapToRegistry using default registry
+1393 silly mapToRegistry registry https://registry.npmjs.org/
+1394 silly mapToRegistry uri https://registry.npmjs.org/cordova-registry-mapper
+1395 verbose addNameRange registry:https://registry.npmjs.org/cordova-registry-mapper not in flight; fetching
+1396 silly resolveWithNewModule bplist-parser@0.1.1 checking installable status
+1397 silly cache add args [ 'bplist-parser@^0.1.0', null ]
+1398 verbose cache add spec bplist-parser@^0.1.0
+1399 silly cache add parsed spec Result {
+1399 silly cache add   raw: 'bplist-parser@^0.1.0',
+1399 silly cache add   scope: null,
+1399 silly cache add   name: 'bplist-parser',
+1399 silly cache add   rawSpec: '^0.1.0',
+1399 silly cache add   spec: '>=0.1.0 <0.2.0',
+1399 silly cache add   type: 'range' }
+1400 silly addNamed bplist-parser@>=0.1.0 <0.2.0
+1401 verbose addNamed ">=0.1.0 <0.2.0" is a valid semver range for bplist-parser
+1402 silly addNameRange { name: 'bplist-parser',
+1402 silly addNameRange   range: '>=0.1.0 <0.2.0',
+1402 silly addNameRange   hasData: false }
+1403 silly mapToRegistry name bplist-parser
+1404 silly mapToRegistry using default registry
+1405 silly mapToRegistry registry https://registry.npmjs.org/
+1406 silly mapToRegistry uri https://registry.npmjs.org/bplist-parser
+1407 verbose addNameRange registry:https://registry.npmjs.org/bplist-parser not in flight; fetching
+1408 http 200 https://registry.npmjs.org/glob
+1409 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+1409 verbose headers   etag: '"591622GQOYR45JODRQD25WKG6"',
+1409 verbose headers   'content-type': 'application/json',
+1409 verbose headers   'content-encoding': 'gzip',
+1409 verbose headers   'cache-control': 'max-age=300',
+1409 verbose headers   'content-length': '19224',
+1409 verbose headers   'accept-ranges': 'bytes',
+1409 verbose headers   date: 'Fri, 29 Apr 2016 11:13:46 GMT',
+1409 verbose headers   via: '1.1 varnish',
+1409 verbose headers   age: '286',
+1409 verbose headers   connection: 'keep-alive',
+1409 verbose headers   'x-served-by': 'cache-lcy1126-LCY',
+1409 verbose headers   'x-cache': 'HIT',
+1409 verbose headers   'x-cache-hits': '61',
+1409 verbose headers   'x-timer': 'S1461928426.726709,VS0,VE0',
+1409 verbose headers   vary: 'Accept-Encoding' }
+1410 silly get cb [ 200,
+1410 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+1410 silly get     etag: '"591622GQOYR45JODRQD25WKG6"',
+1410 silly get     'content-type': 'application/json',
+1410 silly get     'content-encoding': 'gzip',
+1410 silly get     'cache-control': 'max-age=300',
+1410 silly get     'content-length': '19224',
+1410 silly get     'accept-ranges': 'bytes',
+1410 silly get     date: 'Fri, 29 Apr 2016 11:13:46 GMT',
+1410 silly get     via: '1.1 varnish',
+1410 silly get     age: '286',
+1410 silly get     connection: 'keep-alive',
+1410 silly get     'x-served-by': 'cache-lcy1126-LCY',
+1410 silly get     'x-cache': 'HIT',
+1410 silly get     'x-cache-hits': '61',
+1410 silly get     'x-timer': 'S1461928426.726709,VS0,VE0',
+1410 silly get     vary: 'Accept-Encoding' } ]
+1411 verbose get saving glob to C:\Users\bram5\AppData\Roaming\npm-cache\registry.npmjs.org\glob\.cache.json
+1412 silly resolveWithNewModule plist@1.2.0 checking installable status
+1413 silly cache add args [ 'plist@^1.2.0', null ]
+1414 verbose cache add spec plist@^1.2.0
+1415 silly cache add parsed spec Result {
+1415 silly cache add   raw: 'plist@^1.2.0',
+1415 silly cache add   scope: null,
+1415 silly cache add   name: 'plist',
+1415 silly cache add   rawSpec: '^1.2.0',
+1415 silly cache add   spec: '>=1.2.0 <2.0.0',
+1415 silly cache add   type: 'range' }
+1416 silly addNamed plist@>=1.2.0 <2.0.0
+1417 verbose addNamed ">=1.2.0 <2.0.0" is a valid semver range for plist
+1418 silly addNameRange { name: 'plist', range: '>=1.2.0 <2.0.0', hasData: false }
+1419 silly mapToRegistry name plist
+1420 silly mapToRegistry using default registry
+1421 silly mapToRegistry registry https://registry.npmjs.org/
+1422 silly mapToRegistry uri https://registry.npmjs.org/plist
+1423 verbose addNameRange registry:https://registry.npmjs.org/plist not in flight; fetching
+1424 silly resolveWithNewModule unorm@1.4.1 checking installable status
+1425 silly cache add args [ 'unorm@^1.3.3', null ]
+1426 verbose cache add spec unorm@^1.3.3
+1427 silly cache add parsed spec Result {
+1427 silly cache add   raw: 'unorm@^1.3.3',
+1427 silly cache add   scope: null,
+1427 silly cache add   name: 'unorm',
+1427 silly cache add   rawSpec: '^1.3.3',
+1427 silly cache add   spec: '>=1.3.3 <2.0.0',
+1427 silly cache add   type: 'range' }
+1428 silly addNamed unorm@>=1.3.3 <2.0.0
+1429 verbose addNamed ">=1.3.3 <2.0.0" is a valid semver range for unorm
+1430 silly addNameRange { name: 'unorm', range: '>=1.3.3 <2.0.0', hasData: false }
+1431 silly mapToRegistry name unorm
+1432 silly mapToRegistry using default registry
+1433 silly mapToRegistry registry https://registry.npmjs.org/
+1434 silly mapToRegistry uri https://registry.npmjs.org/unorm
+1435 verbose addNameRange registry:https://registry.npmjs.org/unorm not in flight; fetching
+1436 verbose get https://registry.npmjs.org/shelljs not expired, no request
+1437 silly addNameRange number 2 { name: 'shelljs', range: '>=0.5.3 <0.6.0', hasData: true }
+1438 silly addNameRange versions [ 'shelljs',
+1438 silly addNameRange   [ '0.0.1',
+1438 silly addNameRange     '0.0.2',
+1438 silly addNameRange     '0.0.3',
+1438 silly addNameRange     '0.0.4',
+1438 silly addNameRange     '0.0.5',
+1438 silly addNameRange     '0.0.6',
+1438 silly addNameRange     '0.0.7',
+1438 silly addNameRange     '0.0.8',
+1438 silly addNameRange     '0.0.9',
+1438 silly addNameRange     '0.1.0',
+1438 silly addNameRange     '0.1.1',
+1438 silly addNameRange     '0.1.2',
+1438 silly addNameRange     '0.1.3',
+1438 silly addNameRange     '0.1.4',
+1438 silly addNameRange     '0.2.0',
+1438 silly addNameRange     '0.2.1',
+1438 silly addNameRange     '0.2.2',
+1438 silly addNameRange     '0.2.3',
+1438 silly addNameRange     '0.2.4',
+1438 silly addNameRange     '0.2.5',
+1438 silly addNameRange     '0.2.6',
+1438 silly addNameRange     '0.3.0',
+1438 silly addNameRange     '0.4.0',
+1438 silly addNameRange     '0.5.0',
+1438 silly addNameRange     '0.5.1',
+1438 silly addNameRange     '0.5.2',
+1438 silly addNameRange     '0.5.3',
+1438 silly addNameRange     '0.6.0',
+1438 silly addNameRange     '0.7.0',
+1438 silly addNameRange     '0.0.1-alpha1',
+1438 silly addNameRange     '0.0.2-pre1',
+1438 silly addNameRange     '0.0.4-pre1',
+1438 silly addNameRange     '0.0.5-pre1',
+1438 silly addNameRange     '0.0.5-pre2',
+1438 silly addNameRange     '0.0.5-pre3',
+1438 silly addNameRange     '0.0.5-pre4',
+1438 silly addNameRange     '0.0.6-pre1',
+1438 silly addNameRange     '0.0.6-pre2' ] ]
+1439 silly addNamed shelljs@0.5.3
+1440 verbose addNamed "0.5.3" is a plain semver version for shelljs
+1441 verbose get https://registry.npmjs.org/cordova-registry-mapper not expired, no request
+1442 silly addNameRange number 2 { name: 'cordova-registry-mapper',
+1442 silly addNameRange   range: '>=1.1.8 <2.0.0',
+1442 silly addNameRange   hasData: true }
+1443 silly addNameRange versions [ 'cordova-registry-mapper',
+1443 silly addNameRange   [ '0.0.1',
+1443 silly addNameRange     '0.0.2',
+1443 silly addNameRange     '0.0.3',
+1443 silly addNameRange     '1.0.0',
+1443 silly addNameRange     '1.0.1',
+1443 silly addNameRange     '1.1.0',
+1443 silly addNameRange     '1.1.1',
+1443 silly addNameRange     '1.1.2',
+1443 silly addNameRange     '1.1.3',
+1443 silly addNameRange     '1.1.4',
+1443 silly addNameRange     '1.1.5',
+1443 silly addNameRange     '1.1.6',
+1443 silly addNameRange     '1.1.7',
+1443 silly addNameRange     '1.1.8',
+1443 silly addNameRange     '1.1.9',
+1443 silly addNameRange     '1.1.10',
+1443 silly addNameRange     '1.1.11',
+1443 silly addNameRange     '1.1.12',
+1443 silly addNameRange     '1.1.13',
+1443 silly addNameRange     '1.1.14',
+1443 silly addNameRange     '1.1.15' ] ]
+1444 silly addNamed cordova-registry-mapper@1.1.15
+1445 verbose addNamed "1.1.15" is a plain semver version for cordova-registry-mapper
+1446 verbose get https://registry.npmjs.org/bplist-parser not expired, no request
+1447 silly addNameRange number 2 { name: 'bplist-parser', range: '>=0.1.0 <0.2.0', hasData: true }
+1448 silly addNameRange versions [ 'bplist-parser',
+1448 silly addNameRange   [ '0.0.1',
+1448 silly addNameRange     '0.0.2',
+1448 silly addNameRange     '0.0.3',
+1448 silly addNameRange     '0.0.4',
+1448 silly addNameRange     '0.0.5',
+1448 silly addNameRange     '0.0.6',
+1448 silly addNameRange     '0.1.0',
+1448 silly addNameRange     '0.1.1' ] ]
+1449 silly addNamed bplist-parser@0.1.1
+1450 verbose addNamed "0.1.1" is a plain semver version for bplist-parser
+1451 verbose get https://registry.npmjs.org/plist not expired, no request
+1452 silly addNameRange number 2 { name: 'plist', range: '>=1.2.0 <2.0.0', hasData: true }
+1453 silly addNameRange versions [ 'plist',
+1453 silly addNameRange   [ '0.1.0',
+1453 silly addNameRange     '0.1.1',
+1453 silly addNameRange     '0.2.0',
+1453 silly addNameRange     '0.2.1',
+1453 silly addNameRange     '0.3.1',
+1453 silly addNameRange     '0.3.2',
+1453 silly addNameRange     '0.3.3',
+1453 silly addNameRange     '0.4.0',
+1453 silly addNameRange     '0.4.1',
+1453 silly addNameRange     '0.4.2',
+1453 silly addNameRange     '0.4.3',
+1453 silly addNameRange     '1.0.0',
+1453 silly addNameRange     '1.0.1',
+1453 silly addNameRange     '1.1.0',
+1453 silly addNameRange     '1.2.0' ] ]
+1454 silly addNamed plist@1.2.0
+1455 verbose addNamed "1.2.0" is a plain semver version for plist
+1456 verbose get https://registry.npmjs.org/unorm not expired, no request
+1457 silly addNameRange number 2 { name: 'unorm', range: '>=1.3.3 <2.0.0', hasData: true }
+1458 silly addNameRange versions [ 'unorm',
+1458 silly addNameRange   [ '1.0.0',
+1458 silly addNameRange     '1.0.1',
+1458 silly addNameRange     '1.0.2',
+1458 silly addNameRange     '1.0.3',
+1458 silly addNameRange     '1.0.4',
+1458 silly addNameRange     '1.0.5',
+1458 silly addNameRange     '1.1.0',
+1458 silly addNameRange     '1.1.1',
+1458 silly addNameRange     '1.1.2',
+1458 silly addNameRange     '1.2.0',
+1458 silly addNameRange     '1.2.1',
+1458 silly addNameRange     '1.3.0',
+1458 silly addNameRange     '1.3.1',
+1458 silly addNameRange     '1.3.2',
+1458 silly addNameRange     '1.3.3',
+1458 silly addNameRange     '1.4.0',
+1458 silly addNameRange     '1.4.1' ] ]
+1459 silly addNamed unorm@1.4.1
+1460 verbose addNamed "1.4.1" is a plain semver version for unorm
+1461 silly cache afterAdd cordova-registry-mapper@1.1.15
+1462 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\cordova-registry-mapper\1.1.15\package\package.json not in flight; writing
+1463 silly cache afterAdd shelljs@0.5.3
+1464 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\shelljs\0.5.3\package\package.json not in flight; writing
+1465 silly cache afterAdd bplist-parser@0.1.1
+1466 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\bplist-parser\0.1.1\package\package.json not in flight; writing
+1467 silly cache afterAdd plist@1.2.0
+1468 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\plist\1.2.0\package\package.json not in flight; writing
+1469 silly cache afterAdd unorm@1.4.1
+1470 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\unorm\1.4.1\package\package.json not in flight; writing
+1471 silly resolveWithNewModule glob@5.0.15 checking installable status
+1472 silly cache add args [ 'glob@^5.0.13', null ]
+1473 verbose cache add spec glob@^5.0.13
+1474 silly cache add parsed spec Result {
+1474 silly cache add   raw: 'glob@^5.0.13',
+1474 silly cache add   scope: null,
+1474 silly cache add   name: 'glob',
+1474 silly cache add   rawSpec: '^5.0.13',
+1474 silly cache add   spec: '>=5.0.13 <6.0.0',
+1474 silly cache add   type: 'range' }
+1475 silly addNamed glob@>=5.0.13 <6.0.0
+1476 verbose addNamed ">=5.0.13 <6.0.0" is a valid semver range for glob
+1477 silly addNameRange { name: 'glob', range: '>=5.0.13 <6.0.0', hasData: false }
+1478 silly mapToRegistry name glob
+1479 silly mapToRegistry using default registry
+1480 silly mapToRegistry registry https://registry.npmjs.org/
+1481 silly mapToRegistry uri https://registry.npmjs.org/glob
+1482 verbose addNameRange registry:https://registry.npmjs.org/glob not in flight; fetching
+1483 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\cordova-registry-mapper\1.1.15\package\package.json written
+1484 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\shelljs\0.5.3\package\package.json written
+1485 verbose get https://registry.npmjs.org/glob not expired, no request
+1486 silly addNameRange number 2 { name: 'glob', range: '>=5.0.13 <6.0.0', hasData: true }
+1487 silly addNameRange versions [ 'glob',
+1487 silly addNameRange   [ '1.1.0',
+1487 silly addNameRange     '2.0.9',
+1487 silly addNameRange     '2.0.8',
+1487 silly addNameRange     '2.0.7',
+1487 silly addNameRange     '2.1.0',
+1487 silly addNameRange     '3.0.0',
+1487 silly addNameRange     '3.0.1',
+1487 silly addNameRange     '3.1.0',
+1487 silly addNameRange     '3.1.1',
+1487 silly addNameRange     '3.1.2',
+1487 silly addNameRange     '3.1.3',
+1487 silly addNameRange     '3.1.4',
+1487 silly addNameRange     '3.1.5',
+1487 silly addNameRange     '3.1.6',
+1487 silly addNameRange     '3.1.7',
+1487 silly addNameRange     '3.1.9',
+1487 silly addNameRange     '3.1.10',
+1487 silly addNameRange     '3.1.11',
+1487 silly addNameRange     '3.1.12',
+1487 silly addNameRange     '3.1.13',
+1487 silly addNameRange     '3.1.14',
+1487 silly addNameRange     '3.1.15',
+1487 silly addNameRange     '3.1.16',
+1487 silly addNameRange     '3.1.17',
+1487 silly addNameRange     '3.1.18',
+1487 silly addNameRange     '3.1.19',
+1487 silly addNameRange     '3.1.20',
+1487 silly addNameRange     '3.1.21',
+1487 silly addNameRange     '3.2.0',
+1487 silly addNameRange     '3.2.1',
+1487 silly addNameRange     '3.2.3',
+1487 silly addNameRange     '3.2.4',
+1487 silly addNameRange     '3.2.5',
+1487 silly addNameRange     '3.2.6',
+1487 silly addNameRange     '3.2.7',
+1487 silly addNameRange     '3.2.8',
+1487 silly addNameRange     '3.2.9',
+1487 silly addNameRange     '3.2.10',
+1487 silly addNameRange     '3.2.11',
+1487 silly addNameRange     '4.0.0',
+1487 silly addNameRange     '4.0.1',
+1487 silly addNameRange     '4.0.2',
+1487 silly addNameRange     '4.0.3',
+1487 silly addNameRange     '4.0.4',
+1487 silly addNameRange     '4.0.5',
+1487 silly addNameRange     '4.0.6',
+1487 silly addNameRange     '4.1.2-beta',
+1487 silly addNameRange     '4.1.2',
+1487 silly addNameRange     '4.1.3',
+1487 silly addNameRange     '4.1.4',
+1487 silly addNameRange     '4.1.5',
+1487 silly addNameRange     '4.1.6',
+1487 silly addNameRange     '4.2.0',
+1487 silly addNameRange     '4.2.1',
+1487 silly addNameRange     '4.2.2',
+1487 silly addNameRange     '4.3.0',
+1487 silly addNameRange     '4.3.1',
+1487 silly addNameRange     '4.3.2',
+1487 silly addNameRange     '4.3.3',
+1487 silly addNameRange     '4.3.4',
+1487 silly addNameRange     '4.3.5',
+1487 silly addNameRange     '4.4.0',
+1487 silly addNameRange     '4.4.2',
+1487 silly addNameRange     '4.5.0',
+1487 silly addNameRange     '5.0.0',
+1487 silly addNameRange     '4.5.1',
+1487 silly addNameRange     '5.0.1',
+1487 silly addNameRange     '4.5.2',
+1487 silly addNameRange     '5.0.2',
+1487 silly addNameRange     '4.5.3',
+1487 silly addNameRange     '5.0.3',
+1487 silly addNameRange     '5.0.4',
+1487 silly addNameRange     '5.0.5',
+1487 silly addNameRange     '5.0.6',
+1487 silly addNameRange     '5.0.7',
+1487 silly addNameRange     '5.0.9',
+1487 silly addNameRange     '5.0.10',
+1487 silly addNameRange     '5.0.11',
+1487 silly addNameRange     '5.0.12',
+1487 silly addNameRange     '5.0.13',
+1487 silly addNameRange     '5.0.14',
+1487 silly addNameRange     '5.0.15',
+1487 silly addNameRange     '6.0.1',
+1487 silly addNameRange     '6.0.2',
+1487 silly addNameRange     '6.0.3',
+1487 silly addNameRange     '6.0.4',
+1487 silly addNameRange     '7.0.0',
+1487 silly addNameRange     '7.0.1',
+1487 silly addNameRange     '7.0.3' ] ]
+1488 silly addNamed glob@5.0.15
+1489 verbose addNamed "5.0.15" is a plain semver version for glob
+1490 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\bplist-parser\0.1.1\package\package.json written
+1491 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\plist\1.2.0\package\package.json written
+1492 verbose afterAdd C:\Users\bram5\AppData\Roaming\npm-cache\unorm\1.4.1\package\package.json written
+1493 silly rollbackFailedOptional Starting
+1494 silly rollbackFailedOptional Finishing
+1495 silly runTopLevelLifecycles Starting
+1496 silly runTopLevelLifecycles Finishing
+1497 silly install printInstalled
+1498 verbose stack Error: Failed to parse json
+1498 verbose stack Unexpected token '\u0000' at 1:1
+1498 verbose stack                                                                                
+1498 verbose stack ^
+1498 verbose stack     at parseError (C:\Program Files\nodejs\node_modules\npm\node_modules\read-package-json\read-json.js:379:11)
+1498 verbose stack     at parseJson (C:\Program Files\nodejs\node_modules\npm\node_modules\read-package-json\read-json.js:68:23)
+1498 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\read-package-json\read-json.js:48:5
+1498 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\graceful-fs\graceful-fs.js:76:16
+1498 verbose stack     at tryToString (fs.js:414:3)
+1498 verbose stack     at FSReqWrap.readFileAfterClose [as oncomplete] (fs.js:401:12)
+1499 verbose cwd E:\School\Project Zwengel\Zwengel
+1500 error Windows_NT 10.0.10586
+1501 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "--save-dev" "cordova"
+1502 error node v5.4.1
+1503 error npm  v3.3.12
+1504 error file C:\Users\bram5\AppData\Roaming\npm-cache\osenv\0.1.3\package\package.json
+1505 error code EJSONPARSE
+1506 error Failed to parse json
+1506 error Unexpected token '\u0000' at 1:1
+1506 error                                                                                
+1506 error ^
+1507 error File: C:\Users\bram5\AppData\Roaming\npm-cache\osenv\0.1.3\package\package.json
+1508 error Failed to parse package.json data.
+1508 error package.json must be actual JSON, not just JavaScript.
+1508 error
+1508 error This is not a bug in npm.
+1508 error Tell the package author to fix their package.json file. JSON.parse
+1509 verbose exit [ 1, true ]

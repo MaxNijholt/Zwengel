@@ -1,12 +1,13 @@
-var zwengelApp = angular.module('zwengelApp', [
-    'ngRoute',
-    'zwengelControllers',
-    'zwengelServices',
-    'dataServices',
-    'ionic'
-]);
+require('angular/angular');
+require('angular-route/angular-route');
 
-zwengelApp.config(['$routeProvider',
+var app = angular.module('zwengelApp', ['ngRoute']);
+
+app.service('AllData', [require('./app.service.js')]);
+
+app.controller('AllController', ['$window', 'AllData', require('./app.controller.js')]);
+
+app.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
         when('/doelen', {
