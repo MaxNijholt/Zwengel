@@ -310,6 +310,22 @@ module.exports = function($http) {
         onSucces(doel);
     };
     
+    dataCaller.getStap = function(studentID, doelID, stapID, onSucces){
+        var stap = null;
+        
+        dataCaller.testResult.forEach(function(object){
+            if(object.id === doelID){
+                object.steps.forEach(function(object2){
+                if(object2.id === stapID){
+                    stap = object2;
+                }
+                });
+            }
+        });
+        
+        onSucces(stap);
+    };
+    
     self.getDoelen = function(studentID, onSucces){
         dataCaller.getDoelen(studentID, onSucces);
     };
@@ -317,9 +333,14 @@ module.exports = function($http) {
     self.getDoel = function(studentID, doelID, onSucces){
         dataCaller.getDoel(studentID, doelID, onSucces);
     };
+    
+    self.getStap = function(studentID, doelID, stapID, onSucces){
+        dataCaller.getStap(studentID, doelID, stapID, onSucces);
+    };
 
 	return {
         getDoelen: self.getDoelen,
-        getDoel: self.getDoel
+        getDoel: self.getDoel,
+        getStap: self.getStap
 	};
 };

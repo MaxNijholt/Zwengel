@@ -14,7 +14,6 @@ module.exports = function(){
         };
         
         self.history.push(object);
-        console.log(self.history);
     };
     
     self.page = {

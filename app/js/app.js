@@ -4,10 +4,14 @@ var app = angular.module('zwengelApp', ['ngRoute', 'ionic']);
 
 app.factory('AllData', [require('./app.service.js')]);
 app.service('DoelenService', ['$http', require('./doelen/doelen.service.js')]);
+app.service('BeloningenService', ['$http', require('./beloningen/beloningen.service.js')]);
 
 app.controller('AllController', ['$window', '$ionicPlatform', 'AllData', require('./app.controller.js')]);
 app.controller('DoelenController', ['$ionicScrollDelegate', 'AllData', 'DoelenService', require('./doelen/doelen.controller.js')]);
 app.controller('DoelController', ['$ionicScrollDelegate', '$routeParams', 'AllData', 'DoelenService', require('./doelen/doel.controller.js')]);
+app.controller('StapController', ['$ionicScrollDelegate', '$routeParams', 'AllData', 'DoelenService', require('./doelen/stap.controller.js')]);
+app.controller('BeloningenController', ['$ionicScrollDelegate', 'BeloningenService', require('./beloningen/beloningen.controller.js')]);
+app.controller('ProfielController', ['$ionicScrollDelegate', 'AllData', require('./profiel/profiel.controller.js')]);
 
 app.config(['$routeProvider',
     function($routeProvider) {
