@@ -1,4 +1,3 @@
-// require('angular/angular');
 require('angular-route/angular-route');
 
 var app = angular.module('zwengelApp', ['ngRoute', 'ionic']);
@@ -8,6 +7,7 @@ app.service('DoelenService', ['$http', require('./doelen/doelen.service.js')]);
 
 app.controller('AllController', ['$window', '$ionicPlatform', 'AllData', require('./app.controller.js')]);
 app.controller('DoelenController', ['$ionicScrollDelegate', 'AllData', 'DoelenService', require('./doelen/doelen.controller.js')]);
+app.controller('DoelController', ['$ionicScrollDelegate', '$routeParams', 'AllData', 'DoelenService', require('./doelen/doel.controller.js')]);
 
 app.config(['$routeProvider',
     function($routeProvider) {
