@@ -1,4 +1,4 @@
-module.exports = function($window, AllData) {
+module.exports = function($window, $ionicPlatform, AllData) {
     var self = this;
     
     self.page = AllData.page;
@@ -19,7 +19,7 @@ module.exports = function($window, AllData) {
 		AllData.toBack();
     };
     
-    // $ionicPlatform.registerBackButtonAction(function () {
-	// 	AllData.toBack(true);
-	// }, 100);
+    $ionicPlatform.registerBackButtonAction(function () {
+		AllData.toBack(true);
+	}, 100);
 };

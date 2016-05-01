@@ -1,11 +1,13 @@
-require('angular/angular');
+// require('angular/angular');
 require('angular-route/angular-route');
 
-var app = angular.module('zwengelApp', ['ngRoute']);
+var app = angular.module('zwengelApp', ['ngRoute', 'ionic']);
 
-app.service('AllData', [require('./app.service.js')]);
+app.factory('AllData', [require('./app.service.js')]);
+app.service('DoelenService', ['$http', require('./doelen/doelen.service.js')]);
 
-app.controller('AllController', ['$window', 'AllData', require('./app.controller.js')]);
+app.controller('AllController', ['$window', '$ionicPlatform', 'AllData', require('./app.controller.js')]);
+app.controller('DoelenController', ['$ionicScrollDelegate', 'AllData', 'DoelenService', require('./doelen/doelen.controller.js')]);
 
 app.config(['$routeProvider',
     function($routeProvider) {
