@@ -5,7 +5,7 @@ controllers.AllController = function ($ionicPlatform, $window, AllData) {
     var self = this;
 
     self.page = AllData.page;
-    
+
     self.navDoelen = function () {
         AllData.toPage("Doelen", "#/doelen");
     };
@@ -27,7 +27,7 @@ controllers.AllController = function ($ionicPlatform, $window, AllData) {
     }, 100);
 };
 
-controllers.LoginController = function ($ionicScrollDelegate, $rootScope, AuthenticationService, AllData) {
+controllers.LoginController = function ($ionicScrollDelegate, $rootScope, $ionicPopup, AuthenticationService, AllData) {
     var self = this;
     $ionicScrollDelegate.scrollTop();
 
@@ -43,17 +43,27 @@ controllers.LoginController = function ($ionicScrollDelegate, $rootScope, Authen
     self.login = function (input) {
         AuthenticationService.Login(input.username, input.password, function (response) {
             if (response.success) {
-                AuthenticationService.SetCredentials(response, input);
-                AllData.toPage("Doelen", "#/doelen");
-                console.log("ingelogd!");
+                $ionicPopup.alert({
+                    title: 'Inloggen gelukt',
+                    template: 'Gelukt! U bent ingelogd en word nu doorgestuurd.'
+                })
+                    .then(function (res) {
+                        AuthenticationService.SetCredentials(response, input);
+                        AllData.toPage("Doelen", "#/doelen");
+                        console.log("ingelogd!");
+                    });
             }
             else {
-                console.log(response.message);
+                if (response.message === "invalid credentials")
+                    $ionicPopup.alert({
+                        title: 'Fout inloggen',
+                        template: 'Gebruikersnaam en/of wachtwoord onjuist.'
+                    });
+                else
+                    console.log(response.message);
             }
         })
     }
-
-
 };
 
 controllers.DoelenController = function ($ionicScrollDelegate, AllData, StudentInfo) {
@@ -111,7 +121,7 @@ controllers.BeloningenController = function ($ionicScrollDelegate, StudentInfo) 
     };
 };
 
-controllers.ProfielController = function ($ionicScrollDelegate, AllData) {
+controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, AllData, AuthenticationService) {
     var self = this;
 
     $ionicScrollDelegate.scrollTop();
@@ -119,6 +129,16 @@ controllers.ProfielController = function ($ionicScrollDelegate, AllData) {
     self.doelscreen = AllData.pref.doelscreen;
     self.textIcons = AllData.pref.textIcons;
     self.thema = "default";
+
+    self.logout = function () {
+        AuthenticationService.logout();
+        $ionicPopup.alert({
+            title: 'Uitloggen gelukt',
+            template: 'U bent uitgelogd en word nu doorgestuurd.'
+        }).then(function () {
+            AllData.toPage("Login", "#/login");
+        });
+    }
 };
 
 controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllData, StudentInfo) {
@@ -171,9 +191,9 @@ controllers.StapController = function ($ionicScrollDelegate, $routeParams, AllDa
 };
 
 zwengelControllers.controller('AllController', ['$ionicPlatform', '$window', 'AllData', controllers.AllController]);
-zwengelControllers.controller('LoginController', ['$ionicScrollDelegate', '$rootScope', 'AuthenticationService', 'AllData', controllers.LoginController]);
+zwengelControllers.controller('LoginController', ['$ionicScrollDelegate', '$rootScope', '$ionicPopup', 'AuthenticationService', 'AllData', controllers.LoginController]);
 zwengelControllers.controller('DoelenController', ['$ionicScrollDelegate', 'AllData', 'StudentInfo', controllers.DoelenController]);
 zwengelControllers.controller('BeloningenController', ['$ionicScrollDelegate', 'StudentInfo', controllers.BeloningenController]);
-zwengelControllers.controller('ProfielController', ['$ionicScrollDelegate', 'AllData', controllers.ProfielController]);
+zwengelControllers.controller('ProfielController', ['$ionicScrollDelegate', '$ionicPopup', 'AllData', 'AuthenticationService', controllers.ProfielController]);
 zwengelControllers.controller('DoelController', ['$ionicScrollDelegate', '$routeParams', 'AllData', 'StudentInfo', controllers.DoelController]);
 zwengelControllers.controller('StapController', ['$ionicScrollDelegate', '$routeParams', 'AllData', 'StudentInfo', controllers.StapController]);

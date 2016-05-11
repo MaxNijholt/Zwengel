@@ -3,7 +3,7 @@ var zwengelApp = angular.module('zwengelApp', [
     'zwengelControllers',
     'zwengelServices',
     'dataServices',
-    'loginService',
+    'authService',
     'ionic'
 ]);
 

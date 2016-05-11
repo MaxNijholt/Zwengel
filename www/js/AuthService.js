@@ -1,4 +1,4 @@
-angular.module('loginService', ['ngResource'])
+angular.module('authService', ['ngResource'])
 
     .factory('AuthenticationService', function ($http, $rootScope) {
         var service = {};
@@ -9,10 +9,15 @@ angular.module('loginService', ['ngResource'])
                     callback(response);
                 });
         };
+        
+        service.logout = function(){
+            localStorage.removeItem("token");
+            localStorage.removeItem("username");
+            $rootScope.loggedin = false;        
+        }
 
         service.GetToken = function (callback) {
             var token = localStorage.getItem('token');
-            //var token = $cookies.get("token");
             callback(token);
         }
 
@@ -21,8 +26,6 @@ angular.module('loginService', ['ngResource'])
 
             if (input.rememberme) {
                 localStorage.setItem('token', response.data.token);
-                // $cookies.put("token", response.data.token);
-                // console.log("set the cookie");
                 console.log("set token through local storage");
             }
             $rootScope.loggedin = true;
