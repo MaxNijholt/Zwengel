@@ -4,16 +4,23 @@ angular.module('authService', ['ngResource'])
         var service = {};
 
         service.Login = function (username, password, callback) {
-            $http.post('https://zwengel-server.herokuapp.com/auth/login', { username: username, password: password })            
+            $http.post('https://zwengel-server.herokuapp.com/auth/login', { username: username, password: password })
                 .success(function (response) {
                     callback(response);
                 });
         };
-        
-        service.logout = function(){
+
+        service.isLoggedIn = function(){
+            if (localStorage.getItem("token") != null) 
+                return true;    
+            else
+                return false;           
+        }
+
+        service.logout = function () {
             localStorage.removeItem("token");
             localStorage.removeItem("username");
-            $rootScope.loggedin = false;        
+            $rootScope.loggedin = false;
         }
 
         service.GetToken = function (callback) {
@@ -22,7 +29,7 @@ angular.module('authService', ['ngResource'])
         }
 
         service.SetCredentials = function (response, input) {
-            localStorage.setItem('username', JSON.stringify(input.username));                   
+            localStorage.setItem('username', JSON.stringify(input.username));
 
             if (input.rememberme) {
                 localStorage.setItem('token', response.data.token);
