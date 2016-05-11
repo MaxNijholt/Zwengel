@@ -10,13 +10,6 @@ angular.module('authService', ['ngResource'])
                 });
         };
 
-        service.isLoggedIn = function(){
-            if (localStorage.getItem("token") != null) 
-                return true;    
-            else
-                return false;           
-        }
-
         service.logout = function () {
             localStorage.removeItem("token");
             localStorage.removeItem("username");

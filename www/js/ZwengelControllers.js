@@ -31,12 +31,10 @@ controllers.LoginController = function ($ionicScrollDelegate, $rootScope, $ionic
     var self = this;
     $ionicScrollDelegate.scrollTop();
 
-    if (localStorage.getItem("token") != null) {
-        console.log("naar doelen");
+    if (localStorage.getItem("token") != null) {        
         AllData.toPage("Doelen", "#/doelen");
     }
-    else {
-        console.log("naar login");
+    else {        
         AllData.toPage("Login", "#/login");
     }
 
