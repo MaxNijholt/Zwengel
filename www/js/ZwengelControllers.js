@@ -27,15 +27,26 @@ controllers.AllController = function ($ionicPlatform, $window, AllData) {
     }, 100);
 };
 
-controllers.LoginController = function ($ionicScrollDelegate, AllData) {
+controllers.LoginController = function ($ionicScrollDelegate, $rootScope, AuthenticationService) {
     console.log("logincontroller reached");
     var self = this;
-    
+
     $ionicScrollDelegate.scrollTop();
 
-    self.doelscreen = AllData.pref.doelscreen;
-    self.textIcons = AllData.pref.textIcons;
-    self.thema = "default";
+    self.login = function (input) {
+        console.log("login");       
+        AuthenticationService.Login(input.username, input.password, function (response) {
+            if (response.success) {                
+                console.log("Goooood!");
+                //AuthenticationService.SetCredentials(response, input);
+            }
+            else {
+                console.log(response.message);
+            }
+        })
+    }
+
+
 };
 
 controllers.DoelenController = function ($ionicScrollDelegate, AllData, StudentInfo) {
@@ -153,7 +164,7 @@ controllers.StapController = function ($ionicScrollDelegate, $routeParams, AllDa
 };
 
 zwengelControllers.controller('AllController', ['$ionicPlatform', '$window', 'AllData', controllers.AllController]);
-zwengelControllers.controller('LoginController', ['$ionicScrollDelegate', 'AllData', controllers.LoginController]);
+zwengelControllers.controller('LoginController', ['$ionicScrollDelegate', '$rootScope', 'AuthenticationService', controllers.LoginController]);
 zwengelControllers.controller('DoelenController', ['$ionicScrollDelegate', 'AllData', 'StudentInfo', controllers.DoelenController]);
 zwengelControllers.controller('BeloningenController', ['$ionicScrollDelegate', 'StudentInfo', controllers.BeloningenController]);
 zwengelControllers.controller('ProfielController', ['$ionicScrollDelegate', 'AllData', controllers.ProfielController]);
