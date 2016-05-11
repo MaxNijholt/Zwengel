@@ -5,9 +5,9 @@ controllers.AllController = function ($ionicPlatform, $window, AllData) {
     var self = this;
 
     self.page = AllData.page;
-
+    
     self.navDoelen = function () {
-        AllData.toPage("Login", "#/login");
+        AllData.toPage("Doelen", "#/doelen");
     };
 
     self.navBeloningen = function () {
@@ -27,18 +27,25 @@ controllers.AllController = function ($ionicPlatform, $window, AllData) {
     }, 100);
 };
 
-controllers.LoginController = function ($ionicScrollDelegate, $rootScope, AuthenticationService) {
-    console.log("logincontroller reached");
+controllers.LoginController = function ($ionicScrollDelegate, $rootScope, AuthenticationService, AllData) {
     var self = this;
-
     $ionicScrollDelegate.scrollTop();
 
+    if (localStorage.getItem("token") != null) {
+        console.log("naar doelen");
+        AllData.toPage("Doelen", "#/doelen");
+    }
+    else {
+        console.log("naar login");
+        AllData.toPage("Login", "#/login");
+    }
+
     self.login = function (input) {
-        console.log("login");       
         AuthenticationService.Login(input.username, input.password, function (response) {
-            if (response.success) {                
-                console.log("Goooood!");
-                //AuthenticationService.SetCredentials(response, input);
+            if (response.success) {
+                AuthenticationService.SetCredentials(response, input);
+                AllData.toPage("Doelen", "#/doelen");
+                console.log("ingelogd!");
             }
             else {
                 console.log(response.message);
@@ -164,7 +171,7 @@ controllers.StapController = function ($ionicScrollDelegate, $routeParams, AllDa
 };
 
 zwengelControllers.controller('AllController', ['$ionicPlatform', '$window', 'AllData', controllers.AllController]);
-zwengelControllers.controller('LoginController', ['$ionicScrollDelegate', '$rootScope', 'AuthenticationService', controllers.LoginController]);
+zwengelControllers.controller('LoginController', ['$ionicScrollDelegate', '$rootScope', 'AuthenticationService', 'AllData', controllers.LoginController]);
 zwengelControllers.controller('DoelenController', ['$ionicScrollDelegate', 'AllData', 'StudentInfo', controllers.DoelenController]);
 zwengelControllers.controller('BeloningenController', ['$ionicScrollDelegate', 'StudentInfo', controllers.BeloningenController]);
 zwengelControllers.controller('ProfielController', ['$ionicScrollDelegate', 'AllData', controllers.ProfielController]);

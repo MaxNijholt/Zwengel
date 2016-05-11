@@ -4,12 +4,10 @@ angular.module('loginService', ['ngResource'])
         var service = {};
 
         service.Login = function (username, password, callback) {
-          
-            $http.post('https://zwengel-server.herokuapp.com/auth/login', { username: username, password: password })
-                .success(function (response) {                                        
+            $http.post('https://zwengel-server.herokuapp.com/auth/login', { username: username, password: password })            
+                .success(function (response) {
                     callback(response);
                 });
-
         };
 
         service.GetToken = function (callback) {
@@ -19,9 +17,9 @@ angular.module('loginService', ['ngResource'])
         }
 
         service.SetCredentials = function (response, input) {
-            localStorage.setItem('username', JSON.stringify(input.username));
+            localStorage.setItem('username', JSON.stringify(input.username));                   
 
-            if (input.remember) {
+            if (input.rememberme) {
                 localStorage.setItem('token', response.data.token);
                 // $cookies.put("token", response.data.token);
                 // console.log("set the cookie");
@@ -32,4 +30,3 @@ angular.module('loginService', ['ngResource'])
         };
         return service;
     });
-  

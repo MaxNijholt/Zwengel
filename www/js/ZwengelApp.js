@@ -9,14 +9,14 @@ var zwengelApp = angular.module('zwengelApp', [
 
 zwengelApp.config(['$routeProvider',
     function ($routeProvider) {
-        $routeProvider.
-            when('/login', {
-                templateUrl: 'views/login.html',
-                controller: 'LoginController as lc'
-            }).
+        $routeProvider.           
             when('/doelen', {
                 templateUrl: 'views/doelen.html',
                 controller: 'DoelenController as denc'
+            }).
+            when('/login', {
+                templateUrl: 'views/login.html',
+                controller: 'LoginController as lc'
             }).
             when('/doelen/:doelID', {
                 templateUrl: 'views/doel.html',
