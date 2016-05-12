@@ -1,0 +1,14 @@
+<div class="list list-inset">
+<form name="loginForm" novalidate>
+        <label class="item item-input">
+                <input type="text" ng-model="user.username" placeholder="Gebruikersnaam" required>
+        </label>
+        <label class="item item-input">
+                <input type="password" ng-model="user.password" placeholder="Wachtwoord" required>
+        </label>
+    <ion-checkbox ng-model="user.rememberme">Onthouden?</ion-checkbox>
+    </div>
+    <div id="cardLogout" class="card">
+    <button class="button button-block button-positive" ng-disabled="loginForm.$invalid" ng-click="lc.login(user)">Login</button>
+    </div>
+</form>

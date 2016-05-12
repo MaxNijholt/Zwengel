@@ -1,5 +1,6 @@
 <div class="row">
-    <div class="col col-33"><img class="profileImage" src="img/profile.png"></img></div>
+    <div class="col col-33"><img class="profileImage" src="img/profile.png"></img>
+    </div>
     <div class="col col-67 profileInfo">
         <h3>Bob van der Putten</h3>
         <h2 class="no_margin_top">42 <i class="icon ion-card pointsIcon"></i></h2>
@@ -42,6 +43,7 @@
         </select>
     </label>
 </div>
+
 
 <div class="card">
     <div class="item item-divider item-positive">
@@ -93,7 +95,8 @@
                 <p>29-02-2016</p>
             </div>
         </div>
-    </div><div class="item">
+    </div>
+    <div class="item">
         <div class="row">
             <div class="col col-67">
                 <p>Als eerste naar huis</p>
@@ -103,4 +106,7 @@
             </div>
         </div>
     </div>
+</div>
+<div id="cardLogout" class="card">
+    <button class="button button-block button-positive" ng-disabled="loginForm.$invalid" ng-click="pc.logout()">Uitloggen</button>
 </div>
