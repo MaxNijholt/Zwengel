@@ -69,24 +69,24 @@ controllers.DoelenController = function ($ionicScrollDelegate, AllData, StudentI
 
     $ionicScrollDelegate.scrollTop();
 
-    StudentInfo.getDoelen("test", function (results) {
-        // console.log(results);
-        
-        results.forEach(function(object){
-            switch(object.state) {
-                case "finished":
-                    object.doneColor = "balanced";
-                    break;
+    StudentInfo.getDoelen("test", function (results) {        
+
+        // finished, stopped, doing
+        results.forEach(function (object) {
+            switch (object.state) {
                 case "doing":
                     object.doneColor = "positive";
                     break;
-                default:
+                case "finished":
+                    object.doneColor = "balanced";
+                    break;
+                case "stopped":
                     object.doneColor = "assertive";
             }
         });
-        
+
         self.targets = results;
-        
+
     });
 
     self.toDoel = function (doelID) {
@@ -148,8 +148,6 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
 
     $ionicScrollDelegate.scrollTop();
     var doelID;
-    
-    //self.doeletje = $routeParams.doelID;
 
     StudentInfo.getDoel("test", $routeParams.doelID, function (results) {
         results.steps.forEach(function (object) {
