@@ -22,8 +22,8 @@ services_zwengel.AllData = function(){
     };
     
     self.page = {
-        title: "Doelen",
-        url: "#/doelen"
+        title: "Login",
+        url: "#/login"
     };
     
     self.pref = {
