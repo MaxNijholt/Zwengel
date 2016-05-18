@@ -1,25 +1,25 @@
 var dataServices = angular.module('dataServices', ['ngResource']);
 
 var services_data = {};
-var dataCaller = {};
+var dataCaller_data = {};
 
 services_data.StudentInfo = function(){
     var self = this;
     
     self.getDoelen = function(studentID, onSucces){
-        dataCaller.getDoelen(studentID, onSucces);
+        dataCaller_data.getDoelen(studentID, onSucces);
     };
     
     self.getDoel = function(studentID, doelID, onSucces){
-        dataCaller.getDoel(studentID, doelID, onSucces);
+        dataCaller_data.getDoel(studentID, doelID, onSucces);
     };
     
     self.getStap = function(studentID, doelID, stapID, onSucces){
-        dataCaller.getStap(studentID, doelID, stapID, onSucces);
+        dataCaller_data.getStap(studentID, doelID, stapID, onSucces);
     };
     
     self.getBeloningen = function(studentID, onSucces){
-        dataCaller.getBeloningen(studentID, onSucces);
+        dataCaller_data.getBeloningen(studentID, onSucces);
     };
     
     return {
@@ -30,7 +30,7 @@ services_data.StudentInfo = function(){
     };
 };
 
-dataCaller.testResult = [
+dataCaller_data.testResult = [
         {
             "id": "t1",
             "title": "Overtuigen",
@@ -322,14 +322,14 @@ dataCaller.testResult = [
         }
     ];
 
-dataCaller.getDoelen = function(studentID, onSucces){    
-    onSucces(dataCaller.testResult);
+dataCaller_data.getDoelen = function(studentID, onSucces){    
+    onSucces(dataCaller_data.testResult);
 };
 
-dataCaller.getDoel = function(studentID, doelID, onSucces){
+dataCaller_data.getDoel = function(studentID, doelID, onSucces){
     var doel = null;
     
-    dataCaller.testResult.forEach(function(object){
+    dataCaller_data.testResult.forEach(function(object){
         if(object.id === doelID){
             doel = object;
         }
@@ -338,10 +338,10 @@ dataCaller.getDoel = function(studentID, doelID, onSucces){
     onSucces(doel);
 };
 
-dataCaller.getStap = function(studentID, doelID, stapID, onSucces){
+dataCaller_data.getStap = function(studentID, doelID, stapID, onSucces){
     var stap = null;
     
-    dataCaller.testResult.forEach(function(object){
+    dataCaller_data.testResult.forEach(function(object){
         if(object.id === doelID){
             object.steps.forEach(function(object2){
                if(object2.id === stapID){
@@ -354,7 +354,7 @@ dataCaller.getStap = function(studentID, doelID, stapID, onSucces){
     onSucces(stap);
 };
 
-dataCaller.getBeloningen = function(studentID, onSucces){
+dataCaller_data.getBeloningen = function(studentID, onSucces){
     var testResult = [{ 
         "title": "10 min. spelletje spelen in de les",
         "price": 5,

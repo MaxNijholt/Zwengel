@@ -1,15 +1,17 @@
 var authServices = angular.module('authServices', ['ngResource']);
 
 var services_auth = {};
+var dataCaller_auth = {};
+var API = {
+    base: "http://zwengel-server.herokuapp.com",
+    login: "/auth/login"
+};
 
 services_auth.Authentication = function($http, $rootScope) {
     var self = this;
     
-    self.Login = function (username, password, callback) {
-        $http.post('https://zwengel-server.herokuapp.com/auth/login', { username: username, password: password })
-            .success(function (response) {
-                callback(response);
-            });
+    self.Login = function (username, password, onSucces) {
+        dataCaller_auth.login($http, username, password, onSucces);
     };
     
     self.logout = function () {
@@ -40,6 +42,15 @@ services_auth.Authentication = function($http, $rootScope) {
         GetToken: self.GetToken,
         SetCredentials: self.SetCredentials
     };
+};
+
+dataCaller_auth.login = function($http, username, password, onSucces) {
+    $http.post(API.base + API.login, { username: username, password: password })
+        .success(
+            function (response) {
+                onSucces(response);
+            }
+        );
 };
 
 authServices.factory('Authentication', services_auth.Authentication);
