@@ -28,11 +28,31 @@
   <allow-intent href="mailto:*"/>
   <allow-intent href="geo:*"/>
   <icon src="icon.png" />
+  <gap:splash src="res/screen/android/screen-mdpi-portrait.png"/>
   <platform name="android">
     <allow-intent href="market:*"/>
+    <gap:splash src="res/screen/android/screen-hdpi-landscape.png" density="land-hdpi"/>
+    <gap:splash src="res/screen/android/screen-ldpi-landscape.png" density="land-ldpi"/>
+    <gap:splash src="res/screen/android/screen-mdpi-landscape.png" density="land-mdpi"/>
+    <gap:splash src="res/screen/android/screen-xhdpi-landscape.png" density="land-xhdpi"/>
+
+    <gap:splash src="res/screen/android/screen-hdpi-portrait.png" density="port-hdpi"/>
+    <gap:splash src="res/screen/android/screen-ldpi-portrait.png" density="port-ldpi"/>
+    <gap:splash src="res/screen/android/screen-mdpi-portrait.png" density="port-mdpi"/>
+    <gap:splash src="res/screen/android/screen-xhdpi-portrait.png" density="port-xhdpi"/>
   </platform>
   <platform name="ios">
     <allow-intent href="itms:*"/>
     <allow-intent href="itms-apps:*"/>
+    <gap:splash src="res/screen/ios/screen-iphone-portrait.png" width="320" height="480"/>
+    <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png" width="640" height="960"/>
+    <gap:splash src="res/screen/ios/screen-ipad-portrait.png" width="768" height="1024"/>
+    <gap:splash src="res/screen/ios/screen-ipad-portrait-2x.png" width="1536" height="2048"/>
+    <gap:splash src="res/screen/ios/screen-ipad-landscape.png" width="1024" height="768"/>
+    <gap:splash src="res/screen/ios/screen-ipad-landscape-2x.png" width="2048" height="1536"/>
+    <gap:splash src="res/screen/ios/screen-iphone-portrait-568h-2x.png" width="640" height="1136"/>
+    <gap:splash src="res/screen/ios/screen-iphone-landscape.png" width="480" height="320"/>
+    <gap:splash src="res/screen/ios/screen-iphone-landscape-2x.png" width="960" height="640"/>
   </platform>
+  <preference name="SplashScreenDelay" value="3000" />
 </widget>
