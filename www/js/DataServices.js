@@ -2,12 +2,16 @@ var dataServices = angular.module('dataServices', ['ngResource']);
 
 var services_data = {};
 var dataCaller = {};
+var API = {
+    base: "http://zwengel-server.herokuapp.com",
+    goals: "/goals"
+};
 
-services_data.StudentInfo = function(){
+services_data.StudentInfo = function($http){
     var self = this;
     
     self.getDoelen = function(studentID, onSucces){
-        dataCaller.getDoelen(studentID, onSucces);
+        dataCaller.getDoelen($http, studentID, onSucces);
     };
     
     self.getDoel = function(studentID, doelID, onSucces){
@@ -322,8 +326,15 @@ dataCaller.testResult = [
         }
     ];
 
-dataCaller.getDoelen = function(studentID, onSucces){    
-    onSucces(dataCaller.testResult);
+dataCaller.getDoelen = function($http, studentID, onSucces, onFail){
+    $http.get(API.base + API.goals)
+		.then(
+            function(results) {
+                onSucces(results.data.data);
+            }, function(response) {
+                onFail(response);
+            }
+        );
 };
 
 dataCaller.getDoel = function(studentID, doelID, onSucces){
@@ -381,4 +392,4 @@ dataCaller.getBeloningen = function(studentID, onSucces){
     onSucces(testResult);
 };
 
-dataServices.factory('StudentInfo', services_data.StudentInfo);
+dataServices.factory('StudentInfo', ['$http', services_data.StudentInfo]);
