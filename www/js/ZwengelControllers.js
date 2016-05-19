@@ -1,7 +1,7 @@
 var zwengelControllers = angular.module('zwengelControllers', []);
 var controllers = {};
 
-controllers.AllController = function ($ionicPlatform, $window, AllData) {
+controllers.AllController = function ($ionicPlatform, $window, $route, AllData) {
     var self = this;
 
     self.page = AllData.page;
@@ -20,6 +20,11 @@ controllers.AllController = function ($ionicPlatform, $window, AllData) {
 
     self.back = function () {
         AllData.toBack();
+    };
+    
+    self.reload = function(){
+        $route.reload();
+        console.log("reload!");
     };
 
     $ionicPlatform.registerBackButtonAction(function () {
@@ -192,7 +197,7 @@ controllers.StapController = function ($ionicScrollDelegate, $routeParams, AllDa
     });
 };
 
-zwengelControllers.controller('AllController', ['$ionicPlatform', '$window', 'AllData', controllers.AllController]);
+zwengelControllers.controller('AllController', ['$ionicPlatform', '$window', '$route', 'AllData', controllers.AllController]);
 zwengelControllers.controller('LoginController', ['$ionicScrollDelegate', '$rootScope', '$ionicPopup', 'AuthenticationService', 'AllData', controllers.LoginController]);
 zwengelControllers.controller('DoelenController', ['$ionicScrollDelegate', 'AllData', 'StudentInfo', controllers.DoelenController]);
 zwengelControllers.controller('BeloningenController', ['$ionicScrollDelegate', 'StudentInfo', controllers.BeloningenController]);
