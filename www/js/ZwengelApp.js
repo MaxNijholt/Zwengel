@@ -55,10 +55,11 @@ zwengelApp.run(["$rootScope", "$location", "Authentication", function ($rootScop
     }
 
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
-        if (next.$$route.authenticate)
-            if (!$rootScope.loggedin) {
-                event.preventDefault();
-                $location.path('/login');
-            }
+        if (next.$$route != undefined)
+            if (next.$$route.authenticate)
+                if (!$rootScope.loggedin) {
+                    event.preventDefault();
+                    $location.path('/login');
+                }
     });
 }]);

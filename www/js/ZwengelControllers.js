@@ -1,7 +1,7 @@
 var zwengelControllers = angular.module('zwengelControllers', []);
 var controllers = {};
 
-controllers.AllController = function ($ionicPlatform, $window, AllData) {
+controllers.AllController = function ($ionicPlatform, $window, $route, AllData) {
     var self = this;
 
     self.page = AllData.page;
@@ -21,6 +21,11 @@ controllers.AllController = function ($ionicPlatform, $window, AllData) {
     self.back = function () {
         AllData.toBack();
     };
+    
+    self.reload = function(){
+        $route.reload();
+        console.log("reload!");
+    };
 
     $ionicPlatform.registerBackButtonAction(function () {
         AllData.toBack(true);
@@ -31,10 +36,10 @@ controllers.LoginController = function ($ionicScrollDelegate, $rootScope, $ionic
     var self = this;
     $ionicScrollDelegate.scrollTop();
 
-    if (localStorage.getItem("token") != null) {        
+    if (localStorage.getItem("token") != null) {
         AllData.toPage("Doelen", "#/doelen");
     }
-    else {        
+    else {
         AllData.toPage("Login", "#/login");
     }
 
@@ -69,20 +74,24 @@ controllers.DoelenController = function ($ionicScrollDelegate, AllData, StudentI
 
     $ionicScrollDelegate.scrollTop();
 
-    StudentInfo.getDoelen("test", function (results) {
+    StudentInfo.getDoelen("test", function (results) {        
+
+        // finished, stopped, doing
         results.forEach(function (object) {
-            switch (object.done) {
-                case "good":
+            switch (object.state) {
+                case "doing":
+                    object.doneColor = "positive";
+                    break;
+                case "finished":
                     object.doneColor = "balanced";
                     break;
-                case "bad":
+                case "stopped":
                     object.doneColor = "assertive";
-                    break;
-                default:
-                    object.doneColor = "positive";
             }
         });
+
         self.targets = results;
+
     });
 
     self.toDoel = function (doelID) {
@@ -160,7 +169,7 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
         });
 
         self.doel = results;
-        doelID = results.id;
+        doelID = results._id;
     });
 
     self.toStap = function (stapID) {
@@ -188,7 +197,7 @@ controllers.StapController = function ($ionicScrollDelegate, $routeParams, AllDa
     });
 };
 
-zwengelControllers.controller('AllController', ['$ionicPlatform', '$window', 'AllData', controllers.AllController]);
+zwengelControllers.controller('AllController', ['$ionicPlatform', '$window', '$route', 'AllData', controllers.AllController]);
 zwengelControllers.controller('LoginController', ['$ionicScrollDelegate', '$rootScope', '$ionicPopup', 'Authentication', 'AllData', controllers.LoginController]);
 zwengelControllers.controller('DoelenController', ['$ionicScrollDelegate', 'AllData', 'StudentInfo', controllers.DoelenController]);
 zwengelControllers.controller('BeloningenController', ['$ionicScrollDelegate', 'StudentInfo', controllers.BeloningenController]);

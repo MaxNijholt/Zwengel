@@ -2,10 +2,6 @@ var authServices = angular.module('authServices', ['ngResource']);
 
 var services_auth = {};
 var dataCaller_auth = {};
-var API = {
-    base: "http://zwengel-server.herokuapp.com",
-    login: "/auth/login"
-};
 
 services_auth.Authentication = function($http, $rootScope) {
     var self = this;
