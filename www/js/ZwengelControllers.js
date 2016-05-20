@@ -23,8 +23,7 @@ controllers.AllController = function ($ionicPlatform, $window, $route, AllData) 
     };
     
     self.reload = function(){
-        $route.reload();
-        console.log("reload!");
+        $route.reload();    
     };
 
     $ionicPlatform.registerBackButtonAction(function () {
@@ -155,8 +154,7 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
     var doelID;
 
     StudentInfo.getDoel("test", $routeParams.doelID, function (results) {
-        results.steps.forEach(function (object) {
-            console.log(object);
+        results.steps.forEach(function (object) {            
             switch (object.completed) {
                 case "true":
                     object.doneColor = "balanced";
@@ -183,12 +181,12 @@ controllers.StapController = function ($ionicScrollDelegate, $routeParams, AllDa
 
     $ionicScrollDelegate.scrollTop();
 
-    StudentInfo.getStap("test", $routeParams.doelID, $routeParams.stapID, function (result) {
-        switch (result.done) {
-            case "good":
+    StudentInfo.getStap("test", $routeParams.doelID, $routeParams.stapID, function (result) {       
+        switch (result.completed) {
+            case "true":
                 result.doneColor = "balanced";
                 break;
-            case "bad":
+            case "false":
                 result.doneColor = "assertive";
                 break;
             default:

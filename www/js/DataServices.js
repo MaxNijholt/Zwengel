@@ -22,7 +22,7 @@ services_data.StudentInfo = function ($http) {
     };
 
     self.getStap = function (studentID, doelID, stapID, onSucces) {
-        dataCaller_data.getStap(studentID, doelID, stapID, onSucces);
+        dataCaller_data.getStap($http, studentID, doelID, stapID, onSucces);
     };
 
     self.getBeloningen = function (studentID, onSucces) {
@@ -53,27 +53,22 @@ dataCaller_data.getDoel = function ($http, studentID, doelID, onSucces, onFail) 
     $http.get(API.base + API.goals + "/" + doelID)
         .then(
         function (results) {
-            console.log(results.data);
             onSucces(results.data);
         }, function (response) {
             onFail(response);
         });
 }
 
-dataCaller_data.getStap = function (studentID, doelID, stapID, onSucces) {
+dataCaller_data.getStap = function ($http, studentID, doelID, stapID, onSucces) {
     var stap = null;
 
-    dataCaller_data.testResult.forEach(function (object) {
-        if (object.id === doelID) {
-            object.steps.forEach(function (object2) {
-                if (object2.id === stapID) {
-                    stap = object2;
-                }
-            });
-        }
-    });
-
-    onSucces(stap);
+    $http.get(API.base + API.goals + "/" + doelID + API.steps + "/" + stapID)
+        .then(
+        function (results) {
+            onSucces(results.data);
+        }, function (response) {
+            onFail(response);
+        });
 };
 
 dataCaller_data.getBeloningen = function (studentID, onSucces) {
