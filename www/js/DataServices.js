@@ -3,7 +3,8 @@ var dataServices = angular.module('dataServices', ['ngResource']);
 var API = {
     base: "http://zwengel-server.herokuapp.com",
     login: "/auth/login",
-    goals: "/goals"
+    goals: "/goals",
+    steps: "/steps"
 };
 
 var services_data = {};
@@ -37,8 +38,6 @@ services_data.StudentInfo = function ($http) {
 };
 
 dataCaller_data.getDoelen = function ($http, studentID, onSucces, onFail) {
-    console.log(API.base);
-    console.log(API.goals);
     $http.get(API.base + API.goals)
         .then(
         function (results) {

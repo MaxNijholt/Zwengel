@@ -156,11 +156,12 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
 
     StudentInfo.getDoel("test", $routeParams.doelID, function (results) {
         results.steps.forEach(function (object) {
-            switch (object.done) {
-                case "good":
+            console.log(object);
+            switch (object.completed) {
+                case "true":
                     object.doneColor = "balanced";
                     break;
-                case "bad":
+                case "false":
                     object.doneColor = "assertive";
                     break;
                 default:
