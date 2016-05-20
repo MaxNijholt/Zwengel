@@ -3,7 +3,7 @@ var zwengelApp = angular.module('zwengelApp', [
     'zwengelControllers',
     'zwengelServices',
     'dataServices',
-    'authService',
+    'authServices',
     'ionic'
 ]);
 
@@ -47,8 +47,8 @@ zwengelApp.config(['$routeProvider',
     }
 ]);
 
-zwengelApp.run(["$rootScope", "$location", "AuthenticationService", function ($rootScope,
-    $location, AuthenticationService) {
+zwengelApp.run(["$rootScope", "$location", "Authentication", function ($rootScope,
+    $location, Authentication) {
 
     if (localStorage.getItem("token") != null) {
         $rootScope.loggedin = true;
