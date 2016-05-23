@@ -1,4 +1,4 @@
-<div ng-repeat="target in denc.targets | orderBy:endDate" class="row timecard">
+<div ng-repeat="target in denc.targets | orderBy:'endDate':true" class="row timecard">
     <div class="col col-10 col-center">
         <i class="button-icon icon ion-calculator"></i> <!--{{target.icon}}-->
     </div>
