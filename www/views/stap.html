@@ -2,11 +2,10 @@
     <div class="col">
         <h3>{{sc.stap.name}}</h3>        
     </div>
-</div>
-
+</div>   
 <div class="card">
     <div class="item item-divider item-{{sc.stap.doneColor}}">
-        {{sc.stap.name}}
+        {{sc.stap.name}}       
     </div>
     <div class="item item-icon-right item-text-wrap">
         <i class="icon ion-information"></i>
@@ -14,6 +13,6 @@
     </div>
     <div class="item item-icon-right">
         <i class="icon ion-calendar"></i>
-        {{sc.stap.completionDate}}
+        {{sc.stap.completionDate | date:'yyyy-MM-dd'}}
     </div>
 </div>

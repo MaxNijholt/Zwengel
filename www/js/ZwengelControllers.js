@@ -75,7 +75,6 @@ controllers.DoelenController = function ($ionicScrollDelegate, AllData, StudentI
 
     StudentInfo.getDoelen("test", function (results) {        
 
-        // finished, stopped, doing
         results.forEach(function (object) {
             switch (object.state) {
                 case "doing":
@@ -156,10 +155,10 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
     StudentInfo.getDoel("test", $routeParams.doelID, function (results) {
         results.steps.forEach(function (object) {            
             switch (object.completed) {
-                case "true":
+                case true:
                     object.doneColor = "balanced";
                     break;
-                case "false":
+                case false:
                     object.doneColor = "assertive";
                     break;
                 default:
@@ -181,16 +180,16 @@ controllers.StapController = function ($ionicScrollDelegate, $routeParams, AllDa
 
     $ionicScrollDelegate.scrollTop();
 
-    StudentInfo.getStap("test", $routeParams.doelID, $routeParams.stapID, function (result) {       
+    StudentInfo.getStap("test", $routeParams.doelID, $routeParams.stapID, function (result) { 
         switch (result.completed) {
-            case "true":
-                result.doneColor = "balanced";
+            case true:
+                result.doneColor = "balanced";         
                 break;
-            case "false":
-                result.doneColor = "assertive";
+            case false:
+                result.doneColor = "assertive";       
                 break;
             default:
-                result.doneColor = "positive";
+                result.doneColor = "positive";         
         }
         self.stap = result;
     });
