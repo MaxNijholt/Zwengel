@@ -9,10 +9,10 @@
     </div>
     <div class="item item-icon-right item-text-wrap">
         <i class="icon ion-information"></i>
-        {{sc.stap.completed}}
+        {{sc.stap.result}}
     </div>
     <div class="item item-icon-right">
         <i class="icon ion-calendar"></i>
-        {{sc.stap.completionDate | date:'yyyy-MM-dd'}}
+        <b ng-if="sc.stap.completed">Behaald op: </b>{{sc.stap.completionDate | date:'yyyy-MM-dd'}}
     </div>
 </div>

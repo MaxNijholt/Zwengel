@@ -165,6 +165,8 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
                     object.doneColor = "positive";
             }
         });
+        
+        //hetzelfde als met donecolor, de progress balk zetten, dat is wat netter in de view, even met bram over hebben.
 
         self.doel = results;
         doelID = results._id;
@@ -183,13 +185,16 @@ controllers.StapController = function ($ionicScrollDelegate, $routeParams, AllDa
     StudentInfo.getStap("test", $routeParams.doelID, $routeParams.stapID, function (result) { 
         switch (result.completed) {
             case true:
-                result.doneColor = "balanced";         
+                result.doneColor = "balanced"; 
+                result.result = "Behaald";        
                 break;
             case false:
-                result.doneColor = "assertive";       
+                result.doneColor = "assertive";    
+                result.result = "Niet behaald";   
                 break;
             default:
-                result.doneColor = "positive";         
+                result.doneColor = "positive";   
+                result.result = "Nog bezig";                        
         }
         self.stap = result;
     });
