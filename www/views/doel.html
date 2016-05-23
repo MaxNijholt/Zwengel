@@ -33,7 +33,7 @@
     </div>
 </div>
 
-<div class="card" ng-repeat="step in dc.doel.steps" ng-click="dc.toStap(dc.doel.steps.indexOf(step))">
+<div class="card" ng-repeat="step in dc.doel.steps | orderBy:'completionDate':true" ng-click="dc.toStap(dc.doel.steps.indexOf(step))">
     <div class="item item-divider item-{{step.doneColor}}">
         {{step.name}}
     </div>
