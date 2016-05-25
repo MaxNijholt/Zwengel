@@ -21,9 +21,9 @@ controllers.AllController = function ($ionicPlatform, $window, $route, AllData) 
     self.back = function () {
         AllData.toBack();
     };
-    
-    self.reload = function(){
-        $route.reload();    
+
+    self.reload = function () {
+        $route.reload();
     };
 
     $ionicPlatform.registerBackButtonAction(function () {
@@ -73,7 +73,7 @@ controllers.DoelenController = function ($ionicScrollDelegate, AllData, StudentI
 
     $ionicScrollDelegate.scrollTop();
 
-    StudentInfo.getDoelen("test", function (results) {        
+    StudentInfo.getDoelen("test", function (results) {
 
         results.forEach(function (object) {
             switch (object.state) {
@@ -153,7 +153,12 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
     var doelID;
 
     StudentInfo.getDoel("test", $routeParams.doelID, function (results) {
-        results.steps.forEach(function (object) {            
+
+        var count = 0;
+
+        results.steps.forEach(function (object) {
+            if (object.completed)
+                count++;
             switch (object.completed) {
                 case true:
                     object.doneColor = "balanced";
@@ -165,9 +170,19 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
                     object.doneColor = "positive";
             }
         });
-        
-        //hetzelfde als met donecolor, de progress balk zetten, dat is wat netter in de view, even met bram over hebben.
 
+        results.percentage = ((count / results.steps.length) * 100);
+       
+        if (results.percentage < 33){
+            results.progressStatus = "danger";
+            if(results.percentage <= 10)
+                results.percentage = 5;
+        }            
+        else if (results.percentage >= 33 && results.percentage < 66)
+            results.progressStatus = "warning";
+        else if (results.percentage > 66 && results.percentage <= 100)
+            results.progressStatus = "success";
+    
         self.doel = results;
         doelID = results._id;
     });
@@ -182,19 +197,19 @@ controllers.StapController = function ($ionicScrollDelegate, $routeParams, AllDa
 
     $ionicScrollDelegate.scrollTop();
 
-    StudentInfo.getStap("test", $routeParams.doelID, $routeParams.stapID, function (result) { 
+    StudentInfo.getStap("test", $routeParams.doelID, $routeParams.stapID, function (result) {
         switch (result.completed) {
             case true:
-                result.doneColor = "balanced"; 
-                result.result = "Behaald";        
+                result.doneColor = "balanced";
+                result.result = "Behaald";
                 break;
             case false:
-                result.doneColor = "assertive";    
-                result.result = "Niet behaald";   
+                result.doneColor = "assertive";
+                result.result = "Niet behaald";
                 break;
             default:
-                result.doneColor = "positive";   
-                result.result = "Nog bezig";                        
+                result.doneColor = "positive";
+                result.result = "Nog bezig";
         }
         self.stap = result;
     });
