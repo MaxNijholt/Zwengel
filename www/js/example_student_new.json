@@ -1,36 +1,8 @@
-var dataServices = angular.module('dataServices', ['ngResource']);
-
-var services_data = {};
-var dataCaller = {};
-
-services_data.StudentInfo = function(){
-    var self = this;
-    
-    self.getDoelen = function(studentID, onSucces){
-        dataCaller.getDoelen(studentID, onSucces);
-    };
-    
-    self.getDoel = function(studentID, doelID, onSucces){
-        dataCaller.getDoel(studentID, doelID, onSucces);
-    };
-    
-    self.getStap = function(studentID, doelID, stapID, onSucces){
-        dataCaller.getStap(studentID, doelID, stapID, onSucces);
-    };
-    
-    self.getBeloningen = function(studentID, onSucces){
-        dataCaller.getBeloningen(studentID, onSucces);
-    };
-    
-    return {
-        getDoelen: self.getDoelen,
-        getDoel: self.getDoel,
-        getStap: self.getStap,
-        getBeloningen: self.getBeloningen
-    };
-};
-
-dataCaller.testResult = [
+{
+	"id": "s1",
+	"name": "Pieter-Jan",
+	"surname": "Derks",
+	"targets": [
         {
             "id": "t1",
             "title": "Overtuigen",
@@ -320,65 +292,5 @@ dataCaller.testResult = [
                 }
             ]
         }
-    ];
-
-dataCaller.getDoelen = function(studentID, onSucces){    
-    onSucces(dataCaller.testResult);
-};
-
-dataCaller.getDoel = function(studentID, doelID, onSucces){
-    var doel = null;
-    
-    dataCaller.testResult.forEach(function(object){
-        if(object.id === doelID){
-            doel = object;
-        }
-    });
-    
-    onSucces(doel);
-};
-
-dataCaller.getStap = function(studentID, doelID, stapID, onSucces){
-    var stap = null;
-    
-    dataCaller.testResult.forEach(function(object){
-        if(object.id === doelID){
-            object.steps.forEach(function(object2){
-               if(object2.id === stapID){
-                   stap = object2;
-               }
-            });
-        }
-    });
-    
-    onSucces(stap);
-};
-
-dataCaller.getBeloningen = function(studentID, onSucces){
-    var testResult = [{ 
-        "title": "10 min. spelletje spelen in de les",
-        "price": 5,
-        "behaald": true
-    },{ 
-        "title": "15 min. spelletje spelen in de les",
-        "price": 7,
-        "behaald": false
-    },{ 
-        "title": "Thema Ridder",
-        "price": 25,
-        "behaald": false
-    },{ 
-        "title": "Thema Koning",
-        "price": 25,
-        "behaald": true
-    },{ 
-        "title": "Als eerste naar huis",
-        "price": 10,
-        "behaald": false
-    }
-    ];
-    
-    onSucces(testResult);
-};
-
-dataServices.factory('StudentInfo', services_data.StudentInfo);
+    ]
+}
