@@ -71,3 +71,7 @@ ion-content {
 .pointsIcon{
     vertical-align: text-bottom !important;
 }
+
+#cardLogout{
+    box-shadow: none;
+}
