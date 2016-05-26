@@ -18,12 +18,12 @@ services_zwengel.AllData = function(){
         };
         
         self.history.push(object);
-        //console.log(self.history);
+        console.log(self.history);
     };
     
     self.page = {
-        title: "Login",
-        url: "#/login"
+        title: "Doelen",
+        url: "#/doelen"
     };
     
     self.pref = {

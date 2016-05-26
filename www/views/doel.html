@@ -1,18 +1,36 @@
 <div class="row">
     <div class="col">
         <h3>{{dc.doel.title}}</h3>
-        <h4>{{dc.doel.description}}</h4>
-        <div class="progress-bar progress-bar-{{dc.doel.progressStatus}}" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
-            style="width: {{dc.doel.percentage}}%; height: 20px;"></div>
-
+        <div ng-if="dc.doel.motivation">
+            <div class="progress">
+                <div ng-switch="dc.doel.motivation">
+                    <div ng-switch-when="1">
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%;">Motivatie</div>                        
+                    </div>
+                    <div ng-switch-when="2">
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">Motivatie</div>
+                    </div>
+                    <div ng-switch-when="3">
+                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">Motivatie</div>
+                    </div>
+                    <div ng-switch-when="4">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">Motivatie</div>
+                    </div>
+                    <div ng-switch-when="5">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">Motivatie</div>
+                    </div>
+                </div> 
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="card" ng-repeat="step in dc.doel.steps | orderBy:'completionDate':true" ng-click="dc.toStap(dc.doel.steps.indexOf(step))">
+<div class="card" ng-repeat="step in dc.doel.steps" ng-click="dc.toStap(step.id)">
     <div class="item item-divider item-{{step.doneColor}}">
-        {{step.name}}
+        {{step.title}}      
     </div>
     <div class="item item-icon-right">
-        <i class="icon ion-information"></i> {{step.name}}
+        <i class="icon ion-information"></i>
+        {{step.description}} 
     </div>
 </div>
