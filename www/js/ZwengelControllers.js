@@ -5,6 +5,7 @@ controllers.AllController = function ($ionicPlatform, $window, $route, AllData) 
     var self = this;
 
     self.page = AllData.page;
+    
 
     self.navDoelen = function () {
         AllData.toPage("Doelen", "#/doelen");
