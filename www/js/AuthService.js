@@ -26,7 +26,6 @@ services_auth.Authentication = function($http, $rootScope) {
 
         if (input.rememberme) {
             localStorage.setItem('token', response.data.token);
-            console.log("set token through local storage");
         }
         $rootScope.loggedin = true;
         $rootScope.username = input.username;
