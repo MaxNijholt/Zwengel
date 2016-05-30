@@ -143,11 +143,7 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
 
     StudentInfo.getDoel("test", $routeParams.doelID, function (results) {
 
-        var count = 0;
-
-        results.steps.forEach(function (object) {
-            if (object.completed)
-                count++;
+        results.steps.forEach(function (object) {  
             switch (object.completed) {
                 case true:
                     object.doneColor = "balanced";
@@ -159,18 +155,8 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
                     object.doneColor = "positive";
             }
         });
-
-        results.percentage = ((count / results.steps.length) * 100);
-
-        if (results.percentage < 33) {
-            results.progressStatus = "danger";
-            if (results.percentage <= 10)
-                results.percentage = 5;
-        }
-        else if (results.percentage >= 33 && results.percentage < 66)
-            results.progressStatus = "warning";
-        else if (results.percentage > 66 && results.percentage <= 100)
-            results.progressStatus = "success";
+        
+        console.log(results.motivation);
 
         self.doel = results;
         doelID = results._id;
