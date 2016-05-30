@@ -5,6 +5,7 @@ controllers.AllController = function ($ionicPlatform, $window, $route, AllData) 
     var self = this;
 
     self.page = AllData.page;
+    
 
     self.navDoelen = function () {
         AllData.toPage("Doelen", "#/doelen");
@@ -45,15 +46,8 @@ controllers.LoginController = function ($ionicScrollDelegate, $rootScope, $ionic
     self.login = function (input) {
         Authentication.Login(input.username, input.password, function (response) {
             if (response.success) {
-                $ionicPopup.alert({
-                    title: 'Inloggen gelukt',
-                    template: 'Gelukt! U bent ingelogd en word nu doorgestuurd.'
-                })
-                    .then(function (res) {
-                        Authentication.SetCredentials(response, input);
-                        AllData.toPage("Doelen", "#/doelen");
-                        console.log("ingelogd!");
-                    });
+                Authentication.SetCredentials(response, input);
+                AllData.toPage("Doelen", "#/doelen");
             }
             else {
                 if (response.message === "invalid credentials")
@@ -137,12 +131,7 @@ controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, All
 
     self.logout = function () {
         Authentication.logout();
-        $ionicPopup.alert({
-            title: 'Uitloggen gelukt',
-            template: 'U bent uitgelogd en word nu doorgestuurd.'
-        }).then(function () {
-            AllData.toPage("Login", "#/login");
-        });
+        AllData.toPage("Login", "#/login");
     }
 };
 
@@ -154,11 +143,7 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
 
     StudentInfo.getDoel("test", $routeParams.doelID, function (results) {
 
-        var count = 0;
-
-        results.steps.forEach(function (object) {
-            if (object.completed)
-                count++;
+        results.steps.forEach(function (object) {  
             switch (object.completed) {
                 case true:
                     object.doneColor = "balanced";
@@ -170,19 +155,9 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
                     object.doneColor = "positive";
             }
         });
+        
+        console.log(results.motivation);
 
-        results.percentage = ((count / results.steps.length) * 100);
-       
-        if (results.percentage < 33){
-            results.progressStatus = "danger";
-            if(results.percentage <= 10)
-                results.percentage = 5;
-        }            
-        else if (results.percentage >= 33 && results.percentage < 66)
-            results.progressStatus = "warning";
-        else if (results.percentage > 66 && results.percentage <= 100)
-            results.progressStatus = "success";
-    
         self.doel = results;
         doelID = results._id;
     });
