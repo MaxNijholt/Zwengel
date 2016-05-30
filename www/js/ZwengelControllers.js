@@ -148,9 +148,6 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
                 case true:
                     object.doneColor = "balanced";
                     break;
-                case false:
-                    object.doneColor = "assertive";
-                    break;
                 default:
                     object.doneColor = "positive";
             }
