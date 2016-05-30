@@ -78,7 +78,7 @@ controllers.DoelenController = function ($ionicScrollDelegate, AllData, StudentI
                     object.doneColor = "balanced";
                     break;
                 case "stopped":
-                    object.doneColor = "assertive";
+                    object.doneColor = "dark";
             }
         });
 
@@ -183,13 +183,9 @@ controllers.StapController = function ($ionicScrollDelegate, $routeParams, AllDa
                 result.doneColor = "balanced";
                 result.result = "Behaald";
                 break;
-            case false:
-                result.doneColor = "assertive";
-                result.result = "Niet behaald";
-                break;
             default:
                 result.doneColor = "positive";
-                result.result = "Nog bezig";
+                result.result = "Nog niet behaald";
         }
         self.stap = result;
     });
