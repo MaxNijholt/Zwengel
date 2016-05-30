@@ -96,8 +96,8 @@ controllers.BeloningenController = function ($ionicScrollDelegate, StudentInfo) 
 
     $ionicScrollDelegate.scrollTop();
 
-    self.hideFilter = "ng-hide";
-    self.filterIcon = "ion-chevron-down";
+    self.hideFilter = "ng-show";
+    self.filterIcon = "ion-chevron-up";
     StudentInfo.getBeloningen("test", function (results) {
         self.rewards = results;
     });
