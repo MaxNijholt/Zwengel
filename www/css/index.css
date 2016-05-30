@@ -75,3 +75,11 @@ ion-content {
 #cardLogout{
     box-shadow: none;
 }
+
+.timecard{
+    padding: 0 !important;
+}
+
+.timecard_Card{
+    padding: 0 !important;
+}
