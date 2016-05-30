@@ -142,6 +142,16 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
     var doelID;
 
     StudentInfo.getDoel("test", $routeParams.doelID, function (results) {
+        switch (results.state) {
+            case "doing":
+                results.doneColor = "positive";
+                break;
+            case "finished":
+                results.doneColor = "balanced";
+                break;
+            case "stopped":
+                results.doneColor = "assertive";
+        }
 
         results.steps.forEach(function (object) {  
             switch (object.completed) {
@@ -155,8 +165,6 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
                     object.doneColor = "positive";
             }
         });
-        
-        console.log(results.motivation);
 
         self.doel = results;
         doelID = results._id;

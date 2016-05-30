@@ -1,7 +1,11 @@
-<div class="row">
-    <div class="col">
-        <h3>{{dc.doel.title}}</h3>
-        <h4>{{dc.doel.description}}</h4>
+<div class="card">
+    <div class="item item-divider item-{{dc.doel.doneColor}}">
+        <i class="icon {{dc.doel.mobileIcon}}"></i> {{dc.doel.title}}
+    </div>
+    <div class="item item-icon-right item-text-wrap">
+        <i class="icon ion-information"></i> {{dc.doel.description}}
+    </div>
+    <div class="item">
         <div ng-switch="dc.doel.motivation">
             <div ng-switch-when="1">
                 <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
