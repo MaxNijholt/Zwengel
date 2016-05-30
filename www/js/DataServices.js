@@ -1,7 +1,7 @@
 var dataServices = angular.module('dataServices', ['ngResource']);
 
 var API = {
-    base: "http://zwengel-server.herokuapp.com",
+    base: "http://kuipers.solutions:3000",
     login: "/auth/login",
     goals: "/goals",
     steps: "/steps"
