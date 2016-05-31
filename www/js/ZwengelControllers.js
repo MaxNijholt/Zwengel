@@ -152,12 +152,11 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
                     object.doneColor = "positive";
             }
         });
-        
-        console.log(results.motivation);
 
         self.doel = results;
         doelID = results._id;
     });
+
 
     self.toStap = function (stapID) {
         AllData.toPage("Stap", "#/doelen/" + doelID + "/" + stapID);
