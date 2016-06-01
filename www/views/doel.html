@@ -1,6 +1,14 @@
 <div class="card">
-    <div class="item item-divider item-{{dc.doel.doneColor}}">
-        <i class="icon {{dc.doel.mobileIcon}}"></i> {{dc.doel.title}}
+    <div class="item item-divider item-{{dc.doel.doneColor}} item-icon-right"">
+        <div ng-switch="dc.doel.state">
+            <div ng-switch-when="finished">
+                <i class="icon ion-thumbsup"></i>
+            </div>
+            <div ng-switch-when="stopped">
+                <i class="icon ion-thumbsdown"></i> 
+            </div>
+        </div>
+        <i class="{{dc.doel.mobileIcon}}"></i> {{dc.doel.title}}
     </div>
     <div class="item item-icon-right item-text-wrap">
         <i class="icon ion-information"></i> {{dc.doel.description}}

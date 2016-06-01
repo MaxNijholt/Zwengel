@@ -1,6 +1,14 @@
 <div class="card" ng-repeat="target in denc.targets | orderBy:'endDate':true" ng-click="denc.toDoel(target._id)">
-    <div class="item item-divider item-{{target.doneColor}}">
-        <i class="icon {{target.mobileIcon}}"></i> {{target.title}}
+    <div class="item item-divider item-{{target.doneColor}} item item-icon-right">
+        <div ng-switch="target.state">
+            <div ng-switch-when="finished">
+                <i class="icon ion-thumbsup"></i>
+            </div>
+            <div ng-switch-when="stopped">
+                <i class="icon ion-thumbsdown"></i> 
+            </div>
+        </div>
+        <i class="{{target.mobileIcon}}"></i> {{target.title}}
     </div>
     <div class="item item-icon-right">
         <i class="icon ion-information"></i> {{target.description}}
