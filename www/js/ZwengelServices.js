@@ -41,7 +41,9 @@ services_zwengel.AllData = function(){
     self.toBack = function(phoneBack){
         if(self.history.length > 0){
             var historyItem = self.history.pop();
-            self.to(historyItem.title, historyItem.url, historyItem.doel, historyItem.step);
+            if(historyItem.title !="Login"){
+                self.to(historyItem.title, historyItem.url, historyItem.doel, historyItem.step);
+            }
         }else{
             if(phoneBack){
                 var confirm = window.confirm("Afsluiten");
