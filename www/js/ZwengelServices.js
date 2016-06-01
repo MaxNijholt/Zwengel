@@ -44,13 +44,6 @@ services_zwengel.AllData = function(){
             if(historyItem.title !="Login"){
                 self.to(historyItem.title, historyItem.url, historyItem.doel, historyItem.step);
             }
-        }else{
-            if(phoneBack){
-                var confirm = window.confirm("Afsluiten");
-                if (confirm == true) {
-                    // navigator.app.exitApp(); //phoneghap error met plugin
-                }
-            }            
         }
     };
     
