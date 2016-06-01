@@ -70,6 +70,14 @@ controllers.DoelenController = function ($ionicScrollDelegate, AllData, StudentI
     StudentInfo.getDoelen("test", function (results) {
 
         results.forEach(function (object) {
+            var progress = 0;
+            object.steps.forEach(function(stap){
+               if(stap.completed){
+                   progress ++;
+               }
+            });
+            object.steps.progress = progress;
+            object.steps.progressStyle = progress/object.steps.length*100;
             switch (object.state) {
                 case "doing":
                     object.doneColor = "positive";
@@ -142,6 +150,15 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
     var doelID;
 
     StudentInfo.getDoel("test", $routeParams.doelID, function (results) {
+        var progress = 0;
+        results.steps.forEach(function(stap){
+            if(stap.completed){
+                progress ++;
+            }
+        });
+        results.steps.progress = progress;
+        results.steps.progressStyle = progress/results.steps.length*100;
+        
         switch (results.state) {
             case "doing":
                 results.doneColor = "positive";

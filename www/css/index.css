@@ -87,3 +87,7 @@ ion-content {
 .progress{
     margin-bottom: 0 !important;
 }
+
+.progressText{
+    text-align: center;
+}
