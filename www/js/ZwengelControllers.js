@@ -172,29 +172,9 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
     };
 };
 
-controllers.StapController = function ($ionicScrollDelegate, $routeParams, AllData, StudentInfo) {
-    var self = this;
-
-    $ionicScrollDelegate.scrollTop();
-
-    StudentInfo.getStap("test", $routeParams.doelID, $routeParams.stapID, function (result) {
-        switch (result.completed) {
-            case true:
-                result.doneColor = "balanced";
-                result.result = "Behaald";
-                break;
-            default:
-                result.doneColor = "positive";
-                result.result = "Nog niet behaald";
-        }
-        self.stap = result;
-    });
-};
-
 zwengelControllers.controller('AllController', ['$ionicPlatform', '$window', '$route', 'AllData', controllers.AllController]);
 zwengelControllers.controller('LoginController', ['$ionicScrollDelegate', '$rootScope', '$ionicPopup', 'Authentication', 'AllData', controllers.LoginController]);
 zwengelControllers.controller('DoelenController', ['$ionicScrollDelegate', 'AllData', 'StudentInfo', controllers.DoelenController]);
 zwengelControllers.controller('BeloningenController', ['$ionicScrollDelegate', 'StudentInfo', controllers.BeloningenController]);
 zwengelControllers.controller('ProfielController', ['$ionicScrollDelegate', '$ionicPopup', 'AllData', 'Authentication', controllers.ProfielController]);
 zwengelControllers.controller('DoelController', ['$ionicScrollDelegate', '$routeParams', 'AllData', 'StudentInfo', controllers.DoelController]);
-zwengelControllers.controller('StapController', ['$ionicScrollDelegate', '$routeParams', 'AllData', 'StudentInfo', controllers.StapController]);

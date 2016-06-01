@@ -21,10 +21,6 @@ services_data.StudentInfo = function ($http) {
         dataCaller_data.getDoel($http, studentID, doelID, onSucces);
     };
 
-    self.getStap = function (studentID, doelID, stapID, onSucces) {
-        dataCaller_data.getStap($http, studentID, doelID, stapID, onSucces);
-    };
-
     self.getBeloningen = function (studentID, onSucces) {
         dataCaller_data.getBeloningen(studentID, onSucces);
     };
@@ -32,7 +28,6 @@ services_data.StudentInfo = function ($http) {
     return {
         getDoelen: self.getDoelen,
         getDoel: self.getDoel,
-        getStap: self.getStap,
         getBeloningen: self.getBeloningen
     };
 };
@@ -58,18 +53,6 @@ dataCaller_data.getDoel = function ($http, studentID, doelID, onSucces, onFail) 
             onFail(response);
         });
 }
-
-dataCaller_data.getStap = function ($http, studentID, doelID, stapID, onSucces) {
-    var stap = null;
-
-    $http.get(API.base + API.goals + "/" + doelID + API.steps + "/" + stapID)
-        .then(
-        function (results) {
-            onSucces(results.data);
-        }, function (response) {
-            onFail(response);
-        });
-};
 
 dataCaller_data.getBeloningen = function (studentID, onSucces) {
     var testResult = [{
