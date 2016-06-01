@@ -5,8 +5,19 @@
     <div class="item item-icon-right item-text-wrap">
         <i class="icon ion-information"></i> {{dc.doel.description}}
     </div>
-    <div class="item item-icon-right">
-        <i class="icon ion-calendar"></i> {{dc.doel.endDate | date:'dd-MM-yyyy'}}
+    <div ng-switch="dc.doel.state" class="item item-icon-right">
+        <div ng-switch-when="doing">
+            <i class="icon ion-calendar"></i> 
+            <b>Einddatum:</b> {{dc.doel.endDate | date:'dd-MM-yyyy'}}
+        </div>
+        <div ng-switch-when="finished">
+            <i class="icon ion-calendar"></i> 
+            <b>Behaald:</b> {{dc.doel.endDate | date:'dd-MM-yyyy'}}
+        </div>
+        <div ng-switch-when="stopped">
+            <i class="icon ion-calendar"></i> 
+            <b>Gestopt:</b> {{dc.doel.endDate | date:'dd-MM-yyyy'}}
+        </div>
     </div>
     <div ng-if="dc.doel.motivation" class="item">
         <div ng-switch="dc.doel.motivation">
@@ -44,10 +55,10 @@
     </div>
     <div  ng-if="step.completed  && step.completionDate" class="item item-icon-right">
         <i class="icon ion-calendar"></i>
-        <b>Behaald op:</b> {{step.completionDate | date:'dd-MM-yyyy'}}
+        <b>Behaald:</b> {{step.completionDate | date:'dd-MM-yyyy'}}
     </div>
     <div  ng-if="!step.completed && step.endDate" class="item item-icon-right">
         <i class="icon ion-calendar"></i>
-        <b>Einddatum op:</b> {{step.endDate | date:'dd-MM-yyyy'}}
+        <b>Einddatum:</b> {{step.endDate | date:'dd-MM-yyyy'}}
     </div>
 </div>
