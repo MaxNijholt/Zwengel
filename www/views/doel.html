@@ -39,15 +39,15 @@
         {{step.name}}
         <i ng-if="step.completed" class="icon ion-thumbsup"></i>
     </div>
-    <div class="item item-icon-right">
-        <i class="icon ion-information"></i> {{step.name}}
+    <div class="item item-icon-right item-text-wrap">
+        <i class="icon ion-information"></i> {{step.description}}
     </div>
     <div  ng-if="step.completed  && step.completionDate" class="item item-icon-right">
         <i class="icon ion-calendar"></i>
         <b>Behaald op:</b> {{step.completionDate | date:'dd-MM-yyyy'}}
     </div>
-    <div  ng-if="!sc.stap.completed && sc.stap.endDate" class="item item-icon-right">
+    <div  ng-if="!step.completed && step.endDate" class="item item-icon-right">
         <i class="icon ion-calendar"></i>
-        <b>Einddatum op:</b> {{sc.stap.endDate | date:'dd-MM-yyyy'}}
+        <b>Einddatum op:</b> {{step.endDate | date:'dd-MM-yyyy'}}
     </div>
 </div>
