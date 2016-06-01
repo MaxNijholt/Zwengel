@@ -150,7 +150,7 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
                 results.doneColor = "balanced";
                 break;
             case "stopped":
-                results.doneColor = "assertive";
+                results.doneColor = "dark";
         }
 
         results.steps.forEach(function (object) {  
