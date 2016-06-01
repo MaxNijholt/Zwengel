@@ -34,9 +34,10 @@
     </div>
 </div>
 
-<div class="card" ng-repeat="step in dc.doel.steps" ng-click="dc.toStap(dc.doel.steps.indexOf(step))">
-    <div class="item item-divider item-{{step.doneColor}}">
+<div class="card" ng-repeat="step in dc.doel.steps">
+    <div class="item item-divider item-{{step.doneColor}} item-icon-right">
         {{step.name}}
+        <i ng-if="step.completed" class="icon ion-thumbsup"></i>
     </div>
     <div class="item item-icon-right">
         <i class="icon ion-information"></i> {{step.name}}
