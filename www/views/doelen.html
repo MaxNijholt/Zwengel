@@ -10,20 +10,17 @@
         </div>
         <i class="{{target.mobileIcon}}"></i> {{target.title}}
     </div>
-    <div class="item item-icon-right">
-        <i class="icon ion-information"></i> {{target.description}}
+    <div class="item">
+        {{target.description}}
     </div>
-    <div ng-switch="target.state" class="item item-icon-right">
+    <div ng-switch="target.state" class="item">
         <div ng-switch-when="doing">
-            <i class="icon ion-calendar"></i> 
             <b>Einddatum:</b> {{target.endDate | date:'dd-MM-yyyy'}}
         </div>
         <div ng-switch-when="finished">
-            <i class="icon ion-calendar"></i> 
             <b>Behaald:</b> {{target.endDate | date:'dd-MM-yyyy'}}
         </div>
         <div ng-switch-when="stopped">
-            <i class="icon ion-calendar"></i> 
             <b>Gestopt:</b> {{target.endDate | date:'dd-MM-yyyy'}}
         </div>
     </div>

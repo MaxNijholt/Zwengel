@@ -10,20 +10,17 @@
         </div>
         <i class="{{dc.doel.mobileIcon}}"></i> {{dc.doel.title}}
     </div>
-    <div class="item item-icon-right item-text-wrap">
-        <i class="icon ion-information"></i> {{dc.doel.description}}
+    <div class="item item-text-wrap">
+        {{dc.doel.description}}
     </div>
-    <div ng-switch="dc.doel.state" class="item item-icon-right">
+    <div ng-switch="dc.doel.state" class="item">
         <div ng-switch-when="doing">
-            <i class="icon ion-calendar"></i> 
             <b>Einddatum:</b> {{dc.doel.endDate | date:'dd-MM-yyyy'}}
         </div>
         <div ng-switch-when="finished">
-            <i class="icon ion-calendar"></i> 
             <b>Behaald:</b> {{dc.doel.endDate | date:'dd-MM-yyyy'}}
         </div>
         <div ng-switch-when="stopped">
-            <i class="icon ion-calendar"></i> 
             <b>Gestopt:</b> {{dc.doel.endDate | date:'dd-MM-yyyy'}}
         </div>
     </div>
@@ -55,18 +52,16 @@
 
 <div class="card" ng-repeat="step in dc.doel.steps | orderBy:'index'">
     <div class="item item-divider item-{{step.doneColor}} item-icon-right">
-        {{step.name}}
+        {{step.index}}. {{step.name}}
         <i ng-if="step.completed" class="icon ion-thumbsup"></i>
     </div>
-    <div class="item item-icon-right item-text-wrap">
-        <i class="icon ion-information"></i> {{step.description}}
+    <div class="item item-text-wrap">
+        {{step.description}}
     </div>
-    <div  ng-if="step.completed  && step.completionDate" class="item item-icon-right">
-        <i class="icon ion-calendar"></i>
+    <div  ng-if="step.completed  && step.completionDate" class="item">
         <b>Behaald:</b> {{step.completionDate | date:'dd-MM-yyyy'}}
     </div>
-    <div  ng-if="!step.completed && step.endDate" class="item item-icon-right">
-        <i class="icon ion-calendar"></i>
+    <div  ng-if="!step.completed && step.endDate" class="item">
         <b>Einddatum:</b> {{step.endDate | date:'dd-MM-yyyy'}}
     </div>
 </div>
