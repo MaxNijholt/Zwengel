@@ -63,3 +63,15 @@ zwengelApp.run(["$rootScope", "$location", "Authentication", function ($rootScop
                 }
     });
 }]);
+
+
+zwengelApp.factory('httpRequestInterceptor', function ($rootScope) {
+    return {
+        request: function (config) {            
+            config.headers['x-token'] = localStorage.getItem("token");            
+            return config;
+        }
+    }
+});
+
+zwengelApp.config(function ($httpProvider) { $httpProvider.interceptors.push('httpRequestInterceptor'); });

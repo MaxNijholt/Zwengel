@@ -4,7 +4,8 @@ var API = {
     base: "http://kuipers.solutions:3000",
     login: "/auth/login",
     goals: "/goals",
-    steps: "/steps"
+    steps: "/steps",
+    profile: "/auth/users/current"
 };
 
 var services_data = {};
@@ -28,12 +29,17 @@ services_data.StudentInfo = function ($http) {
     self.getBeloningen = function (studentID, onSucces) {
         dataCaller_data.getBeloningen(studentID, onSucces);
     };
+    
+    self.getProfile = function (studentID, onSucces, onFail) {
+         dataCaller_data.getProfile($http, studentID, onSucces, onFail);     
+    };
 
     return {
         getDoelen: self.getDoelen,
         getDoel: self.getDoel,
         getStap: self.getStap,
-        getBeloningen: self.getBeloningen
+        getBeloningen: self.getBeloningen,
+        getProfile: self.getProfile
     };
 };
 
@@ -63,6 +69,16 @@ dataCaller_data.getStap = function ($http, studentID, doelID, stapID, onSucces) 
     var stap = null;
 
     $http.get(API.base + API.goals + "/" + doelID + API.steps + "/" + stapID)
+        .then(
+        function (results) {
+            onSucces(results.data);
+        }, function (response) {
+            onFail(response);
+        });
+};
+
+dataCaller_data.getProfile = function ($http, studentID, onSucces, onFail) {
+    $http.get(API.base + API.profile)
         .then(
         function (results) {
             onSucces(results.data);

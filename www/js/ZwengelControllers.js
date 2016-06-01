@@ -5,7 +5,7 @@ controllers.AllController = function ($ionicPlatform, $window, $route, AllData) 
     var self = this;
 
     self.page = AllData.page;
-    
+
 
     self.navDoelen = function () {
         AllData.toPage("Doelen", "#/doelen");
@@ -120,10 +120,18 @@ controllers.BeloningenController = function ($ionicScrollDelegate, StudentInfo) 
     };
 };
 
-controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, AllData, Authentication) {
+controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, AllData, Authentication, StudentInfo) {
     var self = this;
 
     $ionicScrollDelegate.scrollTop();
+
+
+    StudentInfo.getProfile("test", function (results) {        
+        console.log(results);
+        self.profile = results;
+    }, function(error){       
+        console.log(error);
+    });
 
     self.doelscreen = AllData.pref.doelscreen;
     self.textIcons = AllData.pref.textIcons;
@@ -143,7 +151,7 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
 
     StudentInfo.getDoel("test", $routeParams.doelID, function (results) {
 
-        results.steps.forEach(function (object) {  
+        results.steps.forEach(function (object) {
             switch (object.completed) {
                 case true:
                     object.doneColor = "balanced";
@@ -186,6 +194,6 @@ zwengelControllers.controller('AllController', ['$ionicPlatform', '$window', '$r
 zwengelControllers.controller('LoginController', ['$ionicScrollDelegate', '$rootScope', '$ionicPopup', 'Authentication', 'AllData', controllers.LoginController]);
 zwengelControllers.controller('DoelenController', ['$ionicScrollDelegate', 'AllData', 'StudentInfo', controllers.DoelenController]);
 zwengelControllers.controller('BeloningenController', ['$ionicScrollDelegate', 'StudentInfo', controllers.BeloningenController]);
-zwengelControllers.controller('ProfielController', ['$ionicScrollDelegate', '$ionicPopup', 'AllData', 'Authentication', controllers.ProfielController]);
+zwengelControllers.controller('ProfielController', ['$ionicScrollDelegate', '$ionicPopup', 'AllData', 'Authentication', 'StudentInfo', controllers.ProfielController]);
 zwengelControllers.controller('DoelController', ['$ionicScrollDelegate', '$routeParams', 'AllData', 'StudentInfo', controllers.DoelController]);
 zwengelControllers.controller('StapController', ['$ionicScrollDelegate', '$routeParams', 'AllData', 'StudentInfo', controllers.StapController]);
