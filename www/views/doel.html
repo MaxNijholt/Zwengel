@@ -5,6 +5,9 @@
     <div class="item item-icon-right item-text-wrap">
         <i class="icon ion-information"></i> {{dc.doel.description}}
     </div>
+    <div class="item item-icon-right">
+        <i class="icon ion-calendar"></i> {{dc.doel.endDate | date:'dd-MM-yyyy'}}
+    </div>
     <div ng-if="dc.doel.motivation" class="item">
         <div ng-switch="dc.doel.motivation">
             <div ng-switch-when="1">
@@ -37,5 +40,13 @@
     </div>
     <div class="item item-icon-right">
         <i class="icon ion-information"></i> {{step.name}}
+    </div>
+    <div  ng-if="step.completed  && step.completionDate" class="item item-icon-right">
+        <i class="icon ion-calendar"></i>
+        <b>Behaald op:</b> {{step.completionDate | date:'dd-MM-yyyy'}}
+    </div>
+    <div  ng-if="!sc.stap.completed && sc.stap.endDate" class="item item-icon-right">
+        <i class="icon ion-calendar"></i>
+        <b>Einddatum op:</b> {{sc.stap.endDate | date:'dd-MM-yyyy'}}
     </div>
 </div>

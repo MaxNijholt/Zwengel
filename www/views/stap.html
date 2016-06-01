@@ -11,8 +11,12 @@
         <i class="icon ion-information"></i>
         {{sc.stap.description}}
     </div>
-    <div class="item item-icon-right">
+    <div  ng-if="sc.stap.completed && sc.stap.completionDate" class="item item-icon-right">
         <i class="icon ion-calendar"></i>
-        <b ng-if="sc.stap.completed">Behaald op: </b>{{sc.stap.completionDate | date:'yyyy-MM-dd'}}
+        <b>Behaald op:</b> {{sc.stap.completionDate | date:'dd-MM-yyyy'}}
+    </div>
+    <div  ng-if="!sc.stap.completed && sc.stap.endDate" class="item item-icon-right">
+        <i class="icon ion-calendar"></i>
+        <b>Einddatum op:</b> {{sc.stap.endDate | date:'dd-MM-yyyy'}}
     </div>
 </div>
