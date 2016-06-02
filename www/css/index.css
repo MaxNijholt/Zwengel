@@ -83,3 +83,11 @@ ion-content {
 .timecard_Card{
     padding: 0 !important;
 }
+
+.progress{
+    margin-bottom: 0 !important;
+}
+
+.progressText{
+    text-align: center;
+}
