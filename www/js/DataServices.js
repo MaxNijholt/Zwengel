@@ -99,6 +99,7 @@ dataCaller_data.updatePreferences = function ($http, studentID, preferences, onS
         });
 };
 
+
 dataCaller_data.getBeloningen = function (studentID, onSucces) {
     var testResult = [{
         "title": "10 min. spelletje spelen in de les",
