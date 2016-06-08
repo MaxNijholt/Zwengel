@@ -129,7 +129,7 @@ controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, All
     StudentInfo.getProfile(0,
         function (result) {
             console.log(result);
-            self.profile = result;
+            self.profile = result;            
         }, function (error) {
             console.log(error);
         });
