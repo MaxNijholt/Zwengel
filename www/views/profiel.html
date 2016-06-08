@@ -15,7 +15,7 @@
         <div class="input-label">
             Voorkeurscherm
         </div>
-        <select ng-model="pc.doelscreen">
+        <select ng-model="pc.profile.preferences.preferencesScreen" ng-change="pc.updatePreferences(pc.profile.preferences)">
             <option value="list">Takenlijst</option>
             <option value="map">Kaart</option>
         </select>
@@ -24,7 +24,7 @@
         <div class="input-label">
             Thema
         </div>
-        <select ng-model="pc.thema">
+        <select ng-model="pc.profile.preferences.theme" ng-change="pc.updatePreferences(pc.profile.preferences)">
             <option value="default">Standaard</option>
             <option value="ridder">Ridder</option>
             <option value="koning">Koning</option>
@@ -36,10 +36,10 @@
         <div class="input-label">
             Tekst en icons
         </div>
-        <select ng-model="pc.textIcons">
-            <option value="none">Tekst</option>
-            <option value="half">Half/half</option>
-            <option value="full">Icons</option>
+        <select ng-model="pc.profile.preferences.style" ng-change="pc.updatePreferences(pc.profile.preferences)">
+            <option value="text">Tekst</option>
+            <option value="half">Half text/Half icoontjes</option>
+            <option value="full">Icoontjes</option>
         </select>
     </label>
 </div>
