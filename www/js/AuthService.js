@@ -22,11 +22,15 @@ services_auth.Authentication = function($http, $rootScope) {
     }
     
     self.SetCredentials = function (response, input) {
+        localStorage.removeItem("token");
+
         localStorage.setItem('username', JSON.stringify(input.username));
 
         if (input.rememberme) {
             localStorage.setItem('token', response.data.token);
         }
+        
+        $rootScope.token = response.data.token;
         $rootScope.loggedin = true;
         $rootScope.username = input.username;
     };
