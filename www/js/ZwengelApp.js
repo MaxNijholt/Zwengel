@@ -25,11 +25,6 @@ zwengelApp.config(['$routeProvider',
                 controller: 'DoelController as dc',
                 authenticate: true
             }).
-            when('/doelen/:doelID/:stapID', {
-                templateUrl: 'views/stap.html',
-                controller: 'StapController as sc',
-                authenticate: true
-            }).
             when('/beloningen', {
                 templateUrl: 'views/beloningen.html',
                 controller: 'BeloningenController as benc',

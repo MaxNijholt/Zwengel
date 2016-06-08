@@ -23,10 +23,6 @@ services_data.StudentInfo = function ($http) {
         dataCaller_data.getDoel($http, studentID, doelID, onSucces);
     };
 
-    self.getStap = function (studentID, doelID, stapID, onSucces) {
-        dataCaller_data.getStap($http, studentID, doelID, stapID, onSucces);
-    };
-
     self.getBeloningen = function (studentID, onSucces) {
         dataCaller_data.getBeloningen(studentID, onSucces);
     };
@@ -102,6 +98,7 @@ dataCaller_data.updatePreferences = function ($http, studentID, preferences, onS
             onFail(error);
         });
 };
+
 
 dataCaller_data.getBeloningen = function (studentID, onSucces) {
     var testResult = [{
