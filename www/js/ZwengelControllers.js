@@ -5,7 +5,7 @@ controllers.AllController = function ($ionicPlatform, $window, $route, AllData) 
     var self = this;
 
     self.page = AllData.page;
-    
+
 
     self.navDoelen = function () {
         AllData.toPage("Doelen", "#/doelen");
@@ -128,14 +128,38 @@ controllers.BeloningenController = function ($ionicScrollDelegate, StudentInfo) 
     };
 };
 
-controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, AllData, Authentication) {
+controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, AllData, Authentication, StudentInfo) {
     var self = this;
 
     $ionicScrollDelegate.scrollTop();
 
-    self.doelscreen = AllData.pref.doelscreen;
-    self.textIcons = AllData.pref.textIcons;
-    self.thema = "default";
+    //moet nog studentID ophalen
+    StudentInfo.getProfile(0,
+        function (result) {
+            console.log(result);
+            self.profile = result;            
+        }, function (error) {
+            console.log(error);
+        });
+
+    self.updatePreferences = function (newPreferences) {
+
+        var preferences =
+            {
+                "preferences": {
+                    "preferencesScreen": newPreferences.preferencesScreen,
+                    "theme": newPreferences.theme,
+                    "style": newPreferences.style
+                }
+            }
+
+        StudentInfo.updatePreferences(self.profile._id, preferences,
+            function (result) {
+                console.log(result);
+            }, function (error) {
+                console.log(error);
+            });
+    }
 
     self.logout = function () {
         Authentication.logout();
@@ -170,7 +194,7 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
                 results.doneColor = "dark";
         }
 
-        results.steps.forEach(function (object) {  
+        results.steps.forEach(function (object) {
             switch (object.completed) {
                 case true:
                     object.doneColor = "balanced";
@@ -193,5 +217,5 @@ zwengelControllers.controller('AllController', ['$ionicPlatform', '$window', '$r
 zwengelControllers.controller('LoginController', ['$ionicScrollDelegate', '$rootScope', '$ionicPopup', 'Authentication', 'AllData', controllers.LoginController]);
 zwengelControllers.controller('DoelenController', ['$ionicScrollDelegate', 'AllData', 'StudentInfo', controllers.DoelenController]);
 zwengelControllers.controller('BeloningenController', ['$ionicScrollDelegate', 'StudentInfo', controllers.BeloningenController]);
-zwengelControllers.controller('ProfielController', ['$ionicScrollDelegate', '$ionicPopup', 'AllData', 'Authentication', controllers.ProfielController]);
+zwengelControllers.controller('ProfielController', ['$ionicScrollDelegate', '$ionicPopup', 'AllData', 'Authentication', 'StudentInfo', controllers.ProfielController]);
 zwengelControllers.controller('DoelController', ['$ionicScrollDelegate', '$routeParams', 'AllData', 'StudentInfo', controllers.DoelController]);
