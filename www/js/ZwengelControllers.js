@@ -125,17 +125,33 @@ controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, All
 
     $ionicScrollDelegate.scrollTop();
 
+    //moet nog studentID ophalen
+    StudentInfo.getProfile(0,
+        function (result) {
+            console.log(result);
+            self.profile = result;
+        }, function (error) {
+            console.log(error);
+        });
 
-    StudentInfo.getProfile("test", function (results) {        
-        console.log(results);
-        self.profile = results;
-    }, function(error){       
-        console.log(error);
-    });
+    self.updatePreferences = function (newPreferences) {
 
-    self.doelscreen = AllData.pref.doelscreen;
-    self.textIcons = AllData.pref.textIcons;
-    self.thema = "default";
+        var preferences =
+            {
+                "preferences": {
+                    "preferencesScreen": newPreferences.preferencesScreen,
+                    "theme": newPreferences.theme,
+                    "style": newPreferences.style
+                }
+            }
+
+        StudentInfo.updatePreferences(self.profile._id, preferences,
+            function (result) {
+                console.log(result);
+            }, function (error) {
+                console.log(error);
+            });
+    }
 
     self.logout = function () {
         Authentication.logout();
