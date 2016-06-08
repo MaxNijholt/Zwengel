@@ -47,6 +47,7 @@ zwengelApp.run(["$rootScope", "$location", "Authentication", function ($rootScop
 
     if (localStorage.getItem("token") != null) {
         $rootScope.loggedin = true;
+        $rootScope.token = localStorage.getItem("token");
     }
 
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
@@ -63,7 +64,7 @@ zwengelApp.run(["$rootScope", "$location", "Authentication", function ($rootScop
 zwengelApp.factory('httpRequestInterceptor', function ($rootScope) {
     return {
         request: function (config) {            
-            config.headers['x-token'] = localStorage.getItem("token");            
+            config.headers['x-token'] = $rootScope.token;            
             return config;
         }
     }
