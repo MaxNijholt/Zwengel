@@ -125,6 +125,7 @@ controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, All
 
     $ionicScrollDelegate.scrollTop();
 
+    //moet nog studentID ophalen
     StudentInfo.getProfile(0,
         function (result) {
             console.log(result);
@@ -134,6 +135,7 @@ controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, All
         });
 
     self.updatePreferences = function (newPreferences) {
+
         var preferences =
             {
                 "preferences": {
@@ -142,7 +144,8 @@ controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, All
                     "style": newPreferences.style
                 }
             }
-        StudentInfo.updatePreferences(0, preferences,
+
+        StudentInfo.updatePreferences(self.profile._id, preferences,
             function (result) {
                 console.log(result);
             }, function (error) {
