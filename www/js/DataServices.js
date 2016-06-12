@@ -39,7 +39,6 @@ services_data.StudentInfo = function ($http) {
         getDoelen: self.getDoelen,
         getDoel: self.getDoel,
         getStap: self.getStap,
-        getBeloningen: self.getBeloningen,
         getProfile: self.getProfile,
         updatePreferences : self.updatePreferences
     };
@@ -97,34 +96,6 @@ dataCaller_data.updatePreferences = function ($http, studentID, preferences, onS
         }, function (error) {
             onFail(error);
         });
-};
-
-
-dataCaller_data.getBeloningen = function (studentID, onSucces) {
-    var testResult = [{
-        "title": "10 min. spelletje spelen in de les",
-        "price": 5,
-        "behaald": true
-    }, {
-            "title": "15 min. spelletje spelen in de les",
-            "price": 7,
-            "behaald": false
-        }, {
-            "title": "Thema Ridder",
-            "price": 25,
-            "behaald": false
-        }, {
-            "title": "Thema Koning",
-            "price": 25,
-            "behaald": true
-        }, {
-            "title": "Als eerste naar huis",
-            "price": 10,
-            "behaald": false
-        }
-    ];
-
-    onSucces(testResult);
 };
 
 dataServices.factory('StudentInfo', ['$http', services_data.StudentInfo]);
