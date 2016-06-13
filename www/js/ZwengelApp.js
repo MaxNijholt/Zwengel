@@ -25,11 +25,6 @@ zwengelApp.config(['$routeProvider',
                 controller: 'DoelController as dc',
                 authenticate: true
             }).
-            when('/beloningen', {
-                templateUrl: 'views/beloningen.html',
-                controller: 'BeloningenController as benc',
-                authenticate: true
-            }).
             when('/profiel', {
                 templateUrl: 'views/profiel.html',
                 controller: 'ProfielController as pc',

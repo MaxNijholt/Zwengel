@@ -99,35 +99,6 @@ controllers.DoelenController = function ($ionicScrollDelegate, AllData, StudentI
     };
 };
 
-controllers.BeloningenController = function ($ionicScrollDelegate, StudentInfo) {
-    var self = this;
-
-    $ionicScrollDelegate.scrollTop();
-
-    self.hideFilter = "ng-hide";
-    self.filterIcon = "ion-chevron-down";
-    StudentInfo.getBeloningen("test", function (results) {
-        self.rewards = results;
-    });
-
-    self.buyReward = function (reward) {
-        var confirm = window.confirm("Koop beloning: " + reward.title);
-        if (confirm == true) {
-            alert("Gekocht");
-        }
-    };
-
-    self.toggleHideFilter = function (bool) {
-        if (self.hideFilter === "ng-hide" && !bool) {
-            self.hideFilter = "ng-show";
-            self.filterIcon = "ion-chevron-up";
-        } else {
-            self.hideFilter = "ng-hide";
-            self.filterIcon = "ion-chevron-down";
-        }
-    };
-};
-
 controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, AllData, Authentication, StudentInfo) {
     var self = this;
 
@@ -140,31 +111,13 @@ controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, All
             self.profile = result;            
         }, function (error) {
             console.log(error);
-        });
-
-    self.updatePreferences = function (newPreferences) {
-
-        var preferences =
-            {
-                "preferences": {
-                    "preferencesScreen": newPreferences.preferencesScreen,
-                    "theme": newPreferences.theme,
-                    "style": newPreferences.style
-                }
-            }
-
-        StudentInfo.updatePreferences(self.profile._id, preferences,
-            function (result) {
-                console.log(result);
-            }, function (error) {
-                console.log(error);
-            });
-    }
+        }
+    );
 
     self.logout = function () {
         Authentication.logout();
         AllData.toPage("Login", "#/login");
-    }
+    };
 };
 
 controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllData, StudentInfo) {
@@ -216,6 +169,5 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
 zwengelControllers.controller('AllController', ['$ionicPlatform', '$window', '$route', 'AllData', controllers.AllController]);
 zwengelControllers.controller('LoginController', ['$ionicScrollDelegate', '$rootScope', '$ionicPopup', 'Authentication', 'AllData', controllers.LoginController]);
 zwengelControllers.controller('DoelenController', ['$ionicScrollDelegate', 'AllData', 'StudentInfo', controllers.DoelenController]);
-zwengelControllers.controller('BeloningenController', ['$ionicScrollDelegate', 'StudentInfo', controllers.BeloningenController]);
 zwengelControllers.controller('ProfielController', ['$ionicScrollDelegate', '$ionicPopup', 'AllData', 'Authentication', 'StudentInfo', controllers.ProfielController]);
 zwengelControllers.controller('DoelController', ['$ionicScrollDelegate', '$routeParams', 'AllData', 'StudentInfo', controllers.DoelController]);
