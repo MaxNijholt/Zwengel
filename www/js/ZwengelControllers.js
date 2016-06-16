@@ -71,13 +71,13 @@ controllers.DoelenController = function ($ionicScrollDelegate, AllData, StudentI
 
         results.forEach(function (object) {
             var progress = 0;
-            object.steps.forEach(function(stap){
-               if(stap.completed){
-                   progress ++;
-               }
+            object.steps.forEach(function (stap) {
+                if (stap.completed) {
+                    progress++;
+                }
             });
             object.steps.progress = progress;
-            object.steps.progressStyle = progress/object.steps.length*100;
+            object.steps.progressStyle = progress / object.steps.length * 100;
             switch (object.state) {
                 case "doing":
                     object.doneColor = "positive";
@@ -108,7 +108,7 @@ controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, All
     StudentInfo.getProfile(0,
         function (result) {
             console.log(result);
-            self.profile = result;            
+            self.profile = result;
         }, function (error) {
             console.log(error);
         }
@@ -120,7 +120,7 @@ controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, All
     };
 };
 
-controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllData, StudentInfo) {
+controllers.DoelController = function ($ionicScrollDelegate, $routeParams, $scope, $ionicPopup, AllData, StudentInfo) {
     var self = this;
 
     $ionicScrollDelegate.scrollTop();
@@ -128,14 +128,16 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
 
     StudentInfo.getDoel("test", $routeParams.doelID, function (results) {
         var progress = 0;
-        results.steps.forEach(function(stap){
-            if(stap.completed){
-                progress ++;
+        results.steps.forEach(function (stap) {
+            if (stap.completed) {
+                progress++;
             }
         });
         results.steps.progress = progress;
-        results.steps.progressStyle = progress/results.steps.length*100;
-        
+        results.steps.progressStyle = progress / results.steps.length * 100;
+
+        console.log(results.motivation);
+
         switch (results.state) {
             case "doing":
                 results.doneColor = "positive";
@@ -161,6 +163,73 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllDa
         doelID = results._id;
     });
 
+    self.addMotivation = function () {
+        $scope.popupData = {};
+
+        // An elaborate, custom popup
+        var Motivation = $ionicPopup.show({
+            template: '<input type="text" ng-model="popupData.motivation">',
+            title: 'Motivatie invullen',
+            subTitle: 'Gebruik een nummer van 1 tot en met 5',
+            scope: $scope,
+            buttons: [
+                { text: 'Annuleren' },
+                {
+                    text: '<b>Opslaan</b>',
+                    type: 'button-positive',
+                    onTap: function (e) {
+                        if ($scope.popupData.motivation > 0 && $scope.popupData.motivation < 6) {
+                            //motivatie moet tussen 1 en 6 zitten.
+                            return $scope.popupData.motivation;
+                        } else {
+                            e.preventDefault();
+                        }
+                    }
+                }
+            ]
+        });
+
+        Motivation.then(function (res) {
+            //motivatie updaten.
+            console.log('Motivatie toegevoegd!', res);
+        });
+
+    };
+
+    self.editMotivation = function (currentMotivation) {
+        $scope.popupData = {};
+        $scope.popupData.motivation = currentMotivation;
+  
+        // An elaborate, custom popup
+        var Motivation = $ionicPopup.show({
+            template: '<input type="text" ng-model="popupData.motivation">',
+            title: 'Motivatie invullen',
+            subTitle: 'Gebruik een nummer van 1 tot en met 5',
+            scope: $scope,
+            buttons: [
+                { text: 'Annuleren' },
+                {
+                    text: '<b>Opslaan</b>',
+                    type: 'button-positive',
+                    onTap: function (e) {
+                        if ($scope.popupData.motivation > 0 && $scope.popupData.motivation < 6) {
+                            //motivatie moet tussen 1 en 6 zitten.
+                            return $scope.popupData.motivation;
+                        } else {
+                            e.preventDefault();
+                        }
+                    }
+                }
+            ]
+        });
+
+        Motivation.then(function (res) {
+            //motivatie updaten.
+            console.log('Motivatie gewijzigd!', res);
+        });
+
+    };
+
     self.toStap = function (stapID) {
         AllData.toPage("Stap", "#/doelen/" + doelID + "/" + stapID);
     };
@@ -170,4 +239,4 @@ zwengelControllers.controller('AllController', ['$ionicPlatform', '$window', '$r
 zwengelControllers.controller('LoginController', ['$ionicScrollDelegate', '$rootScope', '$ionicPopup', 'Authentication', 'AllData', controllers.LoginController]);
 zwengelControllers.controller('DoelenController', ['$ionicScrollDelegate', 'AllData', 'StudentInfo', controllers.DoelenController]);
 zwengelControllers.controller('ProfielController', ['$ionicScrollDelegate', '$ionicPopup', 'AllData', 'Authentication', 'StudentInfo', controllers.ProfielController]);
-zwengelControllers.controller('DoelController', ['$ionicScrollDelegate', '$routeParams', 'AllData', 'StudentInfo', controllers.DoelController]);
+zwengelControllers.controller('DoelController', ['$ionicScrollDelegate', '$routeParams', '$scope', '$ionicPopup', 'AllData', 'StudentInfo', controllers.DoelController]);
