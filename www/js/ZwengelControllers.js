@@ -165,48 +165,6 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, $scop
 
     self.getDoel();
 
-    self.addMotivation = function () {
-        $scope.popupData = {};
-
-        // An elaborate, custom popup
-        var Motivation = $ionicPopup.show({
-            template: '<input type="text" style="text-align:center;" ng-model="popupData.motivation">',
-            title: 'Motivatie invullen',
-            subTitle: 'Gebruik een nummer van 1 tot en met 5',
-            scope: $scope,
-            buttons: [
-                { text: 'Annuleren' },
-                {
-                    text: '<b>Opslaan</b>',
-                    type: 'button-positive',
-                    onTap: function (e) {
-                        if ($scope.popupData.motivation > 0 && $scope.popupData.motivation < 6) {
-                            //motivatie moet tussen 1 en 6 zitten.
-                            return $scope.popupData.motivation;
-                        } else {
-                            e.preventDefault();
-                            return;
-                        }
-                    }
-                }
-            ]
-        });
-
-        Motivation.then(function (newMotivation) {
-            if (newMotivation != null) {
-                var motivation = {
-                    "motivation": newMotivation
-                }
-                StudentInfo.updateMotivation("studentID", self.doel._id, motivation, function (response) {                  
-                    self.getDoel();                 
-                }, function (error) {
-                    console.log(error);
-                });
-            }
-        });
-
-    };
-
     self.editMotivation = function (currentMotivation) {
         $scope.popupData = {};
         $scope.popupData.motivation = currentMotivation;

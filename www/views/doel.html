@@ -23,7 +23,7 @@
         </div>
     </div>
     <div ng-if="dc.doel.motivation == 0" class="item">
-        <button class="button button-block button-positive" ng-click="dc.addMotivation()">Klik om jezelf een motivatie te geven</button>
+        <button class="button button-block button-positive" ng-click="dc.editMotivation(dc.doel.motivation)">Klik om jezelf een motivatie te geven</button>
     </div>
     <div ng-if="dc.doel.motivation != 0" class="item" ng-click="dc.editMotivation(dc.doel.motivation)">
         <div ng-switch="dc.doel.motivation">
