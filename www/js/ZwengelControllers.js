@@ -126,49 +126,51 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, $scop
     $ionicScrollDelegate.scrollTop();
     var doelID;
 
-    StudentInfo.getDoel("test", $routeParams.doelID, function (results) {
-        var progress = 0;
-        results.steps.forEach(function (stap) {
-            if (stap.completed) {
-                progress++;
-            }
-        });
-        results.steps.progress = progress;
-        results.steps.progressStyle = progress / results.steps.length * 100;
+    self.getDoel = function () {
+        StudentInfo.getDoel("test", $routeParams.doelID, function (results) {
+            var progress = 0;
+            results.steps.forEach(function (stap) {
+                if (stap.completed) {
+                    progress++;
+                }
+            });
+            results.steps.progress = progress;
+            results.steps.progressStyle = progress / results.steps.length * 100;
 
-        console.log(results.motivation);
-
-        switch (results.state) {
-            case "doing":
-                results.doneColor = "positive";
-                break;
-            case "finished":
-                results.doneColor = "balanced";
-                break;
-            case "stopped":
-                results.doneColor = "dark";
-        }
-
-        results.steps.forEach(function (object) {
-            switch (object.completed) {
-                case true:
-                    object.doneColor = "balanced";
+            switch (results.state) {
+                case "doing":
+                    results.doneColor = "positive";
                     break;
-                default:
-                    object.doneColor = "positive";
+                case "finished":
+                    results.doneColor = "balanced";
+                    break;
+                case "stopped":
+                    results.doneColor = "dark";
             }
-        });
 
-        self.doel = results;
-        doelID = results._id;
-    });
+            results.steps.forEach(function (object) {
+                switch (object.completed) {
+                    case true:
+                        object.doneColor = "balanced";
+                        break;
+                    default:
+                        object.doneColor = "positive";
+                }
+            });
+
+            self.doel = results;
+            doelID = results._id;
+        });
+    }
+
+    self.getDoel();
 
     self.addMotivation = function () {
         $scope.popupData = {};
 
         // An elaborate, custom popup
         var Motivation = $ionicPopup.show({
-            template: '<input type="text" ng-model="popupData.motivation">',
+            template: '<input type="text" style="text-align:center;" ng-model="popupData.motivation">',
             title: 'Motivatie invullen',
             subTitle: 'Gebruik een nummer van 1 tot en met 5',
             scope: $scope,
@@ -183,15 +185,24 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, $scop
                             return $scope.popupData.motivation;
                         } else {
                             e.preventDefault();
+                            return;
                         }
                     }
                 }
             ]
         });
 
-        Motivation.then(function (res) {
-            //motivatie updaten.
-            console.log('Motivatie toegevoegd!', res);
+        Motivation.then(function (newMotivation) {
+            if (newMotivation != null) {
+                var motivation = {
+                    "motivation": newMotivation
+                }
+                StudentInfo.updateMotivation("studentID", self.doel._id, motivation, function (response) {                  
+                    self.getDoel();                 
+                }, function (error) {
+                    console.log(error);
+                });
+            }
         });
 
     };
@@ -199,10 +210,10 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, $scop
     self.editMotivation = function (currentMotivation) {
         $scope.popupData = {};
         $scope.popupData.motivation = currentMotivation;
-  
+
         // An elaborate, custom popup
         var Motivation = $ionicPopup.show({
-            template: '<input type="text" ng-model="popupData.motivation">',
+            template: '<input type="text" style="text-align:center;" ng-model="popupData.motivation">',
             title: 'Motivatie invullen',
             subTitle: 'Gebruik een nummer van 1 tot en met 5',
             scope: $scope,
@@ -223,9 +234,17 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, $scop
             ]
         });
 
-        Motivation.then(function (res) {
-            //motivatie updaten.
-            console.log('Motivatie gewijzigd!', res);
+        Motivation.then(function (newMotivation) {
+            if (newMotivation != null) {
+                var motivation = {
+                    "motivation": newMotivation
+                }
+                StudentInfo.updateMotivation("studentID", self.doel._id, motivation, function (response) {                    
+                    self.getDoel();
+                }, function (error) {
+                    console.log(error);
+                });
+            }
         });
 
     };
