@@ -120,7 +120,7 @@ controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, All
     };
 };
 
-controllers.DoelController = function ($ionicScrollDelegate, $routeParams, $scope, $ionicPopup, AllData, StudentInfo) {
+controllers.DoelController = function ($ionicScrollDelegate, $routeParams, $scope, $ionicPopup, AllData, StudentInfo, PopUps) {
     var self = this;
 
     $ionicScrollDelegate.scrollTop();
@@ -169,30 +169,7 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, $scop
         $scope.popupData = {};
         $scope.popupData.motivation = currentMotivation;
 
-        // An elaborate, custom popup
-        var Motivation = $ionicPopup.show({
-            template: '<input type="text" style="text-align:center;" ng-model="popupData.motivation">',
-            title: 'Motivatie invullen',
-            subTitle: 'Gebruik een nummer van 1 tot en met 5',
-            scope: $scope,
-            buttons: [
-                { text: 'Annuleren' },
-                {
-                    text: '<b>Opslaan</b>',
-                    type: 'button-positive',
-                    onTap: function (e) {
-                        if ($scope.popupData.motivation > 0 && $scope.popupData.motivation < 6) {
-                            //motivatie moet tussen 1 en 6 zitten.
-                            return $scope.popupData.motivation;
-                        } else {
-                            e.preventDefault();
-                        }
-                    }
-                }
-            ]
-        });
-
-        Motivation.then(function (newMotivation) {
+        PopUps.editMotivation($scope, function(newMotivation){
             if (newMotivation != null) {
                 var motivation = {
                     "motivation": newMotivation
@@ -204,7 +181,6 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, $scop
                 });
             }
         });
-
     };
 
     self.toStap = function (stapID) {
@@ -216,4 +192,4 @@ zwengelControllers.controller('AllController', ['$ionicPlatform', '$window', '$r
 zwengelControllers.controller('LoginController', ['$ionicScrollDelegate', '$rootScope', '$ionicPopup', 'Authentication', 'AllData', controllers.LoginController]);
 zwengelControllers.controller('DoelenController', ['$ionicScrollDelegate', 'AllData', 'StudentInfo', controllers.DoelenController]);
 zwengelControllers.controller('ProfielController', ['$ionicScrollDelegate', '$ionicPopup', 'AllData', 'Authentication', 'StudentInfo', controllers.ProfielController]);
-zwengelControllers.controller('DoelController', ['$ionicScrollDelegate', '$routeParams', '$scope', '$ionicPopup', 'AllData', 'StudentInfo', controllers.DoelController]);
+zwengelControllers.controller('DoelController', ['$ionicScrollDelegate', '$routeParams', '$scope', '$ionicPopup', 'AllData', 'StudentInfo', 'PopUps', controllers.DoelController]);
