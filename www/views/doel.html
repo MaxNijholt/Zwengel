@@ -1,28 +1,31 @@
 <div class="card">
-    <div class="item item-divider item-{{dc.doel.doneColor}} item-icon-right"">
-        <div ng-switch="dc.doel.state">
-            <div ng-switch-when="finished">
-                <i class="icon ion-thumbsup"></i>
+    <div class="item item-divider item-{{dc.doel.doneColor}} item-icon-right" ">
+        <div ng-switch="dc.doel.state ">
+            <div ng-switch-when="finished ">
+                <i class="icon ion-thumbsup "></i>
             </div>
-            <div ng-switch-when="stopped">
-                <i class="icon ion-thumbsdown"></i> 
+            <div ng-switch-when="stopped ">
+                <i class="icon ion-thumbsdown "></i> 
             </div>
         </div>
-        <i class="{{dc.doel.mobileIcon}}"></i> {{dc.doel.title}}
+        <i class="{{dc.doel.mobileIcon}} "></i> {{dc.doel.title}}
     </div>
-    <div class="item item-text-wrap">
+    <div class="item item-text-wrap ">
         {{dc.doel.description}}
     </div>
-    <div class="item">
-        <div class="progress">
-            <div class="progress-bar progress-bar-success" role="progressbar" style="width: {{dc.doel.steps.progressStyle}}%;">
+    <div class="item ">
+        <div class="progress ">
+            <div class="progress-bar progress-bar-success " role="progressbar " style="width: {{dc.doel.steps.progressStyle}}%; ">
                 <div ng-if="dc.doel.steps.progress>0&&dc.doel.steps.progressStyle>20">Stappen {{dc.doel.steps.progress}}/{{dc.doel.steps.length}}</div>
                 <div ng-if="dc.doel.steps.progress>0&&dc.doel.steps.progressStyle<21">{{dc.doel.steps.progress}}/{{dc.doel.steps.length}}</div>
             </div>
             <div class="progressText" ng-if="dc.doel.steps.progress<1">Stappen {{dc.doel.steps.progress}}/{{dc.doel.steps.length}}</div>
         </div>
     </div>
-    <div ng-if="dc.doel.motivation" class="item">
+    <div ng-if="dc.doel.motivation == 0" class="item">
+        <button class="button button-block button-positive" ng-click="dc.editMotivation(dc.doel.motivation)">Klik om jezelf een motivatie te geven</button>
+    </div>
+    <div ng-if="dc.doel.motivation != 0" class="item" ng-click="dc.editMotivation(dc.doel.motivation)">
         <div ng-switch="dc.doel.motivation">
             <div class="progress" ng-switch-when="1">
                 <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
@@ -67,10 +70,10 @@
     <div class="item item-text-wrap">
         {{step.description}}
     </div>
-    <div  ng-if="step.completed  && step.completionDate" class="item">
+    <div ng-if="step.completed  && step.completionDate" class="item">
         <b>Behaald:</b> {{step.completionDate | date:'dd-MM-yyyy'}}
     </div>
-    <div  ng-if="!step.completed && step.endDate" class="item">
+    <div ng-if="!step.completed && step.endDate" class="item">
         <b>Einddatum:</b> {{step.endDate | date:'dd-MM-yyyy'}}
     </div>
 </div>

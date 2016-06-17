@@ -71,13 +71,13 @@ controllers.DoelenController = function ($ionicScrollDelegate, AllData, StudentI
 
         results.forEach(function (object) {
             var progress = 0;
-            object.steps.forEach(function(stap){
-               if(stap.completed){
-                   progress ++;
-               }
+            object.steps.forEach(function (stap) {
+                if (stap.completed) {
+                    progress++;
+                }
             });
             object.steps.progress = progress;
-            object.steps.progressStyle = progress/object.steps.length*100;
+            object.steps.progressStyle = progress / object.steps.length * 100;
             switch (object.state) {
                 case "doing":
                     object.doneColor = "positive";
@@ -108,7 +108,7 @@ controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, All
     StudentInfo.getProfile(0,
         function (result) {
             console.log(result);
-            self.profile = result;            
+            self.profile = result;
         }, function (error) {
             console.log(error);
         }
@@ -120,46 +120,68 @@ controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, All
     };
 };
 
-controllers.DoelController = function ($ionicScrollDelegate, $routeParams, AllData, StudentInfo) {
+controllers.DoelController = function ($ionicScrollDelegate, $routeParams, $scope, $ionicPopup, AllData, StudentInfo, PopUps) {
     var self = this;
 
     $ionicScrollDelegate.scrollTop();
     var doelID;
 
-    StudentInfo.getDoel("test", $routeParams.doelID, function (results) {
-        var progress = 0;
-        results.steps.forEach(function(stap){
-            if(stap.completed){
-                progress ++;
-            }
-        });
-        results.steps.progress = progress;
-        results.steps.progressStyle = progress/results.steps.length*100;
-        
-        switch (results.state) {
-            case "doing":
-                results.doneColor = "positive";
-                break;
-            case "finished":
-                results.doneColor = "balanced";
-                break;
-            case "stopped":
-                results.doneColor = "dark";
-        }
+    self.getDoel = function () {
+        StudentInfo.getDoel("test", $routeParams.doelID, function (results) {
+            var progress = 0;
+            results.steps.forEach(function (stap) {
+                if (stap.completed) {
+                    progress++;
+                }
+            });
+            results.steps.progress = progress;
+            results.steps.progressStyle = progress / results.steps.length * 100;
 
-        results.steps.forEach(function (object) {
-            switch (object.completed) {
-                case true:
-                    object.doneColor = "balanced";
+            switch (results.state) {
+                case "doing":
+                    results.doneColor = "positive";
                     break;
-                default:
-                    object.doneColor = "positive";
+                case "finished":
+                    results.doneColor = "balanced";
+                    break;
+                case "stopped":
+                    results.doneColor = "dark";
+            }
+
+            results.steps.forEach(function (object) {
+                switch (object.completed) {
+                    case true:
+                        object.doneColor = "balanced";
+                        break;
+                    default:
+                        object.doneColor = "positive";
+                }
+            });
+
+            self.doel = results;
+            doelID = results._id;
+        });
+    }
+
+    self.getDoel();
+
+    self.editMotivation = function (currentMotivation) {
+        $scope.popupData = {};
+        $scope.popupData.motivation = currentMotivation;
+
+        PopUps.editMotivation($scope, function(newMotivation){
+            if (newMotivation != null) {
+                var motivation = {
+                    "motivation": newMotivation
+                }
+                StudentInfo.updateMotivation("studentID", self.doel._id, motivation, function (response) {                    
+                    self.getDoel();
+                }, function (error) {
+                    console.log(error);
+                });
             }
         });
-
-        self.doel = results;
-        doelID = results._id;
-    });
+    };
 
     self.toStap = function (stapID) {
         AllData.toPage("Stap", "#/doelen/" + doelID + "/" + stapID);
@@ -170,4 +192,4 @@ zwengelControllers.controller('AllController', ['$ionicPlatform', '$window', '$r
 zwengelControllers.controller('LoginController', ['$ionicScrollDelegate', '$rootScope', '$ionicPopup', 'Authentication', 'AllData', controllers.LoginController]);
 zwengelControllers.controller('DoelenController', ['$ionicScrollDelegate', 'AllData', 'StudentInfo', controllers.DoelenController]);
 zwengelControllers.controller('ProfielController', ['$ionicScrollDelegate', '$ionicPopup', 'AllData', 'Authentication', 'StudentInfo', controllers.ProfielController]);
-zwengelControllers.controller('DoelController', ['$ionicScrollDelegate', '$routeParams', 'AllData', 'StudentInfo', controllers.DoelController]);
+zwengelControllers.controller('DoelController', ['$ionicScrollDelegate', '$routeParams', '$scope', '$ionicPopup', 'AllData', 'StudentInfo', 'PopUps', controllers.DoelController]);

@@ -4,6 +4,7 @@ var zwengelApp = angular.module('zwengelApp', [
     'zwengelServices',
     'dataServices',
     'authServices',
+    'popUpServices',
     'ionic'
 ]);
 

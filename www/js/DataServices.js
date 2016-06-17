@@ -23,6 +23,10 @@ services_data.StudentInfo = function ($http) {
         dataCaller_data.getDoel($http, studentID, doelID, onSucces);
     };
 
+    self.updateMotivation = function (studentID, doelID, motivation, onSuccess, onFail) {
+        dataCaller_data.updateMotivation($http, studentID, doelID, motivation, onSuccess, onFail);
+    }
+
     self.getBeloningen = function (studentID, onSucces) {
         dataCaller_data.getBeloningen(studentID, onSucces);
     };
@@ -38,9 +42,10 @@ services_data.StudentInfo = function ($http) {
     return {
         getDoelen: self.getDoelen,
         getDoel: self.getDoel,
+        updateMotivation: self.updateMotivation,
         getStap: self.getStap,
         getProfile: self.getProfile,
-        updatePreferences : self.updatePreferences
+        updatePreferences: self.updatePreferences
     };
 };
 
@@ -66,6 +71,15 @@ dataCaller_data.getDoel = function ($http, studentID, doelID, onSucces, onFail) 
         });
 }
 
+dataCaller_data.updateMotivation = function ($http, studentID, doelID, motivation, onSuccess, onFail) {
+    $http.put(API.base + API.goals + "/" + doelID, motivation)
+        .then(function (result) {
+            onSuccess(result.data);
+        }, function (error) {
+            onFail(error);
+        });
+}
+
 dataCaller_data.getStap = function ($http, studentID, doelID, stapID, onSucces) {
     var stap = null;
 
@@ -88,8 +102,7 @@ dataCaller_data.getProfile = function ($http, studentID, onSucces, onFail) {
         });
 };
 
-dataCaller_data.updatePreferences = function ($http, studentID, preferences, onSucces, onFail) {    
-    console.log(preferences);
+dataCaller_data.updatePreferences = function ($http, studentID, preferences, onSucces, onFail) {
     $http.put(API.base + API.users + "/" + studentID, preferences)
         .then(function (result) {
             onSucces(result.data);
