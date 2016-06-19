@@ -26,6 +26,7 @@ services_data.StudentInfo = function ($http, Authentication) {
     };
 
     self.updateMotivation = function (studentID, doelID, motivation, onSuccess, onFail) {
+        var studentID = Authentication.GetId();
         dataCaller_data.updateMotivation($http, studentID, doelID, motivation, onSuccess, onFail);
     }
 
@@ -78,7 +79,7 @@ dataCaller_data.getDoel = function ($http, studentID, doelID, onSucces, onFail) 
 }
 
 dataCaller_data.updateMotivation = function ($http, studentID, doelID, motivation, onSuccess, onFail) {
-    $http.put(API.base + API.users + '/' + studentId + API.goals + "/" + doelID, motivation)
+    $http.put(API.base + API.users + '/' + studentID + API.goals + "/" + doelID, motivation)
         .then(function (result) {
             onSuccess(result.data);
         }, function (error) {
