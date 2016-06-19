@@ -20,7 +20,11 @@ services_auth.Authentication = function($http, $rootScope) {
         var token = localStorage.getItem('token');
         callback(token);
     }
-    
+
+    self.GetId = function() {
+        return localStorage.getItem('id');
+    };
+
     self.SetCredentials = function (response, input) {
         localStorage.removeItem("token");
 
@@ -28,9 +32,11 @@ services_auth.Authentication = function($http, $rootScope) {
 
         if (input.rememberme) {
             localStorage.setItem('token', response.data.token);
+            localStorage.setItem('id', response.data.id);
         }
         
         $rootScope.token = response.data.token;
+        $rootScope.id = response.data.id;
         $rootScope.loggedin = true;
         $rootScope.username = input.username;
     };
@@ -39,6 +45,7 @@ services_auth.Authentication = function($http, $rootScope) {
         Login: self.Login,
         logout: self.logout,
         GetToken: self.GetToken,
+        GetId: self.GetId,
         SetCredentials: self.SetCredentials
     };
 };
