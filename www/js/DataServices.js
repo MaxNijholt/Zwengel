@@ -1,7 +1,8 @@
 var dataServices = angular.module('dataServices', ['ngResource']);
 
 var API = {
-    base: "http://kuipers.solutions:3000",
+    base: "http://localhost:5000",
+    // base: "http://kuipers.solutions:3000",
     login: "/auth/login",
     goals: "/goals",
     steps: "/steps",
