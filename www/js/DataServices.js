@@ -20,7 +20,8 @@ services_data.StudentInfo = function ($http, Authentication) {
         dataCaller_data.getDoelen($http, studentID, onSucces);
     };
 
-    self.getDoel = function (studentID, doelID, onSucces) {
+    self.getDoel = function (doelID, onSucces) {
+        var studentID = Authentication.GetId();
         dataCaller_data.getDoel($http, studentID, doelID, onSucces);
     };
 
@@ -52,7 +53,6 @@ services_data.StudentInfo = function ($http, Authentication) {
 
 dataCaller_data.getDoelen = function ($http, studentID, onSucces, onFail) {
     var url = API.base + API.users + '/' + studentID + API.goals;
-    console.log(url);
 
     $http.get(url)
         .then(
@@ -67,9 +67,8 @@ dataCaller_data.getDoel = function ($http, studentID, doelID, onSucces, onFail) 
     var doel = null;
 
     var url = API.base + API.users + '/' + studentID + API.goals + "/" + doelID;
-    console.log(url);
 
-    $http.get(API.base + API.users + '/' + studentID + API.goals + "/" + doelID)
+    $http.get(url)
         .then(
         function (results) {
             onSucces(results.data);

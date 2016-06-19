@@ -18,7 +18,6 @@ services_zwengel.AllData = function () {
         };
 
         self.history.push(object);
-        //console.log(self.history);
     };
 
     self.page = {

@@ -107,7 +107,6 @@ controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, All
     //moet nog studentID ophalen
     StudentInfo.getProfile(0,
         function (result) {
-            console.log(result);
             self.profile = result;
         }, function (error) {
             console.log(error);
@@ -127,7 +126,7 @@ controllers.DoelController = function ($ionicScrollDelegate, $routeParams, $scop
     var doelID;
 
     self.getDoel = function () {
-        StudentInfo.getDoel("test", $routeParams.doelID, function (results) {
+        StudentInfo.getDoel($routeParams.doelID, function (results) {
             var progress = 0;
             results.steps.forEach(function (stap) {
                 if (stap.completed) {
