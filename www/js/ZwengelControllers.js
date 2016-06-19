@@ -67,7 +67,7 @@ controllers.DoelenController = function ($ionicScrollDelegate, AllData, StudentI
 
     $ionicScrollDelegate.scrollTop();
 
-    StudentInfo.getDoelen(function (results) {
+    StudentInfo.getDoelen("test", function (results) {
 
         results.forEach(function (object) {
             var progress = 0;

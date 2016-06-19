@@ -1,8 +1,7 @@
 var dataServices = angular.module('dataServices', ['ngResource']);
 
 var API = {
-    base: "http://localhost:5000",
-    // base: "http://kuipers.solutions:3000",
+    base: "http://kuipers.solutions:3000",
     login: "/auth/login",
     goals: "/goals",
     steps: "/steps",
@@ -13,11 +12,10 @@ var API = {
 var services_data = {};
 var dataCaller_data = {};
 
-services_data.StudentInfo = function ($http, Authentication) {
+services_data.StudentInfo = function ($http) {
     var self = this;
 
-    self.getDoelen = function (onSucces) {
-        var studentID = Authentication.GetId();
+    self.getDoelen = function (studentID, onSucces) {
         dataCaller_data.getDoelen($http, studentID, onSucces);
     };
 
@@ -52,10 +50,7 @@ services_data.StudentInfo = function ($http, Authentication) {
 };
 
 dataCaller_data.getDoelen = function ($http, studentID, onSucces, onFail) {
-    var url = API.base + API.users + '/' + studentID + API.goals;
-    console.log(url);
-
-    $http.get(url)
+    $http.get(API.base + API.goals)
         .then(
         function (results) {
             onSucces(results.data.data);
@@ -67,10 +62,7 @@ dataCaller_data.getDoelen = function ($http, studentID, onSucces, onFail) {
 dataCaller_data.getDoel = function ($http, studentID, doelID, onSucces, onFail) {
     var doel = null;
 
-    var url = API.base + API.users + '/' + studentID + API.goals + "/" + doelID;
-    console.log(url);
-
-    $http.get(API.base + API.users + '/' + studentID + API.goals + "/" + doelID)
+    $http.get(API.base + API.goals + "/" + doelID)
         .then(
         function (results) {
             onSucces(results.data);
@@ -80,7 +72,7 @@ dataCaller_data.getDoel = function ($http, studentID, doelID, onSucces, onFail) 
 }
 
 dataCaller_data.updateMotivation = function ($http, studentID, doelID, motivation, onSuccess, onFail) {
-    $http.put(API.base + API.users + '/' + studentId + API.goals + "/" + doelID, motivation)
+    $http.put(API.base + API.goals + "/" + doelID, motivation)
         .then(function (result) {
             onSuccess(result.data);
         }, function (error) {
@@ -119,4 +111,4 @@ dataCaller_data.updatePreferences = function ($http, studentID, preferences, onS
         });
 };
 
-dataServices.factory('StudentInfo', ['$http', 'Authentication', services_data.StudentInfo]);
+dataServices.factory('StudentInfo', ['$http', services_data.StudentInfo]);
