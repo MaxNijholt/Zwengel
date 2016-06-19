@@ -1,19 +1,22 @@
-<div class="row">
-    <div class="col">
-        <h3>{{sc.stap.title}}</h3>        
-    </div>
-</div>
-
 <div class="card">
     <div class="item item-divider item-{{sc.stap.doneColor}}">
-        {{sc.stap.title}}
+        {{sc.stap.name}}       
     </div>
     <div class="item item-icon-right item-text-wrap">
+        <i ng-if="sc.stap.completed" class="icon ion-thumbsup"></i>
+        <i ng-if="!sc.stap.completed" class="icon ion-thumbsdown"></i>
+        {{sc.stap.result}}
+    </div>
+    <div ng-if="sc.stap.description" class="item item-icon-right item-text-wrap">
         <i class="icon ion-information"></i>
         {{sc.stap.description}}
     </div>
-    <div class="item item-icon-right">
+    <div  ng-if="sc.stap.completed && sc.stap.completionDate" class="item item-icon-right">
         <i class="icon ion-calendar"></i>
-        {{sc.stap.endDate}}
+        <b>Behaald op:</b> {{sc.stap.completionDate | date:'dd-MM-yyyy'}}
+    </div>
+    <div  ng-if="!sc.stap.completed && sc.stap.endDate" class="item item-icon-right">
+        <i class="icon ion-calendar"></i>
+        <b>Einddatum op:</b> {{sc.stap.endDate | date:'dd-MM-yyyy'}}
     </div>
 </div>

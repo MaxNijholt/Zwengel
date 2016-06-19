@@ -1,16 +1,33 @@
-<div ng-repeat="target in denc.targets | orderBy:endDate" class="row timecard">
-    <div class="col col-10 col-center">
-        <i class="button-icon icon {{target.icon}}"></i>
+<div class="card" ng-repeat="target in denc.targets | orderBy:'endDate':true" ng-click="denc.toDoel(target._id)">
+    <div class="item item-divider item-{{target.doneColor}} item item-icon-right">
+        <div ng-switch="target.state">
+            <div ng-switch-when="finished">
+                <i class="icon ion-thumbsup"></i>
+            </div>
+            <div ng-switch-when="stopped">
+                <i class="icon ion-thumbsdown"></i> 
+            </div>
+        </div>
+        <i class="{{target.mobileIcon}}"></i> {{target.title}}
     </div>
-    <div class="col col-90">
-        <div class="card" ng-click="denc.toDoel(target.id)">
-            <div class="item item-divider item-{{target.doneColor}}">
-                {{target.title}}
+    <div class="item">
+        <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" style="width: {{target.steps.progressStyle}}%;">
+                <div ng-if="target.steps.progress>0&&target.steps.progressStyle>20">Stappen {{target.steps.progress}}/{{target.steps.length}}</div>
+                <div ng-if="target.steps.progress>0&&target.steps.progressStyle<21">{{target.steps.progress}}/{{target.steps.length}}</div>
             </div>
-            <div class="item item-icon-right">
-                <i class="icon ion-calendar"></i>
-                {{target.endDate}}
-            </div>
+            <div class="progressText" ng-if="target.steps.progress<1">Stappen {{target.steps.progress}}/{{target.steps.length}}</div>
+        </div>
+    </div>
+    <div ng-switch="target.state" class="item">
+        <div ng-switch-when="doing">
+            <b>Einddatum:</b> {{target.endDate | date:'dd-MM-yyyy'}}
+        </div>
+        <div ng-switch-when="finished">
+            <b>Behaald:</b> {{target.endDate | date:'dd-MM-yyyy'}}
+        </div>
+        <div ng-switch-when="stopped">
+            <b>Gestopt:</b> {{target.endDate | date:'dd-MM-yyyy'}}
         </div>
     </div>
 </div>

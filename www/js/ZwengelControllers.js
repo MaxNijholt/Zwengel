@@ -1,149 +1,194 @@
 var zwengelControllers = angular.module('zwengelControllers', []);
 var controllers = {};
 
-controllers.AllController = function($ionicPlatform, $window, AllData) {
+controllers.AllController = function ($ionicPlatform, $window, $route, AllData) {
     var self = this;
-    
+
     self.page = AllData.page;
-    
-    self.navDoelen = function(){
+
+
+    self.navDoelen = function () {
         AllData.toPage("Doelen", "#/doelen");
     };
-    
-    self.navBeloningen = function(){
+
+    self.navBeloningen = function () {
         AllData.toPage("Beloningen", "#/beloningen");
     };
-    
-    self.navProfiel = function(){
+
+    self.navProfiel = function () {
         AllData.toPage("Profiel", "#/profiel");
     };
-    
-    self.back = function(){
-		AllData.toBack();
+
+    self.back = function () {
+        AllData.toBack();
     };
-    
+
+    self.reload = function () {
+        $route.reload();
+    };
+
     $ionicPlatform.registerBackButtonAction(function () {
-		AllData.toBack(true);
-	}, 100);
+        AllData.toBack(true);
+    }, 100);
 };
 
-controllers.DoelenController = function($ionicScrollDelegate, AllData, StudentInfo) {
+controllers.LoginController = function ($ionicScrollDelegate, $rootScope, $ionicPopup, Authentication, AllData) {
     var self = this;
-    
     $ionicScrollDelegate.scrollTop();
-    
-    StudentInfo.getDoelen("test", function(results){
-        results.forEach(function(object){
-            switch(object.done) {
-                case "good":
+
+    if (localStorage.getItem("token") != null) {
+        AllData.toPage("Doelen", "#/doelen");
+    }
+    else {
+        AllData.toPage("Login", "#/login");
+    }
+
+    self.login = function (input) {
+        Authentication.Login(input.username, input.password, function (response) {
+            if (response.success) {
+                Authentication.SetCredentials(response, input);
+                AllData.toPage("Doelen", "#/doelen");
+            }
+            else {
+                if (response.message === "invalid credentials")
+                    $ionicPopup.alert({
+                        title: 'Fout inloggen',
+                        template: 'Gebruikersnaam en/of wachtwoord onjuist.'
+                    });
+                else
+                    console.log(response.message);
+            }
+        })
+    }
+};
+
+controllers.DoelenController = function ($ionicScrollDelegate, AllData, StudentInfo) {
+    var self = this;
+
+    $ionicScrollDelegate.scrollTop();
+
+    StudentInfo.getDoelen(function (results) {
+
+        results.forEach(function (object) {
+            var progress = 0;
+            object.steps.forEach(function (stap) {
+                if (stap.completed) {
+                    progress++;
+                }
+            });
+            object.steps.progress = progress;
+            object.steps.progressStyle = progress / object.steps.length * 100;
+            switch (object.state) {
+                case "doing":
+                    object.doneColor = "positive";
+                    break;
+                case "finished":
                     object.doneColor = "balanced";
                     break;
-                case "bad":
-                    object.doneColor = "assertive";
-                    break;
-                default:
-                    object.doneColor = "positive";
+                case "stopped":
+                    object.doneColor = "dark";
             }
         });
+
         self.targets = results;
+
     });
-    
-    self.toDoel = function(doelID){
+
+    self.toDoel = function (doelID) {
         AllData.toPage("Doel", "#/doelen/" + doelID);
     };
 };
 
-controllers.BeloningenController = function($ionicScrollDelegate, StudentInfo) {
+controllers.ProfielController = function ($ionicScrollDelegate, $ionicPopup, AllData, Authentication, StudentInfo) {
     var self = this;
-    
+
     $ionicScrollDelegate.scrollTop();
-    
-    self.hideFilter = "ng-hide";
-	self.filterIcon = "ion-chevron-down";
-    StudentInfo.getBeloningen("test" , function(results){
-        self.rewards = results;
-    });
-    	
-    self.buyReward = function(reward){
-        var confirm = window.confirm("Koop beloning: " + reward.title);
-        if (confirm == true) {
-            alert("Gekocht");
+
+    //moet nog studentID ophalen
+    StudentInfo.getProfile(0,
+        function (result) {
+            self.profile = result;
+        }, function (error) {
+            console.log(error);
         }
+    );
+
+    self.logout = function () {
+        Authentication.logout();
+        AllData.toPage("Login", "#/login");
     };
-        
-	self.toggleHideFilter = function(bool){
-		if(self.hideFilter === "ng-hide" && !bool){
-			self.hideFilter = "ng-show";
-			self.filterIcon = "ion-chevron-up";
-		}else{
-			self.hideFilter = "ng-hide";
-			self.filterIcon = "ion-chevron-down";
-		}
-	};
 };
 
-controllers.ProfielController = function($ionicScrollDelegate, AllData) {
+controllers.DoelController = function ($ionicScrollDelegate, $routeParams, $scope, $ionicPopup, AllData, StudentInfo, PopUps) {
     var self = this;
-    
-    $ionicScrollDelegate.scrollTop();
-    
-    self.doelscreen = AllData.pref.doelscreen;
-    self.textIcons = AllData.pref.textIcons;
-    self.thema = "default";
-};
 
-controllers.DoelController = function($ionicScrollDelegate, $routeParams, AllData, StudentInfo) {
-    var self = this;
-    
     $ionicScrollDelegate.scrollTop();
     var doelID;
-    
-    StudentInfo.getDoel("test", $routeParams.doelID, function(results){
-        results.steps.forEach(function(object){
-            switch(object.done) {
-                case "good":
-                    object.doneColor = "balanced";
+
+    self.getDoel = function () {
+        StudentInfo.getDoel($routeParams.doelID, function (results) {
+            var progress = 0;
+            results.steps.forEach(function (stap) {
+                if (stap.completed) {
+                    progress++;
+                }
+            });
+            results.steps.progress = progress;
+            results.steps.progressStyle = progress / results.steps.length * 100;
+
+            switch (results.state) {
+                case "doing":
+                    results.doneColor = "positive";
                     break;
-                case "bad":
-                    object.doneColor = "assertive";
+                case "finished":
+                    results.doneColor = "balanced";
                     break;
-                default:
-                    object.doneColor = "positive";
+                case "stopped":
+                    results.doneColor = "dark";
+            }
+
+            results.steps.forEach(function (object) {
+                switch (object.completed) {
+                    case true:
+                        object.doneColor = "balanced";
+                        break;
+                    default:
+                        object.doneColor = "positive";
+                }
+            });
+
+            self.doel = results;
+            doelID = results._id;
+        });
+    }
+
+    self.getDoel();
+
+    self.editMotivation = function (currentMotivation) {
+        $scope.popupData = {};
+        $scope.popupData.motivation = currentMotivation;
+
+        PopUps.editMotivation($scope, function(newMotivation){
+            if (newMotivation != null) {
+                var motivation = {
+                    "motivation": newMotivation
+                }
+                StudentInfo.updateMotivation("studentID", self.doel._id, motivation, function (response) {                    
+                    self.getDoel();
+                }, function (error) {
+                    console.log(error);
+                });
             }
         });
-        
-        self.doel = results;
-        doelID = results.id;
-    });
-    
-    self.toStap = function(stapID){
+    };
+
+    self.toStap = function (stapID) {
         AllData.toPage("Stap", "#/doelen/" + doelID + "/" + stapID);
     };
 };
 
-controllers.StapController = function($ionicScrollDelegate, $routeParams, AllData, StudentInfo) {
-    var self = this;
-    
-    $ionicScrollDelegate.scrollTop();
-    
-    StudentInfo.getStap("test", $routeParams.doelID, $routeParams.stapID, function(result){
-        switch(result.done) {
-                case "good":
-                    result.doneColor = "balanced";
-                    break;
-                case "bad":
-                    result.doneColor = "assertive";
-                    break;
-                default:
-                    result.doneColor = "positive";
-            }
-        self.stap = result;
-    });
-};
-
-zwengelControllers.controller('AllController', ['$ionicPlatform', '$window', 'AllData', controllers.AllController]);
+zwengelControllers.controller('AllController', ['$ionicPlatform', '$window', '$route', 'AllData', controllers.AllController]);
+zwengelControllers.controller('LoginController', ['$ionicScrollDelegate', '$rootScope', '$ionicPopup', 'Authentication', 'AllData', controllers.LoginController]);
 zwengelControllers.controller('DoelenController', ['$ionicScrollDelegate', 'AllData', 'StudentInfo', controllers.DoelenController]);
-zwengelControllers.controller('BeloningenController', ['$ionicScrollDelegate', 'StudentInfo', controllers.BeloningenController]);
-zwengelControllers.controller('ProfielController', ['$ionicScrollDelegate', 'AllData', controllers.ProfielController]);
-zwengelControllers.controller('DoelController', ['$ionicScrollDelegate', '$routeParams', 'AllData', 'StudentInfo', controllers.DoelController]);
-zwengelControllers.controller('StapController', ['$ionicScrollDelegate', '$routeParams', 'AllData', 'StudentInfo', controllers.StapController]);
+zwengelControllers.controller('ProfielController', ['$ionicScrollDelegate', '$ionicPopup', 'AllData', 'Authentication', 'StudentInfo', controllers.ProfielController]);
+zwengelControllers.controller('DoelController', ['$ionicScrollDelegate', '$routeParams', '$scope', '$ionicPopup', 'AllData', 'StudentInfo', 'PopUps', controllers.DoelController]);

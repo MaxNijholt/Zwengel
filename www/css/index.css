@@ -12,7 +12,7 @@ ion-footer-bar {
 }
 
 #footerMenu div {
-    width: 33.4%;
+    width: 50%;
     height: 100%;
     text-align: center;
     padding: 12px;
@@ -70,4 +70,24 @@ ion-content {
 
 .pointsIcon{
     vertical-align: text-bottom !important;
+}
+
+#cardLogout{
+    box-shadow: none;
+}
+
+.timecard{
+    padding: 0 !important;
+}
+
+.timecard_Card{
+    padding: 0 !important;
+}
+
+.progress{
+    margin-bottom: 0 !important;
+}
+
+.progressText{
+    text-align: center;
 }
